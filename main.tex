@@ -232,10 +232,11 @@
 % ----------------------------------------------------------
 % LISTA DE ALGORITMOS
 % ----------------------------------------------------------
-
-\lstlistoflistings % caso não tenha quadros, comente esta linha 
+\renewcommand{\lstlistingname}{Código Fonte}
+\renewcommand{\lstlistlistingname}{Lista de \lstlistingname}
+\pdfbookmark[0]{\lstlistingname}{lol}
 \cleardoublepage
-
+\lstlistoflistings  
 
 % ----------------------------------------------------------
 % LISTA E ABREVIATURAS E SIGLAS
