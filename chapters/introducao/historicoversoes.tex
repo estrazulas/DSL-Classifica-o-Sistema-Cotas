@@ -9,7 +9,37 @@ Criado em meados do ano de 2000 o sistema tem por objetivo disponibilizar vagas 
 
 O projeto não utiliza conceitos de orientação a objetos, em sua maioria os arquivos PHP ultrapassam duas mil linhas, sem divisão em camadas \gls{MVC}, com combinações das linguagens Javascript, HTML e PHP no mesmo arquivo. Quando era preciso criar ou adaptar alguma nova funcionalidade, por falta de conhecimento técnico os antigos desenvolvedores (bolsistas) faziam a cópia das funcionalidades para vários locais do sistema, sem pensar em reutilização de código.
 
-Com objetivo de elencar a situação atual do código fonte do sistema, neste trabalho serão apresentados os quantitativos levantados a partir do sistema de controle de versão do \gls{IFSC}. O Quadro \ref{} apresenta o levantamento geral sobre o total de arquivos, linhas de código, commits e desenvolvedores que já atuaram no projeto. Nas seções seguintes serão contextualizadas as 3 (três) versões do algoritmo de classificação já implementadas em função da legislação.
+Com objetivo de elencar a situação atual do código fonte do sistema, neste trabalho serão apresentados os quantitativos levantados a partir do sistema de controle de versão do \gls{IFSC}. O Quadro \ref{quadro_git_ingresso} apresenta o levantamento geral sobre o total de arquivos, linhas de código, commits e desenvolvedores que já atuaram no projeto. Nas seções seguintes serão contextualizados os dados gerais sobre o algoritmo de classificação, assim como será descrito o levantamento feito nas 3 (três) versões do algoritmo de classificação que foram implementadas até o momento.
+
+\begin{quadro}
+\caption{Dados gerais do controle de versão}
+\label{quadro_git_ingresso}
+\centering
+\begin{tabular}{ l l }
+   \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{5.850cm}|}{\textbf{Total de arquivos}} &
+    \multicolumn{1}{p{8.217cm}|}{1.357 arquivos (php, html, css, js )}
+  \\ 
+   \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{5.850cm}|}{\textbf{Total de linhas de código}} &
+    \multicolumn{1}{p{8.217cm}|}{36.9414 linhas}
+  \\    
+   \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{5.850cm}|}{\textbf{Total de commits}} &
+    \multicolumn{1}{p{8.217cm}|}{731}
+  \\    
+   \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{5.850cm}|}{\textbf{Total de desenvolvedores}} &
+    \multicolumn{1}{p{8.217cm}|}{6}
+  \\     
+   \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{5.850cm}|}{\textbf{Período da coleta}} &
+    \multicolumn{1}{p{8.217cm}|}{11/02/2015 - 17/04/2019}
+  \\       
+  \hline
+
+ \end{tabular} 
+\end{quadro}
 
 \section{Algoritmo de Classificação}
 \label{algoritimodeclassificacao}
