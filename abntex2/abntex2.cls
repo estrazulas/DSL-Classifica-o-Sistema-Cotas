@@ -322,6 +322,7 @@
   \counterwithout{section}{chapter}
   \counterwithout{figure}{section}
   \counterwithout{table}{section}
+  \counterwithout{lstlisting}{chapter}
 }{%else
   \counterwithout{figure}{chapter}
   \counterwithout{table}{chapter}
