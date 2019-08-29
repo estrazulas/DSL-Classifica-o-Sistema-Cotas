@@ -7,12 +7,12 @@ function calcula_vagasAcoesAfirmativas($totalVagas, $percentualNegros, $percentu
     
     // vagas escola publica
     $vagas['AAEP'] = ceil($totalVagas * $multEscolaPublica);
-    // restante para ampla concorrência
+    // restante para ampla concorrencia
     $vagas['CLAG'] = $totalVagas - $vagas['AAEP'];
     
     // vagas escola publica renda < 1.5 SM
     $vagas['AAEPRI'] = ceil($vagas['AAEP'] * 0.5);
-    // restante para escola pública renda > 1.5 SM
+    // restante para escola publica renda > 1.5 SM
     $vagas['AAEPRS'] = $vagas['AAEP'] - $vagas['AAEPRI'];
     
     // vagas escola publica renda < 1.5 SM - PPI

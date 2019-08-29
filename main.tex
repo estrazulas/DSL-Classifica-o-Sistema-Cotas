@@ -229,15 +229,25 @@
 \cleardoublepage
 
 
-% ----------------------------------------------------------
-% LISTA DE ALGORITMOS
-% ----------------------------------------------------------
-\renewcommand{\lstlistingname}{Código Fonte}
-\renewcommand{\lstlistlistingname}{Lista de \lstlistingname}
-\pdfbookmark[0]{\lstlistingname}{lol}
-\cleardoublepage
-\lstlistoflistings  
+% ---
+% LISTA DE CÓDIGOS FONTES
+% ---
 
+\renewcommand\lstlistingname{Código Fonte}
+\renewcommand\lstlistlistingname{Lista de Códigos Fontes}
+\pdfbookmark[0]{\lstlistingname}{lol} % caso não tenha quadros, comente esta linha 
+\counterwithout{lstlisting}{chapter}
+{
+\let\oldnumberline\numberline
+\newcommand{\algnumberline}[1]{Código Fonte~#1~\enspace--~\enspace}
+\renewcommand{\numberline}{\algnumberline}
+
+\lstlistoflistings % caso não tenha quadros,
+ 
+\cleardoublepage
+}
+        
+  
 % ----------------------------------------------------------
 % LISTA E ABREVIATURAS E SIGLAS
 % ----------------------------------------------------------
