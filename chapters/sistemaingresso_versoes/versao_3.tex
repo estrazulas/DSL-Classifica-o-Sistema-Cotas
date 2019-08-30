@@ -20,3 +20,7 @@ Tendo como base essas novas categorias, a Figura \ref{fig:cenario3} detalha o te
 Diante da crescente demanda por alterações nas funções de classificação por cotas, a \gls{DTIC} optou por refatorar o código de modo que as regras de distribuição não fossem implementadas de forma estática no código fonte, esta versão foi implementada com armazenamento da árvore de cotas em banco de dados, como uma tentativa de diminuir o impacto em novas mudanças por parte dos desenvolvedores. 
 
 Nesta versão houve uma redução de linhas de código considerável e a equipe centralizou rotinas responsáveis pelos cálculos em apenas um arquivo \textit{calculo\_cotas.php}. As novas funções de cálculo serão descritas nos próximos parágrafos.
+
+\lstinputlisting[language=PHP, 
+caption=Nova função para gerar o quadro de vagas
+,label=lst:arvorecotas]{chapters/trechos_codigo/arvorecotas.m}
