@@ -1,2 +1,21 @@
 \subsection{Versão 2 - Alteração para Lei Nº 13.409 de 2016 }
 \label{versao2}
+ Em função da criação da Lei nº 13.409, que altera a lei original nº 12.711, foi feita uma re-estruturação do código para inclusão de novas categorias de cotas para \gls{PCD}, mantendo as outras categorias já existentes. Os trechos de lei afetados foram:
+\begin{citacao}
+Art. 3º Em cada instituição federal de ensino superior, as vagas de que trata o art. 1º desta Lei serão preenchidas, por curso e turno, por autodeclarados pretos, pardos e indígenas e por pessoas com deficiência, nos termos da legislação, em proporção ao total de vagas no mínimo igual à proporção respectiva de pretos, pardos, indígenas e pessoas com deficiência na população da unidade da Federação onde está instalada a instituição, segundo o último censo da Fundação Instituto Brasileiro de Geografia e Estatística - IBGE.
+
+Art. 5º Em cada instituição federal de ensino técnico de nível médio, as vagas de que trata o art. 4º desta Lei serão preenchidas, por curso e turno, por autodeclarados pretos, pardos e indígenas e por pessoas com deficiência, nos termos da legislação, em proporção ao total de vagas no mínimo igual à proporção respectiva de pretos, pardos, indígenas e pessoas com deficiência na população da unidade da Federação onde está instalada a instituição, segundo o último censo do IBGE \cite{leicotas2}.
+\end{citacao}
+
+A equipe de desenvolvimento original do sistema já não estava mais presente no setor e a falta de experiência nas regras de cotas por parte da equipe atual, acabou por dificultar e atrasar o processo de entendimento do código fonte para aplicação das mudanças no sistema,  demandando também a alocação de mais desenvolvedores para divisão do trabalho de codificação dos novos tipos de cota.
+
+Após a análise dos novos trechos de lei, foi especificada uma nova versão do algoritmo de classificação, desenvolvida por meio de interpretação da área demandante e dos analistas de sistemas da \gls{DTIC}, gerando uma nova implementação contendo 7 tipos de categorias de cotas possíveis, conforme Tabela \ref{tabela_cotas_v2}:
+
+\input{chapters/sistemaingresso_versoes/quadros/tabela_cotas_v2.tex}
+
+\newpage
+O desenvolvimento durou cerca de 3 (três) meses, com 2 (dois) desenvolvedores dedicados, onde foram alterados todos os arquivos descritos na primeira versão, assim como as telas envolvidas para atender a este novo entendimento e disponibilizar o Código \ref{lst:algoritmov2}:
+
+\lstinputlisting[language=PHP, 
+caption= Segunda versão do algoritmo
+,label=lst:algoritmov2]{chapters/trechos_codigo/algoritmov2.m}

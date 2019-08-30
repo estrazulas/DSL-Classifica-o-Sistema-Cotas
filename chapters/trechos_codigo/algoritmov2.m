@@ -1,0 +1,10 @@
+Vagas['EP'] = TV * PVEP
+Vagas['CLAG'] = TV - Vagas['EP']
+Vagas['RI'] = Vagas['EP'] * 0.5
+Vagas['RIPPI'] = Vagas['RI'] * PIPPI
+Vagas['RIPCD'] = Vagas['RI'] * PIPCD
+Vagas['RINPPID'] = Vagas['RI'] -  (Vagas['RIPPI'] +Vagas['RIPCD'])
+Vagas['RS'] = Vagas['EP'] -  Vagas['RI']
+Vagas['RSPPI'] = Vagas['RS'] * PIPPI
+Vagas['RSPCD'] = Vagas['RS'] * PIPCD
+Vagas['RSNPPID'] = Vagas['RS'] -  (Vagas['RSPPI'] +Vagas['RSPCD'])
