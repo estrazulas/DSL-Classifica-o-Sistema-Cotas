@@ -39,39 +39,10 @@ Ao final do processo de classificação é gerada uma lista de candidatos aprova
 
 As alterações nos documentos de lei podem incluir novas categorias, novas formas de distribuição das vagas iniciais, mudanças de percentuais, formas de arredondamento, descrição dos tipos de cotas e mudança na ordem de prioridade em caso de sobra de vagas. Essas situações serão exemplificadas nas seções seguintes por meio dos casos e cenários onde houve maior impacto de refatoração de código do sistema de ingresso para adequação à legislação.
 
+\input{chapters/sistemaingresso_versoes/versao_1.tex}
 
-\subsection{Versão 1 - Início do sistema de Cotas, Lei Nº 12.711 de 2012}
-\label{versao1}
+\input{chapters/sistemaingresso_versoes/versao_2.tex}
 
-Inicialmente o sistema de ingresso foi construído sem considerar cotas, ou seja, a classificação era por pontuação ou nota de vestibular, não havia exigência de lei em função de reserva de vagas. As chamadas para matrículas eram realizadas pela ordem geral de classificação e alguns critérios de desempate. Hoje apenas alguns tipos de processos seguem este molde, como por exemplo cursos de curta duração, ou cursos internos que não se aplicam à legislação.
+\input{chapters/sistemaingresso_versoes/versao_3.tex}
 
-Com o surgimento da lei Nº 12.711/2012 vem também a demanda do governo para que as instituições reservem 50\% das vagas para estudantes do ensino médio exclusivamente em escolas públicas, e dentro destes 50\% deveria ser reservado um percentual para estudantes cuja renda familiar fosse inferior a 1.5 salários mínimos per capita:
-
-\begin{citacao}
-Parágrafo único.  No preenchimento das vagas de que trata o caput deste artigo, 50\% (cinquenta por cento) deverão ser reservados aos estudantes oriundos de famílias com renda igual ou inferior a 1,5 salário-mínimo (um salário-mínimo e meio) per capita.
-
-Art. 3o  Em cada instituição federal de ensino superior, as vagas de que trata o art. 1o desta Lei serão preenchidas, por curso e turno, por autodeclarados pretos, pardos e indígenas, em proporção no mínimo igual à de pretos, pardos e indígenas na população da unidade da Federação onde está instalada a instituição, segundo o último censo do Instituto Brasileiro de Geografia e Estatística (IBGE) \cite{leicotas}.
-\end{citacao}
-
-Com este objetivo o algoritmo de classificação que era uma consulta SQL foi separado em 3 funções PHP de nome:\textit{calcula\_vagasAcoesAfirmativas}, \textit{aprova\_Candidatos} e \textit{retorna\_OrdemdePreenchimentodeVagasNaoOcupadas}.  A primeira com função de gerar o quadro de vagas, a segunda a seleção dos candidatos para serem aprovados e atualizar a contagem de vagas em cada categoria e a ultima para retornar a ordem de preenchimento em caso de sobra de vagas.
-
-Tendo em vista que há uma divisão categórica das vagas entre os candidatos, foi preciso criar 5 tipos de situações de classificação para cada combinação de cotas possível, essas categorias foram definidas conforme o Quadro \ref{quadro_categoriasv1}.
-
-\input{chapters/sistemaingresso_versoes/quadros/quadro_categoriasv1.tex}
-
-\newpage
-Dadas as situações de classificação possíveis o primeiro passo do algoritmo é gerar um quadro de vagas para cada tipo de cota, tendo como base o percentual do \gls{IBGE} e o total de vagas para o curso, o trecho de código desenvolvido para chegar a este quadro será apresentado no
-
-
-\lstinputlisting[language=PHP, 
-caption=Função que calcula o quadro de vagas
-]{chapters/trechos_codigo/calculaquadrovagas.m}
-
-\subsection{Versão 2 - Alteração para Lei Nº 13.409 de 2016 }
-\label{versao2}
-
-\subsection{Versão 3 - Reimplementação para interpretação do MEC em 2017 }
-\label{versao3}
-
-\subsection{Outras customizações realizadas no algoritmo}
-\label{outrasVersoes}
+\input{chapters/sistemaingresso_versoes/outras_versoes.tex}
