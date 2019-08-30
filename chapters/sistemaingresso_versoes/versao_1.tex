@@ -40,7 +40,12 @@ Basicamente o que a função \textit{calcula\_vagasAcoesAfirmativas} faz é sepa
     \item O total de vagas de estudantes de Renda Superior que NÃO são autodeclarados PPI (AAEPRSNPPI) é obtido após diminuir o total de vagas para renda inferior AAEPSI - o total armazenado em (AAEPRSPPI).
 \end{enumerate}{}
 
-Tendo com base o quadro de vagas o algoritmo de classificação de candidatos utiliza a função \textit{aprova\_Candidatos} descrita no Código Fonte \ref{lst:algoritmoaprovacao}, fazendo a seleção dos candidatos para aprovação em cada categoria até atingir o seu total de vagas disponível. 
+Um exemplo do resultado da geração do quadro de vagas, para um cenário de curso com 40 vagas,  pode ser visto na Figura \ref{fig:cenario1}.
+
+\input{chapters/sistemaingresso_versoes/cenarios/cenario1.tex}
+
+\newpage
+Tendo com base o quadro de vagas o algoritmo de classificação de candidatos utiliza a função \textit{aprova\_Candidatos} descrita no Código Fonte \ref{lst:algoritmoaprovacao}, fazendo a seleção dos candidatos para aprovação em cada categoria até atingir o total de vagas disponível. 
 
 \lstinputlisting[language=PHP, 
 caption=Função de aprovação de candidatos
@@ -57,4 +62,4 @@ Após análise no controle de versão pode-se identificar que as funções eram 
 \input{chapters/sistemaingresso_versoes/quadros/tabela_arquivosv1.tex}
 
 
-Com base nesse levantamento pode-se observar uma quantidade considerável de código fonte envolvido para desenvolvimento de regras para classificação de candidatos. Como tentativa de dar celeridade no processo de desenvolvimento de correções e na criação de futuras versões, os problemas de refatoração de código foram reduzidos nas versões posteriores do algoritmo de classificação. Na Seção \ref{versao2} são apresentados os dados sobre o controle de versão pós refatoração.
+Com base nesse levantamento pode-se observar uma quantidade considerável de código fonte envolvido para desenvolvimento de regras para classificação de candidatos. Como tentativa de dar celeridade no processo de desenvolvimento de correções e na criação de futuras versões, os problemas de refatoração de código foram reduzidos nas versões posteriores do algoritmo de classificação. Na Seção \ref{versao2} são apresentados os dados sobre o controle de versão, pós refatoração realizada em função de novas demandas de alteração da legislação.
