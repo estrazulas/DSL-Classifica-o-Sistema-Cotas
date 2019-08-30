@@ -127,7 +127,6 @@
 
 \usepackage{lscape} 
 \usepackage{rotating} %rotates the figures, page
-\usepackage[ruled,titlenumbered,linesnumbered,lined,boxed,vlined]{algorithm2e} 
 \usepackage{tikz}
 \usepackage[section]{placeins}
 \usepackage{setspace} 
@@ -222,14 +221,6 @@
 \cleardoublepage
 
 % ---
-% LISTA DE QUADROS
-% ---
-\pdfbookmark[0]{\listofquadrosname}{loq} % caso não tenha quadros, comente esta linha 
-\listofquadros* % caso não tenha quadros, comente esta linha 
-\cleardoublepage
-
-
-% ---
 % LISTA DE CÓDIGOS FONTES
 % ---
 
@@ -237,6 +228,7 @@
 \renewcommand\lstlistlistingname{Lista de Códigos Fontes}
 \pdfbookmark[0]{\lstlistingname}{lol} % caso não tenha quadros, comente esta linha 
 \counterwithout{lstlisting}{chapter}
+
 {
 \let\oldnumberline\numberline
 \newcommand{\algnumberline}[1]{Código Fonte~#1~\enspace--~\enspace}
@@ -246,6 +238,7 @@
  
 \cleardoublepage
 }
+
         
   
 % ----------------------------------------------------------
@@ -263,8 +256,12 @@
 % \printglossary[style=super, type=\acronymtype]
 \cleardoublepage
 
+
+
 % ----------------------------------------------------------
 % LISTA DE SIMBOLOS
+
+
 % ----------------------------------------------------------
 %\input{others/list_simbol}
 
