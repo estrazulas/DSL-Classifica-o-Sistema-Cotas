@@ -13,7 +13,7 @@ Art. 3o  Em cada instituição federal de ensino superior, as vagas de que trata
 
 Com este objetivo o algoritmo de classificação que era uma consulta SQL foi separado em 3 funções PHP de nome: \textit{calcula\_vagasAcoesAfirmativas}, \textit{aprova\_Candidatos} e \textit{retorna\_OrdemdePreenchimentodeVagasNaoOcupadas}.  A primeira com função de gerar o quadro de vagas, a segunda a seleção dos candidatos para serem aprovados e atualizar a contagem de vagas em cada categoria e a ultima para retornar a ordem de preenchimento em caso de sobra de vagas.
 
-Tendo em vista que há uma divisão categórica das vagas entre os candidatos, foi preciso criar 5 tipos de situações de classificação para cada combinação de cotas possível, essas categorias foram definidas conforme o Quadro \ref{quadro_categoriasv1}.
+Tendo em vista que há uma divisão categórica das vagas entre os candidatos, foi preciso criar 5 (cinco) tipos de situações de classificação para cada combinação de cotas possível, essas categorias foram definidas conforme o Quadro \ref{tabela_categoriasv1}.
 
 \input{chapters/sistemaingresso_versoes/quadros/quadro_categoriasv1.tex}
 
@@ -61,5 +61,5 @@ Após análise no controle de versão pode-se identificar que as funções eram 
 
 \input{chapters/sistemaingresso_versoes/quadros/tabela_arquivosv1.tex}
 
-
+\newpage
 Com base nesse levantamento pode-se observar uma quantidade considerável de código fonte envolvido para desenvolvimento de regras para classificação de candidatos. Como tentativa de dar celeridade no processo de desenvolvimento de correções e na criação de futuras versões, os problemas de código duplicado foram reduzidos por meio de refatoração nas versões posteriores do algoritmo de classificação. Na Seção \ref{versao2} são apresentados os dados sobre o controle de versão, pós refatoração realizada em função de novas demandas de alteração da legislação.

@@ -1,2 +1,22 @@
 \subsection{Versão 3 - Reimplementação para interpretação do MEC em 2017 }
 \label{versao3}
+
+Com objetivo de unificar o entendimento da distribuição de cotas, o \gls{MEC} lançou em seu portal as alterações e detalhes sobre como deveria ser implementada a nova regra de ingresso em vestibulares e processos seletivos da rede federal. Na Figura \ref{fig:mec} pode-se observar a nova divisão, que agora abrange \gls{PPI} que possuam alguma deficiência e \gls{PPI} que não possuam deficiência, tanto para os estudantes de escolas públicas com renda inferior, como estudantes de renda superior a 1,5 salários mínimos. 
+
+\input{chapters/sistemaingresso_versoes/imagens/mec.tex}
+
+
+Na versão anterior da implementação o aluno teria que optar por concorrer entre uma das opções ou \gls{PPI} ou somente \gls{PCD} ou demais vagas, causando problemas durante as inscrições de várias instituições de ensino, pois haviam candidatos que eram tanto \gls{PPI} como \gls{PCD} e tinham direito a concorrer nas duas categorias de cota.
+
+Tendo em vista a correção do entendimento feita pelo \gls{MEC}, foi preciso criar 9 (nove) tipos de situações de classificação para cada combinação de cotas possível (Tabela \ref{tabela_cotasv3}).
+
+\input{chapters/sistemaingresso_versoes/quadros/tabela_cotas_v3.tex}
+
+Tendo como base essas novas categorias, a Figura \ref{fig:cenario3} detalha o terceiro cenário de classificação para um curso de 40 vagas. 
+
+\input{chapters/sistemaingresso_versoes/cenarios/cenario3.tex}
+
+\newpage
+Diante da crescente demanda por alterações nas funções de classificação por cotas, a \gls{DTIC} optou por refatorar o código de modo que as regras de distribuição não fossem implementadas de forma estática no código fonte, esta versão foi implementada com armazenamento da árvore de cotas em banco de dados, como uma tentativa de diminuir o impacto em novas mudanças por parte dos desenvolvedores. 
+
+Nesta versão houve uma redução de linhas de código considerável e a equipe centralizou rotinas responsáveis pelos cálculos em apenas um arquivo \textit{calculo\_cotas.php}. As novas funções de cálculo serão descritas nos próximos parágrafos.
