@@ -1,2 +1,29 @@
 \subsection{Outras customizações realizadas no algoritmo}
 \label{outrasVersoes}
+
+O \gls{MEC} em sua implementação para classificação de candidatos do \gls{SISU} para o primeiro semestre de 2018, acabou por adotar em seu sistema um entendimento distinto sobre questões de arredondamento de vagas em contra-mão do que era descrito na portaria normativa nº 18/2012/MEC:
+
+\begin{citacao}
+Art. 11 - Sempre que a aplicação dos percentuais para a apuração da reserva de vagas de que trata o art. 10 implicar resultados com decimais, será adotado, em cada etapa do cálculo, o número inteiro imediatamente superior \cite{portarianr9}.
+\end{citacao}
+
+\input{chapters/sistemaingresso_versoes/imagens/seres.tex}
+
+A área demandante do \gls{IFSC} em consulta com a \gls{SERES} recebeu o retorno de que tiveram que adotar regra diferenciada de arredondamento do exigido em lei, por questões de limitação de vagas (Figura \ref{fig:seres}), algumas categorias não poderiam ser atendidas na época, obrigando que o sistema de ingresso do \gls{IFSC} fosse ajustado para a modalidade de processos do tipo \gls{SISU}, principalmente para chamada de vagas posteriores à classificação gerada pelo \gls{SISU}.
+
+Nesse contexto a equipe de desenvolvimento da \gls{DTIC}, precisou fazer correções no algorítimo de classificação para considerar o arredondamento diferenciado, inserindo novas configurações em banco de dados, para o cálculo condicionando à modalidade do processo, mantendo a compatibilidade com processos que seguem a forma de arredondamento prevista em lei.
+
+A exemplo do desenvolvimento necessário para essa correção de arredondamento, o sistema de controle de versão indica como 8 arquivos PHP modificados, sendo 69 linhas adicionadas e 44 linhas removidas, além da necessidade de inclusão de 2 novos campos na tabela de configurações do sistema de cotas (Figura \ref{fig:versaosisu}).
+
+\input{chapters/sistemaingresso_versoes/imagens/versaosisu.tex}
+
+Essas foram as maiores alterações levantadas no sistema de controle de versões do \gls{IFSC}, no entanto pode-se observar nas Figuras \ref{fig:trello} e \ref{fig:chamados}, que foram criadas varias demandas na ferramenta \textit{Trello} (utilizada para gerenciamento do desenvolvimento interno ), assim como vários chamados de cunho corretivo.  
+
+\input{chapters/sistemaingresso_versoes/imagens/trello.tex}
+
+\input{chapters/sistemaingresso_versoes/imagens/chamados.tex}
+
+Tendo em vista os problemas de desenvolvimento ligados ao histórico de versões citados anteriormente, o Capítulo \ref{chap:fundamentacao} aborda conceitos sobre \gls{DSL}, como uma maneira de abstrair questões técnicas de programação para fins de definição e implementação de regras de negócio. Serão elencadas as principais vantagens e desvantagens sobre \gls{GPL}, conforme a literatura, assim como as ferramentas mais utilizadas para construção de linguagens específicas de domínio.
+
+
+
