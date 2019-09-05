@@ -6,7 +6,7 @@ Com objetivo de unificar o entendimento da distribuição de cotas, o \gls{MEC} 
 \input{chapters/sistemaingresso_versoes/imagens/mec.tex}
 
 
-Na versão anterior da implementação o aluno teria que optar por concorrer entre uma das opções ou \gls{PPI} ou somente \gls{PCD} ou demais vagas, causando problemas durante as inscrições de várias instituições de ensino, pois haviam candidatos que eram tanto \gls{PPI} como \gls{PCD} e tinham direito a concorrer nas duas categorias de cota.
+Na versão anterior da implementação, o aluno teria que optar por concorrer entre das opções: \gls{PPI}, somente \gls{PCD} ou nas demais vagas, causando problemas durante as inscrições de várias instituições de ensino, pois haviam candidatos que eram tanto \gls{PPI} como \gls{PCD} e tinham direito a concorrer nas duas categorias de cota.
 
 Tendo em vista a correção do entendimento feita pelo \gls{MEC}, foi preciso criar 9 (nove) tipos de situações de classificação para cada combinação de cotas possível (Tabela \ref{tabela_cotasv3}).
 
@@ -19,7 +19,7 @@ Tendo como base essas novas categorias, a Figura \ref{fig:cenario3} detalha o te
 \newpage
 Diante da crescente demanda por alterações nas funções de classificação por cotas, a \gls{DTIC} optou por refatorar o código de modo que as regras de distribuição não fossem implementadas de forma estática no código fonte, esta versão foi implementada com armazenamento da árvore de cotas em banco de dados, como uma tentativa de diminuir o impacto em novas mudanças por parte dos desenvolvedores. 
 
-Nesta versão houve uma redução de linhas de código considerável e a equipe centralizou rotinas responsáveis pelos cálculos em apenas um arquivo \textit{calculo\_cotas.php}. Nesse arquivo foram criadas as funções, \textit{obtem\_arvore\_cotas} e \textit{calcula\_cotas} (Código Fonte \ref{lst:arvorecotas}), que fazem a consulta de configurações e percentuais necessários para o calculo do quadro de vagas. 
+Nesta versão houve uma redução de linhas de código considerável e a equipe centralizou rotinas responsáveis pelos cálculos em apenas um arquivo \textit{calculo\_cotas.php}. Nesse arquivo foram criadas as funções, \textit{obtem\_arvore\_cotas} e \textit{calcula\_cotas} (Código Fonte \ref{lst:arvorecotas}), que fazem a consulta de configurações e percentuais necessários para o cálculo do quadro de vagas. 
 
 As novas funções foram importadas em todos os arquivos envolvidos nos processos de classificação de candidatos, e as funções antigas precisaram ser alteradas para buscar as configurações de cotas de maneira dinâmica, como pode ser visto no Código Fonte \ref{lst:novafuncaoprioridade}, que agora busca a ordem de prioridade de sobra de vagas da base de dados. 
 

@@ -1,11 +1,11 @@
 \chapter{Sistema de Ingresso e Versionamento}
 \label{chap:historicoversoes}
 
-Neste capítulo serão descritas informações sobre as funcionalidades desenvolvidas no sistema de ingresso do \gls{IFSC} com relação aos requisitos e algoritmos do sistema de cotas, para este fim será utilizado o histórico do controle de versão no que concerne ao quantitativo de arquivos, classes, funções/métodos e as diferentes versões desde o surgimento da demanda de cotas na legislação.
+Neste capítulo serão descritas as informações sobre as funcionalidades desenvolvidas no sistema de ingresso do \gls{IFSC} com relação aos requisitos e algoritmos do sistema de cotas, para este fim será utilizado o histórico do controle de versão no que concerne ao quantitativo de arquivos, classes, funções/métodos e as diferentes versões desde o surgimento da demanda de cotas na legislação.
 
 \section{Histórico de Projeto}
 \label{historicopj}
-Criado em meados do ano de 2000 o sistema tem por objetivo disponibilizar vagas de cursos para os discentes do \gls{IFSC}. Este sistema foi desenvolvido internamente na linguagem PHP, para automatizar os processos seletivos, que eram realizados por meio de planilhas e ferramentas não integradas, as quais demandavam ao setor responsável muitas pessoas e muitos procedimentos operacionais repetitivos, gerando falhas no processo por erro humano.
+Criado em meados do ano de 2000, o sistema tem por objetivo disponibilizar vagas de cursos para os discentes do \gls{IFSC}. Este sistema foi desenvolvido internamente na linguagem PHP, para automatizar os processos seletivos, que eram realizados por meio de planilhas e ferramentas não integradas, as quais demandavam ao setor responsável muitas pessoas e muitos procedimentos operacionais repetitivos, gerando falhas no processo por erro humano.
 
 O projeto não utiliza conceitos de orientação a objetos, em sua maioria os arquivos PHP ultrapassam duas mil linhas, sem divisão em camadas \gls{MVC}, com combinações das linguagens Javascript, HTML e PHP no mesmo arquivo. Quando era preciso criar ou adaptar alguma nova funcionalidade, por falta de conhecimento técnico os antigos desenvolvedores (bolsistas) faziam a cópia das funcionalidades para vários locais do sistema, sem pensar em reutilização de código.
 
@@ -17,15 +17,15 @@ Com objetivo de elencar a situação atual do código fonte do sistema, neste tr
 \section{Algoritmo de Classificação}
 \label{algoritimodeclassificacao}
 
-Neste seção serão detalhados os conceitos e as etapas do processo de classificação de candidatos à vagas do sistema de cotas, assim como o levantamento de cenários exemplifica-tórios sobre distribuição de vagas tendo como base as versões já implementadas no sistema de ingresso.
+Nesta seção serão detalhados os conceitos e as etapas do processo de classificação de candidatos às vagas do sistema de cotas, assim como o levantamento de cenários exemplificativos sobre a distribuição de vagas tendo como base as versões já implementadas no sistema de ingresso.
 
-Para cada processo seletivo há uma lista de cursos, onde o setor que gerencia as vagas define o valor total de vagas iniciais e indica se o processo seletivo vai utilizar a regra de classificação por cotas. Durante as inscrições serão apresentados aos candidatos os campos necessários para indicar que vieram de escola pública e também informar sua renda familiar e se autodeclaram pretos, pardos e indígenas.
+Para cada processo seletivo há uma lista de cursos, em que o setor que gerencia as vagas define o valor total de vagas iniciais e indica se o processo seletivo vai utilizar a regra de classificação por cotas. Durante as inscrições são apresentados aos candidatos os campos necessários para indicar se vieram de escola pública, bem como informar a sua renda familiar e se autodeclaram-se pretos, pardos e indígenas.
 
 Após o término do período de inscrições os candidatos são separados em categorias de concorrência de acordo com o preenchimento realizado no ato da inscrição. A seguir, os candidatos participam do processo seletivo de forma física como provas de vestibular ou processos eletrônicos de classificação, como por exemplo: sorteio, pontuação por preenchimento de formulários sócio-econômicos ou classificação por \gls{ENEM} ou \gls{SISU}. Por fim é gerado um número de classificação que representa a ordem dos candidatos que disputam as vagas disponíveis.
 
-O algoritmo de classificação utiliza como parâmetro de entrada a lista de candidatos, contendo o número de inscrição, a ordem de classificação geral, a data de nascimento (como critério de desempate), a quantidade de vagas total do curso, o percentual de vagas disponível para escola pública e o percentual de proporção do \gls{IBGE}, que varia conforme a Unidade Federada e é fornecido conforme o ultimo censo demográfico, representando o percentual sobre o total de pretos, pardos e indígenas no estado em relação às demais categorias.
+O algoritmo de classificação utiliza como parâmetro de entrada a lista de candidatos, contendo o número de inscrição, a ordem de classificação geral, a data de nascimento (como critério de desempate), a quantidade de vagas total do curso, o percentual de vagas disponível para escola pública e o percentual de proporção do \gls{IBGE}, que varia conforme a Unidade Federada e é fornecido conforme o último censo demográfico, representando o percentual sobre o total de pretos, pardos e indígenas no estado em relação às demais categorias de cotas para estudantes da escola pública.
 
-Com esses parâmetros de entrada o algoritmo gera um quadro de vagas contendo quantas vagas estão reservadas para às respectivas categorias de cotas, e faz a seleção e aprovação de candidatos de acordo com a sua classificação e critérios de desempate. Por fim, em caso de sobra de vagas por falta de candidatos para uma determinada categoria de cota, o algoritmo utiliza faz nova busca por candidatos de outra categoria, de acordo com a ordem de prioridade estabelecida na portaria Nº 18 de 2012 do \gls{MEC}, a qual define:
+Com esses parâmetros de entrada, o algoritmo gera um quadro de vagas contendo quantas vagas estão reservadas para às respectivas categorias de cotas, e faz a seleção e aprovação de candidatos de acordo com a sua classificação e critérios de desempate. Por fim, em caso de sobra de vagas por falta de candidatos para uma determinada categoria de cota, o algoritmo faz nova busca por candidatos de outra categoria, de acordo com a ordem de prioridade estabelecida na portaria Nº 18 de 2012 do \gls{MEC}, a qual define:
 
 \begin{citacao}
 Art. 15. No caso de não preenchimento das vagas reservadas aos autodeclarados pretos, pardos
@@ -37,7 +37,7 @@ anterior, nos termos do art. 10 desta Portaria. \cite{portarianr9}
 
 Ao final do processo de classificação é gerada uma lista de candidatos aprovados, incluindo a classificação geral e a classificação na respectiva categoria de cota, por fim esta lista é enviada ao sistema acadêmico para que os candidatos possam realizar a matrícula e entregar a documentação necessária. 
 
-As alterações nos documentos de lei podem incluir novas categorias, novas formas de distribuição das vagas iniciais, mudanças de percentuais, formas de arredondamento, descrição dos tipos de cotas e mudança na ordem de prioridade em caso de sobra de vagas. Essas situações serão exemplificadas nas seções seguintes por meio dos casos e cenários onde houve maior impacto de refatoração de código do sistema de ingresso para adequação à legislação.
+As alterações nos documentos de lei podem incluir novas categorias, novas formas de distribuição das vagas iniciais, mudanças de percentuais, formas de arredondamento, descrição dos tipos de cotas e mudança na ordem de prioridade em caso de sobra de vagas. Essas situações serão exemplificadas nas seções seguintes por meio dos casos e cenários nos quais houve maior impacto de refatoração de código do sistema de ingresso para adequação à legislação.
 
 \input{chapters/sistemaingresso_versoes/versao_1.tex}
 
