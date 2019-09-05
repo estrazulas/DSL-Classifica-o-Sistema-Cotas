@@ -9,6 +9,7 @@ Art. 11 - Sempre que a aplicação dos percentuais para a apuração da reserva 
 
 \input{chapters/sistemaingresso_versoes/imagens/seres.tex}
 
+\newpage
 A área demandante do \gls{IFSC} em consulta com a \gls{SERES} recebeu o retorno de que tiveram que adotar regra diferenciada de arredondamento do exigido em lei, por questões de limitação de vagas (Figura \ref{fig:seres}), algumas categorias não poderiam ser atendidas na época, obrigando que o sistema de ingresso do \gls{IFSC} fosse ajustado para a modalidade de processos do tipo \gls{SISU}, principalmente para chamada de vagas posteriores à classificação gerada pelo \gls{SISU}.
 
 Nesse contexto, a equipe de desenvolvimento da \gls{DTIC} precisou fazer correções no algoritmo de classificação para considerar o arredondamento diferenciado. Com isso, inseriu novas configurações em banco de dados para o cálculo condicionando à modalidade do processo, mantendo a compatibilidade com processos que seguem a forma de arredondamento prevista em lei.
@@ -17,12 +18,14 @@ A exemplo do desenvolvimento necessário para essa correção de arredondamento,
 
 \input{chapters/sistemaingresso_versoes/imagens/versaosisu.tex}
 
-
-Essas foram as maiores alterações levantadas no sistema de controle de versões do \gls{IFSC}, no entanto pode-se observar nas Figuras \ref{fig:trello} e \ref{fig:chamados}, que foram criadas várias demandas na ferramenta \textit{Trello} (utilizada para gerenciamento do desenvolvimento interno ), assim como vários chamados de cunho corretivo.  
 \newpage
-\input{chapters/sistemaingresso_versoes/imagens/trello.tex}
+Essas foram as maiores alterações levantadas no sistema de controle de versões do \gls{IFSC}, no entanto pode-se observar nas Figuras \ref{fig:chamados} e \ref{fig:trello}, que foram criadas várias demandas na ferramenta \textit{Trello} (utilizada para gerenciamento do desenvolvimento interno ), assim como vários chamados de cunho corretivo.  
 
 \input{chapters/sistemaingresso_versoes/imagens/chamados.tex}
+
+\input{chapters/sistemaingresso_versoes/imagens/trello.tex}
+
+
 
 Tendo em vista os problemas de desenvolvimento ligados ao histórico de versões citados anteriormente, o Capítulo \ref{chap:fundamentacao} aborda conceitos sobre \gls{DSL}, como uma maneira de abstrair questões técnicas de programação para fins de definição e implementação de regras de negócio. Serão elencadas as principais vantagens e desvantagens da \gls{DSL} em relação à \gls{GPL} conforme a literatura, assim como as ferramentas mais utilizadas para construção de linguagens específicas de domínio.
 
