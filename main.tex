@@ -216,6 +216,7 @@
 % ----------------------------------------------------------
 % LISTA DE TABELAS
 % ----------------------------------------------------------
+
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
 \cleardoublepage
@@ -223,20 +224,39 @@
 % ---
 % LISTA DE CÓDIGOS FONTES
 % ---
-\renewcommand\lstlistingname{Código Fonte}
-\renewcommand\lstlistlistingname{Lista de Códigos Fontes}
+
 \pdfbookmark[0]{\lstlistingname}{lol} % caso não tenha quadros, comente esta linha 
 \counterwithout{lstlisting}{chapter}
 
+
+% Altera o nome padrão do rótulo usado no comando \autoref{}
+\renewcommand{\lstlistingname}{Código Fonte}
+
+% Altera o rótulo a ser usando no elemento pré-textual "Lista de código"
+\renewcommand{\lstlistlistingname}{Lista de códigos}
+
+% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
+\begingroup\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+  \newlistentry{lstlisting}{lol}{0}
+\endgroup
+
+\renewcommand{\cftlstlistingaftersnum}{\hfill--\hfil}
+
+\let\oldlstlistoflistings\lstlistoflistings
 {
 \let\oldnumberline\numberline
 \newcommand{\algnumberline}[1]{Código Fonte~#1~\enspace--~\enspace}
 \renewcommand{\numberline}{\algnumberline}
 
+\begin{KeepFromToc}
 \lstlistoflistings
- 
-\cleardoublepage
+\end{KeepFromToc}
 }
+\cleardoublepage
+
 
         
   
