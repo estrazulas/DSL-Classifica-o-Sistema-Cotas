@@ -33,4 +33,15 @@ Na Figura \ref{fig:xtextgramatica} é possível verificar a definição da gram�
 \input{chapters/fundamentacao/imagens/xtextprograma.tex}
 
 \newpage
-Por fim a ferramenta \textit{Spoofax}
+Por fim, a ferramenta \textit{Spoofax} utiliza o formato \gls{SDF} para descrição da sintaxe da linguagem, sendo um ambiente integrado de especificação de linguagens, com suporte e \textit{plugins} para a \gls{IDE} Eclipse. 
+
+Um exemplo de definição de gramatica em formato \gls{SDF} pode ser observado na Figura \ref{fig:spoofaxgramatica}. No canto esquerdo da linguagem são definidas as regras da sintaxe, para uma linguagem de entidades similar à que foi utilizada no exemplo do Xtext. 
+
+\input{chapters/fundamentacao/imagens/spoofaxgramatica.tex}
+
+
+Segundo \citeonline{kats2010spoofax}, os seus editores permitem verificar e destacar erros por linha, validar tipos de dados da linguagem, resolução de referências, recursos de ajuda conforme contexto e até completar ou sugerir opções de código para o usuário da linguagem (Figura \ref{fig:spoofaxeditor}). 
+
+\input{chapters/fundamentacao/imagens/spoofaxeditor.tex}
+
+A fim de criar a linguagem de domínio proposta pelo presente trabalho, será necessário definir entre uma dessas ferramentas. Na seção \ref{justificativamps} é apresentada a justificativa da escolha do \gls{MPS} como ferramental para implementação da linguagem de especificação de regras de classificação pelo sistema de cotas.
