@@ -1,0 +1,36 @@
+\newpage
+\subsection{Exemplos de ferramentas}
+\label{exemplosferramentasdsl}
+
+\citeonline{fowler2005language} apresenta em seu texto, a \textit{Intentional Software} como a precursora das ferramentas de criação de linguagens, foi desenvolvida por \textit{Charles Simonyi} no setor de pesquisa \textit{Microsoft Research}. 
+
+Essa ferramenta, permite a criação e edição de código de domínio, o qual é criado por meio da definição de um esquema de domínio pelo \textit{Domain Expert} com apoio dos desenvolvedores, para então ser construído um gerador de código que resulta na aplicação final \cite{simonyi2006intentional}. 
+
+A ferramenta utiliza uma representação de domínio em formato de árvore de interações, que é apresentada ao usuário em diferentes formas de visualização e edição, a Figura \ref{fig:intentional} mostra a arvore de intenção para uma instrução matemática simples.
+
+\input{chapters/fundamentacao/imagens/intentional.tex}
+
+Outra ferramenta de abordagem projecional é a \gls{MPS}, de código aberto sob a licença Apache 2.0 e é desenvolvido pela \textit{JetBrains}. Ela se baseia em definição da linguagens por meio de representação de texto estruturado, e possui uma série de recursos sofisticados de edição e ferramentas de navegação. 
+
+Segundo \citeonline{dslengineering} a \gls{MPS} suporta notações mistas (textuais, simbólicas, tabulares, gráficas) e uma ampla variedade de recursos de composição de idiomas. Ela define a linguagem por meio de \textit{Concepts} que são elementos para criação da sintaxe abstrata (Figura \ref{fig:mpsconceitos}), e esses conceitos são atrelados a um editor, o qual define as regras de projeção por meio de uma lista de células, que juntas definem a estrutura desejada para a sintaxe do conceito (Figura \ref{fig:mpseditor}).
+
+\input{chapters/fundamentacao/imagens/mpsconceitos.tex}
+
+\input{chapters/fundamentacao/imagens/mpseditor.tex}
+
+\newpage
+
+
+Como alternativa às ferramentas projecionais, existem ferramentas que geram o \textit{parser} a partir da gramática, nesse caso as regras da linguagem são expressadas em notação baseada em \gls{BNF}. As ferramentas Xtext e Spoofax são casos de ambientes onde é possível construir \gls{DSL}s por meio desse tipo de abordagem, a seguir serão listados alguns exemplos nessas ferramentas.
+
+
+\citeonline{eysholdt2010xtext} descreve a ferramenta Xtext, como um \textit{framework} que permite o rápido desenvolvimento de ferramental de suporte à linguagens textuais, podendo atender desde linguagens menores como \gls{DSL}, até linguagens completas \gls{GPL}. Ela utiliza o core do \gls{EMF} para criar a \GLS{AST} a partir de uma especificação de gramática. 
+
+Na Figura \ref{fig:xtextgramatica} é possível verificar a definição da gramática de uma linguagem específica para definição de entidades, de forma similar ao que existe em alguns \textit{frameworks} de programação, como Rails e Grails. O resultado é apresentado na Figura \ref{fig:xtextprograma}, onde observa-se a utilização de recursos do Xtext no momento da codificação de um novo programa nessa linguagem.
+
+\input{chapters/fundamentacao/imagens/xtextgramatica.tex}
+
+\input{chapters/fundamentacao/imagens/xtextprograma.tex}
+
+\newpage
+Por fim a ferramenta \textit{Spoofax}

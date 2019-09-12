@@ -1,0 +1,41 @@
+\newpage
+\subsection{Ferramentas de construção de DSL}
+\label{ferramentasdsl}
+
+Para \citeonline{voelter2014generic}, as ferramentas desempenham um papel importante no desenvolvimento de software, à medida em que a complexidade do software aumenta, da mesma forma há um aumento na importância em se construir e utilizar ferramentas de apoio.
+
+\citeonline{fowler2005language} apresenta o termo \textit{Language Workbench}, como o ferramental necessário para construir um conjunto de linguagens específicas de domínio. Para ele, essas ferramentas possuem 3 (três) principais definições em comum para criação de \gls{DSL}s:
+
+\begin{itemize}
+    \item Definem a sintaxe abstrata, que é o modelo da representação abstrata da linguagem;
+    \item Definem um editor, que permita manipulação da representação abstrata;
+    \item Definem um gerador, que descreve como deve ser traduzida a representação abstrata em uma representação executável.
+\end{itemize}
+
+O processo de desenvolvimento de linguagens pode ser facilitado por meio do uso de ferramentas ou de sistemas de criação de linguagens, apesar de existirem vários, todo esse ferramental possui como propósito básico a descrição de linguagens, podendo variar os interpretadores, analisadores, verificadores de consistência e os ambientes de desenvolvimento (\gls{IDE}s) disponibilizadas aos designers \cite{mernik2005and}. 
+
+\begin{citacao}
+
+
+A maioria dos ambientes de programação são baseados em edição livre de texto, onde o desenvolvedor manipula o texto de modo a formar palavras e frases. Nesse sentido, é necessário um \textit{parser} para verificar se o texto do programa (sintaxe concreta) possui a sintaxe correta e assim como criar uma \gls{AST} para popular a estrutura de dados a partir da informação extraída da fonte de texto  \cite{dslengineering}.
+
+\end{citacao}
+
+
+Nos tradicionais compiladores e \gls{IDE}s, os \textit{parsers} precisam ser implementados manualmente, o que requer grande esforço de desenvolvimento. Para uma realidade de construção de uma linguagem tradicional, \gls{GPL}, essa abordagem faz sentido, porém no contexto de \gls{DSL}s as ferramentas permitem gerar um parser a partir de uma gramática, não sendo necessário que o programador crie um \textit{parser} customizado.
+
+\citeonline{dslengineering} categoriza as ferramentas modernas para construção de \gls{DSL} como \textit{baseadas em parsing} ou ferramentas de \textit{abordagem projecional}. No primeiro caso a partir da gramática é gerado um \textit{parser}, e no segundo a \gls{AST} é construída diretamente por ações no editor, onde a \gls{AST} é modificada diretamente enquanto o usuário edita o programa (abordagem bem conhecida para editores gráficos em geral, e o padrão \gls{MVC}. 
+
+Para \citeonline{martinfowlerprojectionalediting}, na abordagem de \textit{parsing}, o compilador utiliza o código fonte para gerar uma representação executável do programa, transformando todo o texto em uma representação abstrata que é mantida apenas durante a compilação. (Figura \ref{fig:abordagemparsing}). 
+
+\input{chapters/fundamentacao/imagens/parsing.tex}
+
+\newpage
+No caso da abordagem projecional, utilizamos editores gráficos para manipular diretamente as definições do sistema, ou seja, editamos a representação abstrata, de modo que o programador possa modificar as definições mantidas em no modelo. Neste caso, o executável é produzido por uma série de projeções e transformações a partir desta representação abstrata (Figura \ref{fig:abordagemprojectional}).
+
+
+\input{chapters/fundamentacao/imagens/projectional.tex}
+
+Na Seção \ref{exemplosferramentasdsl} serão apresentados alguns exemplos de ferramentas de criação de \gls{DSL}s.
+
+\input{chapters/fundamentacao/ferramentas/exemplosferramentas.tex}
