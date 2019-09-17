@@ -14,28 +14,7 @@
    A segunda modelagem de \gls{DSL}, tem como proposta definir: configurações relacionadas à forma de entrada de dados da lista de candidatos, assinatura do método a ser gerado, linguagem alvo da geração, formato da lista de retorno dos aprovados e a composição de campos para cada uma das respectivas categorias de cotas configuradas pelos usuários na primeira \gls{DSL}.
    
    \input{chapters/proposta/propostadsl_usuario.tex}
-   
- Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes} nas seções \ref{versao1}, \ref{versao2} e \ref{versao3}, serão pontuadas algumas características em comum identificadas entre cada uma dessas versões:
-   
-   \begin{itemize}
-    \item A divisão das vagas entre as diferentes categorias de cotas, se deu em formato hierárquico, iniciando no total de vagas o qual foi sendo subdividido em percentuais reservados para suas subcategorias (ex: Estudantes da escola pública, Estudantes com renda baixa, Estudantes PCD, etc); 
-   
-   \item Esses percentuais, são de conhecimento dos usuários especialistas no sistema de cotas, e podem variar de acordo com a documentação da legislação vigente, ou outras definições que variam conforme a unidade federada que oferta o curso; 
-   
-   \item Em muitas vezes, é aplicando um percentual a uma categoria, e a cota seguinte fica com o restante das vagas. Por exemplo, estudantes da categoria Escola Pública (EP), que possuem Renda Inferior (RI) ou igual a 1.5 salários mínimos, que são \gls{PPI}, possuem direito à 15.7\% das vagas em relação aos que não são \gls{PPI};
-   
-   \item Apenas alguns nós, geralmente as folhas, da árvore de distribuição de cotas são consideradas como passíveis de inscrição por candidatos, são neles que estarão os valores finais de reserva para cada categoria de cota;
-   
-   \item Todas as versões consideravam a ordem de prioridade entre as diferentes categorias de cotas passíveis de inscrição;
-   
-   \item Questões de arredondamento das vagas (para cima ou para baixo), devem ser consideradas e podem variar de acordo com a versão de lei implementada.
 
-   \end{itemize}
-   
-   
-   
-   
-   
    
 
    \input{chapters/proposta/propostadsl_dev.tex}
