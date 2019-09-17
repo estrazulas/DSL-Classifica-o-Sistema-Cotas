@@ -1,50 +1,42 @@
 \chapter{Proposta}
 \label{chap:proposta}
 
-\begin{table}[!htpb]
-    \centering
-    \caption{Cronograma}
-    \label{tab:cronograma}
-    \begin{scriptsize}
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{3cm}|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
-         &\multicolumn{3}{c|}{1} &
-        \multicolumn{3}{c|}{2} &
-        \multicolumn{3}{c|}{3} &
-        \multicolumn{3}{c|}{4}\\\cline{2-13}
-         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\\cline{2-13} 
-         & 07/19 & 08/19 & 09/19 & 10/19 & 11/19 & 12/19 & 01/20 & 02/20 & 03/20 & 04/20 & 05/20 & 06/20 
-         \\\hline    
-         
-         Revisão Literatura & \cellcolor{gray!50} & \cellcolor{gray!50} & \cellcolor{gray!50} &\cellcolor{gray!50} & \cellcolor{gray!50}& & & & & & & \\[10pt]\hline
-         
-         Desenvolvimento Catálogo & &\cellcolor{gray!50} &\cellcolor{gray!50} &\cellcolor{gray!50} & \cellcolor{gray!50}& \cellcolor{gray!50}& & & & & & \\[10pt]\hline    
-         
-         Aplicação pesquisa catálogo & & & & & & &\cellcolor{gray!50} &\cellcolor{gray!50} & & & & \\[10pt]\hline    
-        %  Desenvolvimento do protótipo & & & & & &\cellcolor{gray!50} &\cellcolor{gray!50} &\cellcolor{gray!50} & & & & \\[10pt]\hline    
-         
-         Desenvolvimento do protótipo & & & & &\cellcolor{gray!50} &\cellcolor{gray!50} &\cellcolor{gray!50} &\cellcolor{gray!50} &\cellcolor{gray!50} & & & \\[10pt]\hline    
-         
-         Avaliação do protótipo & & & & & & & & &\cellcolor{gray!50} &\cellcolor{gray!50} & & \\[10pt]\hline    
-         
-         Encaminhar dissertação para Banca & & & & & & & & & & &\cellcolor{gray!50} & \\[10pt]\hline  
-         
-         Defesa da dissertação & & & & & & & & & & & &\cellcolor{gray!50} \\[10pt]\hline    
-    \end{tabular}}
-    \end{scriptsize}
-\end{table}
+   Nesse capítulo, será descrita a proposta de linguagem a ser desenvolvida na ferramenta \gls{MPS}, que possui como principal objetivo facilitar a definição das regras de distribuição de cotas e dessa forma, permitir que os usuários do sistema de ingresso do IFSC possam alterar essas definições de forma independente à implementação do respectivo algoritmo de classificação.
+   
+   Como foi descrito no Capítulo \ref{chap:historicoversoes}, desde lançamento da lei de cotas em 2012, o sistema de ingresso passou por, pelo menos, 3 (três) versões diferentes de distribuição de vagas, ocasionando em várias refatorações de código desde então. 
+   
+   Desse modo, a presente pesquisa tem como proposta: a definição de uma linguagem que permita descrever todos os 3 cenários passados, com apoio de recursos de linguagens existentes no \gls{MPS} tais como: validação de estrutura e de tipos de dados aceitos, preenchimento automático de código de acordo com o contexto, validação de inconsistências, recursos de dicas ao usuário da linguagem e geração de código fonte por meio de transformações. 
+   
+   Com apoio desses recursos, o usuário especialista no sistema de cotas, poderá fazer o uso controlado da especificação de regras do sistema de cotas, assim como, no caso de surgimento de um novo cenário de distribuição de vagas, esse conjunto de regras alteradas poderiam ser transformadas em código fonte, possibilitando a  sua importação no sistema de ingresso do \gls{IFSC}, diminuindo a necessidade de refatoração em seu código.
+   
+   Nesse sentido, a Seção \ref{sec:dslproposta:usuario} irá abordar a proposta de uma \gls{DSL} que será utilizada por especialistas de negócio, para definição da árvore de distribuição de cotas, tendo como base as especificações de lei. Enquanto na Seção \ref{sec:dslproposta:dev}, será descrita outra proposta de \gls{DSL}, que utiliza a primeira como dependência, e se aplica a desenvolvedores, porém o foco da modelagem trata de questões técnicas sobre a geração de código do algoritmo de aprovação.
+   
+   A segunda modelagem de \gls{DSL}, tem como proposta definir: configurações relacionadas à forma de entrada de dados da lista de candidatos, assinatura do método a ser gerado, linguagem alvo da geração, formato da lista de retorno dos aprovados e a composição de campos para cada uma das respectivas categorias de cotas configuradas pelos usuários na primeira \gls{DSL}.
+   
+   \input{chapters/proposta/propostadsl_usuario.tex}
+   
+ Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes} nas seções \ref{versao1}, \ref{versao2} e \ref{versao3}, serão pontuadas algumas características em comum identificadas entre cada uma dessas versões:
+   
+   \begin{itemize}
+    \item A divisão das vagas entre as diferentes categorias de cotas, se deu em formato hierárquico, iniciando no total de vagas o qual foi sendo subdividido em percentuais reservados para suas subcategorias (ex: Estudantes da escola pública, Estudantes com renda baixa, Estudantes PCD, etc); 
+   
+   \item Esses percentuais, são de conhecimento dos usuários especialistas no sistema de cotas, e podem variar de acordo com a documentação da legislação vigente, ou outras definições que variam conforme a unidade federada que oferta o curso; 
+   
+   \item Em muitas vezes, é aplicando um percentual a uma categoria, e a cota seguinte fica com o restante das vagas. Por exemplo, estudantes da categoria Escola Pública (EP), que possuem Renda Inferior (RI) ou igual a 1.5 salários mínimos, que são \gls{PPI}, possuem direito à 15.7\% das vagas em relação aos que não são \gls{PPI};
+   
+   \item Apenas alguns nós, geralmente as folhas, da árvore de distribuição de cotas são consideradas como passíveis de inscrição por candidatos, são neles que estarão os valores finais de reserva para cada categoria de cota;
+   
+   \item Todas as versões consideravam a ordem de prioridade entre as diferentes categorias de cotas passíveis de inscrição;
+   
+   \item Questões de arredondamento das vagas (para cima ou para baixo), devem ser consideradas e podem variar de acordo com a versão de lei implementada.
 
+   \end{itemize}
+   
+   
+   
+   
+   
+   
 
-\begin{quadro}
-\caption{Caption do quadro}
-\label{quadro_modelo}
-\centering
-\begin{tabular}{|lllll|}
-\cline{1-5}
-A& B &  C& D &E  \\ \cline{1-5}
-\multirow{3}{*}{1}  & 2 &  3& 4& 5 \\
- &  2 &  3& 4& 5  \\
- &  2 &  3& 4& 5 \\
- \cline{1-5}
-\end{tabular}
-\end{quadro}
+   \input{chapters/proposta/propostadsl_dev.tex}
+   
