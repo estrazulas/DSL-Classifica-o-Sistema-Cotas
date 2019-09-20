@@ -4,10 +4,10 @@
 Segundo \citeonline{dslengineering}, o propósito das \gls{DSL} é de atender a um domínio específico, são construídas para resolver uma classe específica de problemas. De outro lado, as \gls{GPL} são voltadas aos desenvolvedores para resolver qualquer tipo de problema computável:
 
 \begin{citacao}
-As Linguagens de Programação de Uso Geral (GPLs) são um meio para programadores instruírem computadores.Todas podem ser usadas para implementar qualquer coisa computável com uma máquina de Turing. Isso também significa que qualquer coisa expressável com uma linguagem de programação completa de Turing também pode ser expressa em qualquer outra linguagem de programação completa de Turing. Nesse sentido, todas as linguagens de programação são intercambiáveis. \cite[p.27]{dslengineering}
+As Linguagens de Programação de Uso Geral (GPLs) são um meio para programadores instruírem computadores.Todas podem ser usadas para implementar qualquer coisa computável com uma máquina de Turing. Isso também significa que qualquer coisa expressável com uma linguagem de programação completa de Turing também pode ser expressa em qualquer outra linguagem de programação completa de Turing. Nesse sentido, todas as linguagens de programação são intercambiáveis. \cite[p.27, tradução nossa]{dslengineering}
 \end{citacao}
 
-Para \citeonline{ghosh2011dsl}, projetar uma DSL não é uma tarefa tão assustadora quanto projetar uma linguagem de programação de uso geral. Pois tem foco limitado e é restrita apenas ao domínio que está sendo modelado.
+Para \citeonline{ghosh2011dsl}, projetar uma \gls{DSL} não é uma tarefa tão assustadora quanto projetar uma linguagem de programação de uso geral. Pois tem foco limitado e é restrita apenas ao domínio que está sendo modelado.
 
 Enquanto \gls{GPL} são flexíveis, as \gls{DSL} sacrificam a flexibilidade em benefício da produtividade e da concisão de programas relevantes em um domínio específico. As \gls{GPL}s são utilizadas em domínios maiores e complexos, do outro lado são trabalhados problemas menores e bem definidos \cite{dslengineering}. Algumas dessas diferenças podem ser observadas na  Figura \ref{fig:gplvsdsl}.
 
@@ -33,7 +33,7 @@ Para \citeonline{dslengineering}, o uso de \gls{DSL}s no desenvolvimento de solu
     
     \item[e)] Envolvimento de especialistas de domínio: quando os especialistas de negócio (não desenvolvedores) conseguem expressar mais facilmente suas ideias, o que pode levar a uma melhor integração entre eles e os desenvolvedores das linguagens;
     
-    \item[f)] Ferramentas produtivas: ao contrário de bibliotecas, \textit{frameworks} e \gls{DSL} internas, as \gls{DSL} externas podem ser fornecidas com uma \gls{IDE} preparada o seu idioma, o que pode resultar em uma experiência de usuário muito aprimorada;
+    \item[f)] Ferramentas produtivas: ao contrário de bibliotecas, \textit{frameworks} e \gls{DSL} internas, as \gls{DSL} externas podem ser fornecidas com uma \gls{IDE} preparada para o seu idioma, o que pode resultar em uma experiência de usuário muito aprimorada;
 
     \item[g)] Redução no \textit{Overhead}: se tratando de \gls{DSL} de geração de código, o gerador pode reduzir abstrações de domínio mais complexas e gerar código mais eficiente, assim como os compiladores das linguagens convencionais otimizam o \textit{bytecode} gerado.
 \end{enumerate}
@@ -44,7 +44,7 @@ Para \citeonline{dslengineering}, o uso de \gls{DSL}s no desenvolvimento de solu
     \item[a)] A modelagem de \gls{DSL} não é trivial, no sentido que exige muita experiência do domínio e expertise em desenvolvimento de linguagens, poucas pessoas possuem ambos;
     \item[b)] Dependendo do tamanho da comunidade de usuários da \gls{DSL}, o desenvolvimento de treinamentos, documentações, suporte e manutenção, pode se tornar um sério problema;
     \item[c)] O custo inicial de desenvolvimento pode ser alto, apesar de poder ser compensado pelo tempo economizado com o aumento da produtividade nos estágios posteriores do ciclo de desenvolvimento;
-    \item[d)] O criação descontrolada de linguagens pode resultar em um design inchado, \citeonline{dslengineering} apresenta o termo \textit{DSL Hell}, no qual ao invés de pesquisar por uma \gls{DSL} existente para determinado domínio e aprendê-la, o desenvolvedor acaba por fazer a construção de uma nova linguagem, que pode possivelmente sobrepor implementações já cobertas, mas ainda assim serem incompatíveis entre si;
+    \item[d)] A criação descontrolada de linguagens pode resultar em um design inchado, \citeonline{dslengineering} apresenta o termo \textit{DSL Hell}, no qual ao invés de pesquisar por uma \gls{DSL} existente para determinado domínio e aprendê-la, o desenvolvedor acaba por fazer a construção de uma nova linguagem, que pode possivelmente sobrepor implementações já cobertas, mas ainda assim serem incompatíveis entre si;
     \item[e)] A construção de \gls{DSL}s requer mudança no pensamento cultural da organização, pois o método de desenvolvimento é bastante diferente dos métodos tradicionais da engenharia de software, e podem implicar em mudanças significantes em como a equipe de desenvolvedores e usuários trabalham.
     
 \end{enumerate}

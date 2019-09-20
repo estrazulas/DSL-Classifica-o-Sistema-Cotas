@@ -1,7 +1,7 @@
 \chapter{Sistema de Ingresso e Versionamento}
 \label{chap:historicoversoes}
 
-Neste capítulo serão descritas as informações sobre as funcionalidades desenvolvidas no sistema de ingresso do \gls{IFSC} com relação aos requisitos e algoritmos do sistema de cotas. Para esse fim será utilizado o histórico do controle de versão no que concerne ao quantitativo de arquivos, classes, funções/métodos e as diferentes versões desde o surgimento da demanda de cotas na legislação.
+Neste capítulo serão descritas as informações sobre as funcionalidades desenvolvidas no sistema de ingresso do \gls{IFSC} com relação aos requisitos e algoritmos do sistema de cotas. Para esse fim, será utilizado o histórico do controle de versão no que concerne ao quantitativo de arquivos, classes, funções/métodos e as diferentes versões desde o surgimento da demanda de cotas na legislação.
 
 \section{Histórico de Projeto}
 \label{historicopj}
@@ -25,7 +25,7 @@ Após o término do período de inscrições, os candidatos são separados em ca
 
 O algoritmo de classificação utiliza como parâmetro de entrada a lista de candidatos, contendo o número de inscrição, a ordem de classificação geral, a data de nascimento (como critério de desempate), a quantidade de vagas total do curso, o percentual de vagas disponíveis para escola pública e o percentual de proporção do \gls{IBGE}.
 
-Esses parâmetros, variam conforme a Unidade Federada e é fornecido conforme o último censo demográfico, representando o percentual sobre o total de pretos, pardos e indígenas no estado em relação às demais categorias de cotas para estudantes da escola pública.
+Esses parâmetros variam conforme a Unidade Federada e é fornecido conforme o último censo demográfico, representando o percentual sobre o total de pretos, pardos e indígenas no estado em relação às demais categorias de cotas para estudantes da escola pública.
 
 Com esses parâmetros de entrada, o algoritmo gera um quadro de vagas contendo quantas vagas estão reservadas para às respectivas categorias de cotas, e faz a seleção e aprovação de candidatos de acordo com a sua classificação e critérios de desempate. Por fim, em caso de sobra de vagas por falta de candidatos para uma determinada categoria de cota, o algoritmo faz nova busca por candidatos de outra categoria, de acordo com a ordem de prioridade estabelecida na portaria Nº 18 de 2012 do \gls{MEC}, a qual define:
 
