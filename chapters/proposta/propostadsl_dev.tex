@@ -1,19 +1,19 @@
 \section{DSL técnica para geração algoritmo de aprovação}
 \label{sec:dslproposta:dev}
 
- Uma das vantagens do \gls{MPS}, é permitir a composição de várias linguagens em uma única solução, isso favorece a separação de preocupações durante a modelagem. Do ponto de vista da primeira \gls{DSL}, a proposta é atender ao público de usuários especialistas no domínio de regras da legislação de cotas. 
+ Uma das vantagens do \gls{MPS} é permitir a composição de várias linguagens em uma única solução, isso favorece a separação de preocupações durante a modelagem. Do ponto de vista da primeira \gls{DSL}, a proposta é atender ao público de usuários especialistas no domínio de regras da legislação de cotas. 
  
  Por outro lado, uma \gls{DSL} técnica (para apoio ao desenvolvedores) pode agregar definições necessárias para geração do código fonte, tais como:
  
- \begin{itemize}
-     \item Mapeamento de campos relacionados à inscrição do candidato - para definir condições de seleção dos inscritos, de acordo com sua categoria de cota;
-     \item Linguagem alvo - para seleção de uma linguagem alvo (ex: Java, PHP) possível de implementação;
-     \item Definição da assinatura do método de aprovação de candidatos - que poderá ser importado em uma das linguagens alvo;
-     \item Formato de entrada e retorno da lista de candidatos - para indicar ao gerador a estrutura de dados utilizada como entrada ou saída de resultados, podendo ser utilizados por exemplo, formatos como JSON ou CSV;
-     \item Composição de campos de inscrição - no sentido de escolha dos campos que serão utilizados no critérios de seleção da base de candidatos inscritos, para cada categoria de cota possível.
- \end{itemize}
+ \begin{enumerate}
+     \item[a)] Mapeamento de campos relacionados à inscrição do candidato - para definir condições de seleção dos inscritos, de acordo com sua categoria de cota;
+     \item[b)] Linguagem alvo - para seleção de uma linguagem alvo (ex: Java, PHP) possível de implementação;
+     \item[c)] Definição da assinatura do método de aprovação de candidatos - que poderá ser importado em uma das linguagens alvo;
+     \item[d)] Formato de entrada e retorno da lista de candidatos - para indicar ao gerador a estrutura de dados utilizada como entrada ou saída de resultados, podendo ser utilizados por exemplo, formatos como JSON ou CSV;
+     \item[e)] Composição de campos de inscrição - no sentido de escolha dos campos que serão utilizados no critérios de seleção da base de candidatos inscritos, para cada categoria de cota possível.
+ \end{enumerate}
  
-    No Código Fonte \ref{lst:propostadsldevconfig}, é a apresentada a estrutura proposta para suprir as definições descritas. Na linha 2 seria selecionada a versão de implementação das regras de cotas, e em seguida definidos os dados para geração do método de aprovação (linhas 5, 8, 11, 12). 
+    No Código Fonte \ref{lst:propostadsldevconfig}, é apresentada a estrutura proposta para suprir as definições descritas. Na linha 2 seria selecionada a versão de implementação das regras de cotas, e em seguida, definidos os dados para geração do método de aprovação (linhas 5, 8, 11, 12). 
     
     \lstinputlisting[language=PHP, 
 caption= Configurações para o algortimo de aprovação de candidatos

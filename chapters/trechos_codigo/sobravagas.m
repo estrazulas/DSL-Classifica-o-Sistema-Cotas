@@ -1,10 +1,8 @@
 function retorna_OrdemdePreenchimentodeVagasNaoOcupadas($situacaodeClassificacao)
 {
     $ordem = array();
-    
     switch($situacaodeClassificacao)
     {
-
         case 'AAEPRIPPI':
             $ordem = array('AAEPRINPPI', 'AAEPRSPPI', 'AAEPRSNPPI', 'CLAG');
             break;
@@ -20,7 +18,5 @@ function retorna_OrdemdePreenchimentodeVagasNaoOcupadas($situacaodeClassificacao
         default:
             break;
     }
-    
     return $ordem;
 }
-

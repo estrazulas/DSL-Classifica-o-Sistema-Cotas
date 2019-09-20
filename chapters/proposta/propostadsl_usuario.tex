@@ -2,40 +2,38 @@
 \label{sec:dslproposta:usuario}
 
    
- Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes} nas seções \ref{versao1}, \ref{versao2} e \ref{versao3}, serão pontuadas algumas características em comum identificadas entre cada uma dessas versões:
+ Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes}, nas seções \ref{versao1}, \ref{versao2} e \ref{versao3}, serão pontuadas algumas características em comum identificadas entre cada uma dessas versões:
    
-   \begin{itemize}
-    \item A divisão das vagas entre as diferentes categorias de cotas, se deu em formato hierárquico, iniciando no total de vagas o qual foi sendo subdividido em percentuais reservados para suas subcategorias (ex: Estudantes da escola pública, Estudantes com renda baixa, Estudantes PCD, etc); 
+   \begin{enumerate}
+    \item[a)] A divisão das vagas entre as diferentes categorias de cotas, se deu em formato hierárquico, iniciando no total de vagas o qual foi sendo subdividido em percentuais reservados para suas subcategorias (ex: Estudantes da escola pública, Estudantes com renda baixa, Estudantes PCD, etc); 
    
-   \item Esses percentuais, são de conhecimento dos usuários especialistas no sistema de cotas, e podem variar de acordo com a documentação da legislação vigente, ou outras definições que variam conforme a unidade federada que oferta o curso; 
+   \item[b)] Esses percentuais, são de conhecimento dos usuários especialistas no sistema de cotas, e podem variar de acordo com a documentação da legislação vigente, ou outras definições que variam conforme a unidade federada que oferta o curso; 
    
-   \item Em muitas vezes, é aplicando um percentual a uma categoria, e a cota seguinte fica com o restante das vagas. Por exemplo, estudantes da categoria Escola Pública (EP), que possuem Renda Inferior (RI) ou igual a 1.5 salários mínimos, que são \gls{PPI}, possuem direito à 15.7\% das vagas em relação aos que não são \gls{PPI};
-   
-   \item Apenas alguns nós, geralmente as folhas, da árvore de distribuição de cotas são consideradas como passíveis de inscrição por candidatos, são neles que estarão os valores finais de reserva para cada categoria de cota;
-   
-   \item Todas as versões consideravam a ordem de prioridade entre as diferentes categorias de cotas passíveis de inscrição;
-   
-   \item Questões de arredondamento das vagas (para cima ou para baixo), devem ser consideradas e podem variar de acordo com a versão de lei implementada.
+   \item[c)] Em muitos casos, não é definido um valor de percentual fixo, de modo que uma categoria recebe o valor calculado restante de vagas da categoria pai. Por exemplo, o percentual de cotistas \gls{PCD} é aplicado, e o que resta das vagas vai para candidatos da mesma categoria que não são \gls{PCD};
 
-   \end{itemize}
+   \item[d)] Todas as versões consideravam a ordem de prioridade entre as diferentes categorias de cotas passíveis de inscrição;
+   
+   \item[e)] Questões de arredondamento das vagas (para cima ou para baixo), devem ser consideradas e podem variar de acordo com a versão de lei implementada.
+
+   \end{enumerate}
    
    Essa \gls{DSL} proposta, objetiva abordar um modelo que permita a configuração de todos os itens listados, tais como: identificador da versão de lei, lista de variáveis para configuração de percentuais, formas de aplicação de arredondamento, uma macro para aplicar a função de resto de vagas de uma categoria, campo descritivo para os diferentes tipos de categorias, estrutura para divisão em subcategorias e lista de ordem de prioridade para sobra de vagas.
    
-   No Código Fonte \ref{lst:dsl1versaoconfig}, é apresentado um exemplo de instancia da configuração de distribuição de vagas, onde a sintaxe requer uma string para definição da versão, e uma lista de variáveis a serem criadas pelo usuário da linguagem para que sejam definidos os percentuais de reserva de vagas.
+   No Código Fonte \ref{lst:dsl1versaoconfig}, é apresentado um exemplo de instância da configuração de distribuição de vagas, em que a sintaxe requer uma string para definição da versão, e uma lista de variáveis a serem criadas pelo usuário da linguagem para que sejam definidos os percentuais de reserva de vagas.
    
    \lstinputlisting[language=PHP, 
 caption=Configurações de percentuais
 ,label=lst:dsl1versaoconfig]{chapters/proposta/codigos_proposta/versao_config_proposta.m}
 
 
-No que diz respeito à estrutura hierárquica, no Código Fonte \ref{lst:dsl1arvorecotas} é possível identificar os campos da árvore de distribuição ("Distribuição de vagas:"), iniciando com o identificador referente à sigla da cota, e suas respectivas propriedades, tais como: descrição da categoria de cota, o percentual de reserva a ser aplicado (variável configurada, valor percentual preenchido manualmente ou a macro "Restante das vagas") e por fim se haverá novas subdivisões em outras categorias ("Se divide em:").
+No que diz respeito à estrutura hierárquica, no Código Fonte \ref{lst:dsl1arvorecotas} é possível identificar os campos da árvore de distribuição ("Distribuição de vagas:"), iniciando com o identificador referente à sigla da cota, e suas respectivas propriedades, tais como: descrição da categoria de cota, o percentual de reserva a ser aplicado (variável configurada, valor percentual preenchido manualmente ou a macro "Restante das vagas") e, por fim, se haverá novas subdivisões em outras categorias ("Se divide em:").
 
    \lstinputlisting[language=PHP, 
 caption=Definição da estrutura de distribuição de vagas
 ,label=lst:dsl1arvorecotas]{chapters/proposta/codigos_proposta/arvore_cotas.m}
 
 
-O ultimo ponto a ser exemplificado é o caso da configuração da ordem de prioridade ("Ordem prioritária de preenchimento para sobra de vagas:") em caso de sobra de vagas (Código Fonte \ref{lst:dsl1prioridade}), onde o usuário poderá selecionar as categorias preenchidas anteriormente com a marcação "Quadro de vagas:" de valor "Sim".  
+O último ponto a ser exemplificado é o caso da configuração da ordem de prioridade ("Ordem prioritária de preenchimento para sobra de vagas:") em caso de sobra de vagas (Código Fonte \ref{lst:dsl1prioridade}), o usuário poderá selecionar as categorias preenchidas anteriormente com a marcação "Quadro de vagas:" de valor "Sim".  
 
    \lstinputlisting[language=PHP, 
 caption=Ordem de preenchimento para sobra de vagas
