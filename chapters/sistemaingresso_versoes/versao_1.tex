@@ -11,33 +11,33 @@ Parágrafo único.  No preenchimento das vagas de que trata o caput deste artigo
 Art. 3o  Em cada instituição federal de ensino superior, as vagas de que trata o art. 1o desta Lei serão preenchidas, por curso e turno, por autodeclarados pretos, pardos e indígenas, em proporção no mínimo igual à de pretos, pardos e indígenas na população da unidade da Federação onde está instalada a instituição, segundo o último censo do Instituto Brasileiro de Geografia e Estatística (IBGE) \cite{leicotas}.
 \end{citacao}
 
-Com esse objetivo, o algoritmo de classificação que era uma consulta SQL foi separado em 3 funções PHP de nome: \textit{calcula\_vagasAcoesAfirmativas}, \textit{aprova\_Candidatos} e \textit{retorna\_OrdemdePreenchimentodeVagasNaoOcupadas}.  A primeira função faz a geração do quadro de vagas, a segunda a seleção dos candidatos para serem aprovados e atualizar a contagem de vagas em cada categoria e a última para retornar a ordem de preenchimento em caso de sobra de vagas.
+Com esse objetivo, o algoritmo de classificação que era uma consulta SQL foi separado em 3 funções PHP de nome: \texttt{calcula\_vagasAcoesAfirmativas}, \texttt{aprova\_Candidatos} e \texttt{retorna\_OrdemdePreenchimentodeVagasNaoOcupadas}.  A primeira função faz a geração do quadro de vagas, a segunda a seleção dos candidatos para serem aprovados e atualizar a contagem de vagas em cada categoria e a última para retornar a ordem de preenchimento em caso de sobra de vagas.
 
 Tendo em vista que há uma divisão categórica das vagas entre os candidatos, foi preciso criar 5 (cinco) tipos de situações de classificação para cada combinação de cotas possível, essas categorias foram definidas conforme a Tabela \ref{tabela_categoriasv1}.
 
 \input{chapters/sistemaingresso_versoes/quadros/quadro_categoriasv1.tex}
 
 \newpage
-Dadas as situações de classificação possíveis, o primeiro passo do algoritmo é gerar um quadro de vagas para cada tipo de cota, tendo como base o percentual do \gls{IBGE} e o total de vagas para o curso. O trecho de código desenvolvido será apresentado no Código Fonte \ref{lst:quadrovagas}.
+Dadas as situações de classificação possíveis, o primeiro passo do algoritmo é gerar um quadro de vagas para cada tipo de cota, tendo como base o percentual do \gls{IBGE} e o total de vagas para o curso. O trecho de código é apresentado no Código Fonte \ref{lst:quadrovagas}.
 
 
 \lstinputlisting[language=PHP, 
 caption=Função que calcula o quadro de vagas
 ,label=lst:quadrovagas]{chapters/trechos_codigo/calculaquadrovagas.m}
 
-Basicamente, o que a função \textit{calcula\_vagasAcoesAfirmativas} faz é separar as vagas conforme os seguintes passos:
+Basicamente, o que a função \texttt{calcula\_vagasAcoesAfirmativas} faz é separar as vagas conforme os seguintes passos:
 
 \begin{enumerate}
-    \item Dado o total de vagas do curso;
-    \item Obter o percentual de escola pública;
-    \item Obter o percentual de proporção de PPI do IBGE no estado de oferta;
-    \item Multiplicar o total de vagas pelo percentual de Escola Pública (50\%) e armazenar o valor em AAEP;
-    \item Obter o total reservado para ampla concorrência (CLAG), diminuindo o total de vagas pelo reservado ao sistema de cotas AAEP;
-    \item Dividir o total de vagas AAEP em 50\% para candidatos de Renda Inferior a 1.5 (AAEPRI) e 50\% para candidatos de Renda Superior a 1.5 (AAEPRS);
-    \item Dentro do total de vagas AAEPRI, deve-se calcular a proporção reservada pelo IBGE para cotistas PPI (Preto, Pardo, Indígenas) que também possuam Renda Inferior a 1.5 salários mínimos e armazenar em AAEPRIPPI;
-    \item O total de vagas de estudantes de Renda Inferior que NÃO são autodeclarados PPI (AAEPRINPPI) é obtido após diminuir o total de vagas para renda inferior AAEPRI - o total armazenado em (AAEPRIPPI).
-    \item Dentro do total de vagas AAEPRS, deve-se calcular a proporção reservada pelo IBGE para cotistas PPI (Preto, Pardo, Indígenas) que também possuam Renda Superior a 1.5 salários mínimos e armazenar em AAEPRSPPI;
-    \item O total de vagas de estudantes de Renda Superior que NÃO são autodeclarados PPI (AAEPRSNPPI) é obtido após diminuir o total de vagas para renda inferior AAEPSI - o total armazenado em (AAEPRSPPI).
+    \item Linha 1 - Dado o total de vagas do curso;
+    \item Linha 3 - Obter o percentual de escola pública;
+    \item Linha 4 - Obter o percentual de proporção de PPI do IBGE no estado de oferta;
+    \item Linha 6 - Multiplicar o total de vagas pelo percentual de Escola Pública (50\%) e armazenar o valor em AAEP;
+    \item Linha 8 - Obter o total reservado para ampla concorrência (CLAG), diminuindo o total de vagas pelo reservado ao sistema de cotas AAEP;
+    \item Linha 12 - Dividir o total de vagas AAEP em 50\% para candidatos de Renda Inferior a 1.5 (AAEPRI) e 50\% para candidatos de Renda Superior a 1.5 (AAEPRS);
+    \item Linha 14 - Dentro do total de vagas AAEPRI, deve-se calcular a proporção reservada pelo IBGE para cotistas PPI (Preto, Pardo, Indígenas) que também possuam Renda Inferior a 1.5 salários mínimos e armazenar em AAEPRIPPI;
+    \item Linha 16 - O total de vagas de estudantes de Renda Inferior que NÃO são autodeclarados PPI (AAEPRINPPI) é obtido após diminuir o total de vagas para renda inferior AAEPRI - o total armazenado em (AAEPRIPPI).
+    \item Linha 18 - Dentro do total de vagas AAEPRS, deve-se calcular a proporção reservada pelo IBGE para cotistas PPI (Preto, Pardo, Indígenas) que também possuam Renda Superior a 1.5 salários mínimos e armazenar em AAEPRSPPI;
+    \item Linha 20 - O total de vagas de estudantes de Renda Superior que NÃO são autodeclarados PPI (AAEPRSNPPI) é obtido após diminuir o total de vagas para renda inferior AAEPSI - o total armazenado em (AAEPRSPPI).
 \end{enumerate}{}
 
 Um exemplo do resultado da geração do quadro de vagas, para um cenário de curso com 40 vagas,  pode ser visto na Figura \ref{fig:cenario1}.
@@ -45,19 +45,20 @@ Um exemplo do resultado da geração do quadro de vagas, para um cenário de cur
 \input{chapters/sistemaingresso_versoes/cenarios/cenario1.tex}
 
 \newpage
-Tendo com base o quadro de vagas, o algoritmo de classificação de candidatos utiliza a função \textit{aprova\_Candidatos} descrita no Código Fonte \ref{lst:algoritmoaprovacao}, fazendo a seleção dos candidatos para aprovação em cada categoria até atingir o total de vagas disponíveis. 
+Tendo com base o quadro de vagas, o algoritmo de classificação de candidatos utiliza a função \texttt{aprova\_Candidatos} descrita no Código Fonte \ref{lst:algoritmoaprovacao}, fazendo a seleção dos candidatos para aprovação em cada categoria até atingir o total de vagas disponíveis. 
 
 \lstinputlisting[language=PHP, 
 caption=Função de aprovação de candidatos
 ,label=lst:algoritmoaprovacao]{chapters/trechos_codigo/aprovacandidatos.m}
 
-Por fim, por motivo de falta de candidatos, o algoritmo utiliza a função \textit{ordemdePreenchimentodeVagasNaoOcupadas} para obter a prioridade por lei quando sobra vaga de uma determinada categoria de cota (Código Fonte \ref{lst:sobravagas}).
+Por fim, por motivo de falta de candidatos, o algoritmo utiliza a função \texttt{ordemdePreenchimentodeVagasNaoOcupadas} para obter a prioridade por lei quando sobra vaga de uma determinada categoria de cota (Código Fonte \ref{lst:sobravagas}).
 
+\newpage
 \lstinputlisting[language=PHP, 
 caption=Função de prioridade em caso de sobra de vagas
 ,label=lst:sobravagas]{chapters/trechos_codigo/sobravagas.m}
 
-Após análise no controle de versão pode-se identificar que as funções eram utilizadas em diferentes etapas e tipos de processo do sistema. No entanto, a equipe desenvolvedora não teve preocupação na organização do código e fez a cópia em vários pontos do sistema, trazendo ainda mais problemas de manutenção. Os arquivos envolvidos, assim como os dados do controle de versão serão listados nas Tabelas \ref{tabela_arquivosv1_1}, \ref{tabela_arquivosv1_2}, \ref{tabela_arquivosv1_3} e \ref{tabela_arquivosv1_4}.
+Após análise no controle de versão pode-se identificar que as funções eram utilizadas em diferentes etapas e tipos de processo do sistema. No entanto, a equipe desenvolvedora não teve preocupação na organização do código e fez a cópia em vários pontos do sistema, trazendo ainda mais problemas de manutenção. Os arquivos envolvidos, assim como os dados do controle de versão são listados nas Tabelas \ref{tabela_arquivosv1_1}, \ref{tabela_arquivosv1_2}, \ref{tabela_arquivosv1_3} e \ref{tabela_arquivosv1_4}.
 
 \input{chapters/sistemaingresso_versoes/quadros/tabela_arquivosv1.tex}
 

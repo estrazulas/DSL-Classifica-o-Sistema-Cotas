@@ -1,7 +1,7 @@
 \chapter{Proposta}
 \label{chap:proposta}
 
-   Nesse capítulo, será descrita a proposta de linguagem a ser desenvolvida na ferramenta \gls{MPS}, que possui como principal objetivo facilitar a definição das regras de distribuição de cotas e, dessa forma, permitir que os usuários do sistema de ingresso do \gls{IFSC} possam alterar essas definições de forma independente à implementação do respectivo algoritmo de classificação.
+   Nesse Capítulo, é descrita a proposta de linguagem a ser desenvolvida na ferramenta \gls{MPS}, que possui como principal objetivo facilitar a definição das regras de distribuição de cotas e, dessa forma, permitir que os usuários do sistema de ingresso do \gls{IFSC} possam alterar essas definições de forma independente à implementação do respectivo algoritmo de classificação.
    
    Como foi descrito no Capítulo \ref{chap:historicoversoes}, desde a promulgação da lei de cotas em 2012, o sistema de ingresso passou por, pelo menos, 3 (três) versões diferentes de distribuição de vagas, ocasionando em várias refatorações de código desde então. 
    
@@ -9,9 +9,9 @@
    
    Com apoio desses recursos, o usuário especialista no sistema de cotas, poderá fazer o uso controlado da especificação de regras, assim como, no caso de surgimento de um novo cenário de distribuição de vagas. Esse conjunto de regras alteradas poderiam ser transformadas em código fonte, possibilitando a  sua importação no sistema de ingresso do \gls{IFSC}, diminuindo a necessidade de refatoração em seu código.
    
-   Nesse sentido, a Seção \ref{sec:dslproposta:usuario} irá abordar a proposta de uma \gls{DSL} que será utilizada por especialistas de negócio, para definição da árvore de distribuição de cotas, tendo como base as especificações de lei. Enquanto na Seção \ref{sec:dslproposta:dev}, será descrita outra proposta de \gls{DSL}, que utiliza a primeira como dependência, e se aplica a desenvolvedores, porém o foco da modelagem trata de questões técnicas sobre a geração de código do algoritmo de aprovação.
+   Nesse sentido, a Seção \ref{sec:dslproposta:usuario} aborda a proposta de uma \gls{DSL} a ser utilizada por especialistas de negócio, para definição da árvore de distribuição de cotas, tendo como base as especificações de lei. Enquanto na Seção \ref{sec:dslproposta:dev}, é descrita outra proposta de \gls{DSL}, que utiliza a primeira como dependência, e se aplica a desenvolvedores, porém o foco da modelagem trata de questões técnicas sobre a geração de código do algoritmo de aprovação.
    
-   A segunda modelagem de \gls{DSL}, tem como proposta definir: configurações relacionadas à forma de entrada de dados da lista de candidatos, assinatura do método a ser gerado, linguagem alvo da geração, formato da lista de retorno dos aprovados e a composição de campos para cada uma das respectivas categorias de cotas configuradas pelos usuários na primeira \gls{DSL}.
+   A segunda \gls{DSL}, tem como proposta definir: configurações relacionadas à forma de entrada de dados da lista de candidatos, assinatura do método a ser gerado, linguagem alvo da geração, formato da lista de retorno dos aprovados e a composição de campos para cada uma das respectivas categorias de cotas configuradas pelos usuários na primeira \gls{DSL}.
    
    \input{chapters/proposta/propostadsl_usuario.tex}
 

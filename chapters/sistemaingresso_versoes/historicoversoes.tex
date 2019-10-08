@@ -1,7 +1,7 @@
 \chapter{Sistema de Ingresso e Versionamento}
 \label{chap:historicoversoes}
 
-Neste capítulo serão descritas as informações sobre as funcionalidades desenvolvidas no sistema de ingresso do \gls{IFSC} com relação aos requisitos e algoritmos do sistema de cotas. Para esse fim, será utilizado o histórico do controle de versão no que concerne ao quantitativo de arquivos, classes, funções/métodos e as diferentes versões desde o surgimento da demanda de cotas na legislação.
+Neste capítulo são descritas as informações sobre as funcionalidades desenvolvidas no sistema de ingresso do \gls{IFSC} com relação aos requisitos e algoritmos do sistema de cotas. Para esse fim, foi utilizado o histórico do controle de versão no que concerne ao quantitativo de arquivos, classes, funções/métodos e as diferentes versões desde o surgimento da demanda de cotas na legislação.
 
 \section{Histórico de Projeto}
 \label{historicopj}
@@ -9,7 +9,7 @@ Criado em meados do ano de 2000, o sistema de ingresso do \gls{IFSC}, tem por ob
 
 O projeto não utiliza conceitos de orientação a objetos, em sua maioria os arquivos PHP ultrapassam duas mil linhas, sem divisão em camadas \gls{MVC}, com combinações das linguagens Javascript, HTML e PHP no mesmo arquivo. Quando era preciso criar ou adaptar alguma nova funcionalidade, por falta de conhecimento técnico os antigos desenvolvedores (bolsistas) faziam a cópia das funcionalidades para vários locais do sistema, sem pensar em reutilização de código.
 
-Com objetivo de elencar a situação atual do código fonte do sistema, neste trabalho serão apresentados os quantitativos levantados a partir do sistema de controle de versão do \gls{IFSC}. O Quadro \ref{quadro_git_ingresso} apresenta o levantamento geral sobre o total de arquivos, linhas de código, commits e desenvolvedores que já atuaram no projeto. Nas seções seguintes serão contextualizados os dados gerais sobre o algoritmo de classificação, assim como será descrito o levantamento feito nas 3 (três) versões do algoritmo de classificação que foram implementadas até o momento.
+Com objetivo de elencar a situação atual do código fonte do sistema, neste trabalho são apresentados os quantitativos levantados a partir do sistema de controle de versão do \gls{IFSC}. A Tabela \ref{quadro_git_ingresso} apresenta o levantamento geral sobre o total de arquivos, linhas de código, commits e desenvolvedores que já atuaram no projeto. Nas Seções seguintes são contextualizados os dados gerais sobre o algoritmo de classificação, assim como é descrito o levantamento feito nas 3 (três) versões do algoritmo de classificação que foram implementadas até o momento.
 
 \input{chapters/sistemaingresso_versoes/quadros/quadro_dados_gerais_git.tex}
 
@@ -17,7 +17,7 @@ Com objetivo de elencar a situação atual do código fonte do sistema, neste tr
 \section{Algoritmo de Classificação}
 \label{algoritimodeclassificacao}
 
-Nesta seção serão detalhados os conceitos e as etapas do processo de classificação de candidatos às vagas do sistema de cotas, assim como o levantamento de cenários exemplificativos sobre a distribuição de vagas tendo como base as versões já implementadas no sistema de ingresso.
+Nesta Seção são detalhados os conceitos e as etapas do processo de classificação de candidatos às vagas do sistema de cotas, assim como o levantamento de cenários ilustrativos sobre a distribuição de vagas tendo como base as versões já implementadas no sistema de ingresso.
 
 Para cada processo seletivo há uma lista de cursos, em que o setor que gerencia as vagas define-as com base no valor total inicial e indica se o processo seletivo vai utilizar a regra de classificação por cotas. Durante as inscrições são apresentados aos candidatos os campos necessários para indicar se vieram de escola pública, bem como informar a sua renda familiar e se autodeclaram-se pretos, pardos e indígenas.
 
@@ -39,7 +39,7 @@ anterior, nos termos do art. 10 desta Portaria. \cite{portarianr9}
 
 Ao final do processo de classificação é gerada uma lista de candidatos aprovados, incluindo a classificação geral e a classificação na respectiva categoria de cota, por fim esta lista é enviada ao sistema acadêmico para que os candidatos possam realizar a matrícula e entregar a documentação necessária. 
 
-As alterações nos documentos de lei podem incluir novas categorias, novas formas de distribuição das vagas iniciais, mudanças de percentuais, formas de arredondamento, descrição dos tipos de cotas e mudança na ordem de prioridade em caso de sobra de vagas. Essas situações serão exemplificadas nas seções seguintes por meio dos casos e cenários nos quais houve maior impacto de refatoração de código do sistema de ingresso para adequação à legislação.
+As alterações nos documentos de lei podem incluir novas categorias, novas formas de distribuição das vagas iniciais, mudanças de percentuais, formas de arredondamento, descrição dos tipos de cotas e mudança na ordem de prioridade em caso de sobra de vagas. Essas situações são exemplificadas nas Seções seguintes por meio dos casos e cenários nos quais houve maior impacto de refatoração de código do sistema de ingresso para adequação à legislação.
 
 \input{chapters/sistemaingresso_versoes/versao_1.tex}
 

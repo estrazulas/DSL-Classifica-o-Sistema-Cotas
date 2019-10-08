@@ -1,7 +1,7 @@
 \section{DSL técnica para geração algoritmo de aprovação}
 \label{sec:dslproposta:dev}
 
- Uma das vantagens do \gls{MPS} é permitir a composição de várias linguagens em uma única solução, isso favorece a separação de preocupações durante a modelagem. Do ponto de vista da primeira \gls{DSL}, a proposta é atender ao público de usuários especialistas no domínio de regras da legislação de cotas. 
+ Uma das vantagens do \gls{MPS} é permitir a composição de várias linguagens em uma única solução, isso favorece a separação de interesses durante a modelagem. Do ponto de vista da primeira \gls{DSL}, a proposta é atender ao público de usuários especialistas no domínio de regras da legislação de cotas. 
  
  Por outro lado, uma \gls{DSL} técnica (para apoio ao desenvolvedores) pode agregar definições necessárias para geração do código fonte, tais como:
  
@@ -10,7 +10,7 @@
      \item[b)] Linguagem alvo - para seleção de uma linguagem alvo (ex: Java, PHP) possível de implementação;
      \item[c)] Definição da assinatura do método de aprovação de candidatos - que poderá ser importado em uma das linguagens alvo;
      \item[d)] Formato de entrada e retorno da lista de candidatos - para indicar ao gerador a estrutura de dados utilizada como entrada ou saída de resultados, podendo ser utilizados por exemplo, formatos como JSON ou CSV;
-     \item[e)] Composição de campos de inscrição - no sentido de escolha dos campos que serão utilizados no critérios de seleção da base de candidatos inscritos, para cada categoria de cota possível.
+     \item[e)] Composição de campos de inscrição - no sentido de escolha dos campos utilizados no critérios de seleção da base de candidatos inscritos, para cada categoria de cota possível.
  \end{enumerate}
  
     No Código Fonte \ref{lst:propostadsldevconfig}, é apresentada a estrutura proposta para suprir as definições descritas. Na linha 2 seria selecionada a versão de implementação das regras de cotas, e em seguida, definidos os dados para geração do método de aprovação (linhas 5, 8, 11, 12). 
@@ -25,6 +25,6 @@ caption= Configurações para o algortimo de aprovação de candidatos
 caption= Composição de campos por tipo de cota
 ,label=lst:dsltecnicacontinuacao]{chapters/proposta/codigos_proposta/dsl_tecnica_composicao.m}
  
- É importante considerar, que essa linguagem tem carácter de cunho auxiliar, uma vez que um \textit{template} fixo de gerador poderia ser implementado apenas utilizando a primeira \gls{DSL}, que possui as regras base de distribuição. Contudo, após a análise do controle de versão realizada (Capítulo \ref{chap:historicoversoes}), foi observado que grande parte do código escrito estava relacionado com questões técnicas do algoritmo.
+ É importante considerar, que essa linguagem tem caráter de cunho auxiliar, uma vez que um \textit{template} fixo de gerador poderia ser implementado apenas utilizando a primeira \gls{DSL}, que possui as regras base de distribuição. Contudo, após a análise do controle de versão realizada (Capítulo \ref{chap:historicoversoes}), foi observado que grande parte do código escrito estava relacionado com questões técnicas do algoritmo.
  
  Nesse sentido, a elaboração dessa linguagem auxiliar, pode dar celeridade às questões mais técnicas de geração, fornecendo por exemplo: métodos prontos para serem importados em diferentes linguagens de programação, com diferentes tipos de estruturas de dados, ou até a possibilidade de geração de serviço web de aprovação de candidatos.
