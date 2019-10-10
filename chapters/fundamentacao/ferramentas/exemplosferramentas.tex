@@ -10,7 +10,7 @@ A ferramenta utiliza uma representação de domínio em formato de árvore de in
 
 \input{chapters/fundamentacao/imagens/intentional.tex}
 
-Outra ferramenta de abordagem projecional é a \gls{MPS}, de código aberto sob a licença Apache 2.0 e é desenvolvido pela \textit{JetBrains}. Ela se baseia em definição da linguagens por meio de representação de texto estruturado, e possui uma série de recursos sofisticados de edição e ferramentas de navegação. 
+Outra ferramenta de abordagem projecional é a \gls{MPS}, de código aberto sob a licença Apache 2.0 e é desenvolvida pela \textit{JetBrains}. Ela se baseia em definição de linguagens por meio de representação de texto estruturado, e possui uma série de recursos sofisticados de edição e ferramentas de navegação. 
 
 Segundo \citeonline{dslengineering}, a \gls{MPS} suporta notações mistas (textuais, simbólicas, tabulares, gráficas) e uma ampla variedade de recursos de composição de idiomas. Ela define a linguagem por meio de \textit{Concepts} que são elementos para criação da sintaxe abstrata (Figura \ref{fig:mpsconceitos}), e esses conceitos são atrelados a um editor, o qual define as regras de projeção por meio de uma lista de células, que juntas definem a estrutura desejada para a sintaxe do conceito (Figura \ref{fig:mpseditor}).
 
@@ -24,7 +24,7 @@ Segundo \citeonline{dslengineering}, a \gls{MPS} suporta notações mistas (text
 Como alternativa às ferramentas projecionais, existem ferramentas que geram o \textit{parser} a partir da gramática, nesse caso, as regras da linguagem são expressadas em notação baseada em \gls{BNF}. As ferramentas Xtext e Spoofax são casos de ambientes nos quais é possível construir \gls{DSL}s por meio desse tipo de abordagem, a seguir são listados alguns exemplos nessas ferramentas.
 
 
-\citeonline{eysholdt2010xtext}, descreve a ferramenta Xtext, como um \textit{framework} que permite o rápido desenvolvimento de ferramental de suporte às linguagens textuais, podendo atender desde linguagens menores como \gls{DSL}, até linguagens completas \gls{GPL}. Ela utiliza o core do \gls{EMF} para criar a \GLS{AST} a partir de uma especificação de gramática. 
+\citeonline{eysholdt2010xtext}, descreve a ferramenta Xtext, como um \textit{framework} que permite o rápido desenvolvimento de ferramental de suporte às linguagens textuais, podendo atender desde linguagens menores como \gls{DSL}s, até linguagens completas \gls{GPL}s. Ela utiliza o core do \gls{EMF} para criar a \GLS{AST} a partir de uma especificação de gramática. 
 
 Na Figura \ref{fig:xtextgramatica} é possível verificar a definição da gramática de uma linguagem específica para modelagem de entidades, de forma similar ao que existe em alguns \textit{frameworks} de programação, como Rails e Grails. O resultado é apresentado na Figura \ref{fig:xtextprograma}, na qual observa-se a utilização de recursos do Xtext no momento da codificação de um novo programa nessa linguagem.
 

@@ -24,7 +24,7 @@ A maioria dos ambientes de programação são baseados em edição livre de text
 
 Nos tradicionais compiladores e \gls{IDE}s, os \textit{parsers} precisam ser implementados manualmente, o que requer grande esforço de desenvolvimento. Para uma realidade de construção de uma linguagem tradicional, \gls{GPL}, essa abordagem faz sentido, porém no contexto de \gls{DSL}s as ferramentas permitem gerar um parser a partir de uma gramática, não sendo necessário que o programador crie um \textit{parser} customizado.
 
-\citeonline{dslengineering} categoriza as ferramentas modernas para construção de \gls{DSL} como \textit{baseadas em parsing} ou ferramentas de \textit{abordagem projecional}. No primeiro caso, a partir da gramática é gerado um \textit{parser}, e no segundo, a \gls{AST} é construída diretamente por ações no editor, na qual é modificada diretamente enquanto o usuário edita o programa (abordagem bem conhecida para editores gráficos em geral, e o padrão \gls{MVC}). 
+\citeonline{dslengineering} categoriza as ferramentas modernas para construção de \gls{DSL}s como \textit{baseadas em parsing} ou ferramentas de \textit{abordagem projecional}. No primeiro caso, a partir da gramática é gerado um \textit{parser}, e no segundo, a \gls{AST} é construída diretamente por ações no editor, na qual é modificada diretamente enquanto o usuário edita o programa (abordagem bem conhecida para editores gráficos em geral, e o padrão \gls{MVC}). 
 
 Para \citeonline{martinfowlerprojectionalediting}, na abordagem de \textit{parsing}, o compilador utiliza o código fonte para gerar uma representação executável do programa, transformando todo o texto em uma representação abstrata que é mantida apenas durante a compilação. (Figura \ref{fig:abordagemparsing}). 
 
