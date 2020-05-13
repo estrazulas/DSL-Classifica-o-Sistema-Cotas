@@ -2,7 +2,7 @@
 \label{sec:dslproposta:usuario}
 
    
- Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes}, nas Seções \ref{versao1}, \ref{versao2} e \ref{versao3}, são pontuadas algumas características em comum identificadas entre cada uma dessas versões:
+ Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes}, sobre as versões do sistema de cotas detalhadas nas Seções \ref{versao1}, \ref{versao2} e \ref{versao3}, podem ser  pontuadas algumas características em comum identificadas entre cada uma dessas versões:
    
    \begin{enumerate}
     \item[a)] A divisão das vagas entre as diferentes categorias de cotas, se deu em formato hierárquico, iniciando no total de vagas o qual foi sendo subdividido em percentuais reservados para suas subcategorias (ex: Estudantes da escola pública, Estudantes com renda baixa, Estudantes PCD, etc); 
@@ -23,21 +23,21 @@
    
    \lstinputlisting[language=PHP, 
 caption=Configurações de percentuais
-,label=lst:dsl1versaoconfig]{chapters/proposta/codigos_proposta/versao_config_proposta.m}
+,label=lst:dsl1versaoconfig]{chapters/dslcotas/codigos_proposta/versao_config_proposta.m}
 
 
 No que diz respeito à estrutura hierárquica, no Código Fonte \ref{lst:dsl1arvorecotas} é possível identificar os campos da árvore de distribuição ("Distribuição de vagas:"), iniciando com o identificador referente à sigla da cota, e suas respectivas propriedades, tais como: descrição da categoria de cota, o percentual de reserva a ser aplicado (variável configurada, valor percentual preenchido manualmente ou a macro "Restante das vagas") e, por fim, se haverá novas subdivisões em outras categorias ("Se divide em:").
 
    \lstinputlisting[language=PHP, 
 caption=Definição da estrutura de distribuição de vagas
-,label=lst:dsl1arvorecotas]{chapters/proposta/codigos_proposta/arvore_cotas.m}
+,label=lst:dsl1arvorecotas]{chapters/dslcotas/codigos_proposta/arvore_cotas.m}
 
 
-O último ponto a ser exemplificado é o caso da configuração da ordem de prioridade ("Ordem prioritária de preenchimento para sobra de vagas:") em caso de sobra de vagas (Código Fonte \ref{lst:dsl1prioridade}), o usuário poderá selecionar as categorias preenchidas anteriormente com a marcação "Quadro de vagas:" de valor "Sim".  
+O último ponto a ser exemplificado é o caso da configuração da ordem de prioridade ("Ordem prioritária de preenchimento para sobra de vagas:") em caso de sobra de vagas (Código Fonte \ref{lst:dsl1prioridade}), o usuário da linguagem poderá selecionar as categorias preenchidas anteriormente com a marcação "Quadro de vagas:" de valor "Sim".  
 
    \lstinputlisting[language=PHP, 
 caption=Ordem de preenchimento para sobra de vagas
-,label=lst:dsl1prioridade]{chapters/proposta/codigos_proposta/prioridade.m}
+,label=lst:dsl1prioridade]{chapters/dslcotas/codigos_proposta/prioridade.m}
 
 É importante ressaltar que, com apoio do \gls{MPS} é possível utilizar recursos de preenchimento automático de código, avisar o usuário da linguagem sobre inconsistências como: declarações duplicadas, formatos inválidos de entradas de dados, categorias de cotas com configurações incompletas ou não preenchidas e ausência de categorias na lista de ordem de prioridade (preenchimento em caso de sobra de vagas). 
 
