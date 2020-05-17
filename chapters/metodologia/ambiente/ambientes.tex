@@ -1,10 +1,34 @@
 \section{Ambiente da pesquisa}
 \label{ambiente}
-
+ Este Capítulo apresenta o ambiente elaborado para verificar a validade da DSL de Cotas em relação aos objetivos da presente pesquisa. Desse modo, serão descritos os critérios utilizados para definir os grupos de usuários convidados, os critérios de avaliação da \gls{API} implementada para classificar e aprovar os candidatos, e também apresentar o questionário aplicado com os participantes.
+ 
 \subsection{Metodologia de avaliação da DSL}
 \label{metododsl}
 
- [TERMINAR] classificados de acordo com as seguintes categorias: 1) não desenvolvedores e especialistas na legislação de cotas; 2) desenvolvedores e não especialistas na legislação de cotas; 3) desenvolvedores e especialistas na legislação de cotas; 4) não desenvolvedores e não especialistas na legislação de cotas. Identificados ao longo do texto respectivamente como: NDEV-ESP; DEV-NESP; DEV-ESP; NDEV-NESP. 
+ Segundo \citeonline{kateMoran2018}, estudos qualitativos de usabilidade tentam compreender o pensamento e as dificuldades vivenciadas pelos indivíduos, geralmente este tipo de estudo apresenta aos usuários atividades abertas que têm o potencial de expor problemas na interface do sistema. 
+ 
+ \citeonline{kateMoran2018} também cita alguns princípios básicos para elaboração de tarefas para qualquer tipo de teste com usuário, tais como:
+ 
+ \begin{enumerate}
+    \item[a)] Atente-se ao que seus usuários precisam fazer com o seu produto para inspirar suas tarefas;
+    \item[b)] Evite fornecer dicas para a sua tarefa. Não descreva os passos exatos que o usuário precisa fazer, deixe que eles descubram por si só;
+    \item[c)] Sempre faça um teste piloto para as tarefas, isso é essencial para evitar obter acidentalmente dados incorretos ou ruins.
+    
+\end{enumerate}
+ 
+ Considerando essas orientações foi realizado um teste piloto da \gls{DSL} em Abril de 2020. Para tanto, foi instalado o software \textit{TeamViewer} para acesso remoto a uma máquina virtual contendo a ferramenta \gls{MPS}, no qual a DSL foi disponibilizada para teste. Todavia, observou-se que a ferramenta de acesso remoto dificultava o uso da linguagem, no sentido de apresentar lentidão durante a execução dos comandos. Outro problema percebido foi a falta de instruções sobre o uso da linguagem, bem como foram encontradas dificuldades de visualização de alguns elementos, tendo em vista que a fonte fornecida era pequena.
+ 
+ A partir dessa avaliação foram feitas as correções necessárias, por meio da troca da ferramenta de acesso remoto para o software \textit{VNCViewer} e a elaboração de um documento para subsidiar os usuários. Desse modo, foi elaborado um manual de utilização da DSL (APÊNDICE X), no qual foram apresentados os objetivos e os elementos da linguagem, os principais comandos para edição das regras de negócio e o link para o vídeo explicativo também elaborado pelo autor, no qual se exibiu um exemplo de uso das principais funcionalidades. 
+ 
+ //inserir imagem do ambiente
+ 
+ No que concerne à seleção dos usuários para os testes, baseando-se em \citeonline{nielsen2012many}, entre os meses de Abril e Maio de 2020 buscou-se 20 pessoas com perfis diferentes que foram agrupadas de acordo com as seguintes categorias: 1) não desenvolvedores e especialistas na legislação de cotas; 2) desenvolvedores e não especialistas na legislação de cotas; 3) desenvolvedores e especialistas na legislação de cotas; 4) não desenvolvedores e não especialistas na legislação de cotas. Ao longo da análise dos dados estas foram identificadas no texto, respectivamente, como: NDEV-ESP; DEV-NESP; DEV-ESP; NDEV-NESP. 
 
+ A coleta de dados iniciou-se por meio de envio de e-mail (APÊNDICE X) para cada participante, no qual constavam o manual de utilização da DSL, a instrução para acesso remoto, o link para o vídeo explicativo, e o exercício aberto para descrição da primeira versão de lei Nº 12.711 na DSL Cotas (Capítulo \ref{chap:historicoversoes}, Seção \ref{versao1}). Também foi sugerido para que os participantes contabilizassem o tempo utilizado para desenvolvimento do exercício. A instrução final do e-mail continha o link de acesso ao questionário de avaliação (Figuras x e y).
+ 
+ //inserir figuras do questionário
+ 
+ Por fim, a Seção \ref{avaliacaoapi} descreve os procedimentos metodológicos criados de modo a possibilitar a avaliação da \gls{API}, a qual é detalhada no Capítulo \ref{chap:dslcotas}.
+ 
 \subsection{Metodologia de avaliação da API}
 \label{metodoapi}
