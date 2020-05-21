@@ -38,7 +38,39 @@ Na Subseção \ref{sub:sec:editores}, serão apresentados os editores criados pa
 
 \subsection{\textit{Editores de conceitos}}
 \label{sub:sec:editores}
+O \gls{MPS} oferece aos projetistas uma abordagem de definição de sintaxe abstrata por meio de editores construídos com a notação de células. O \textit{designer} da linguagem combina as células do editor e as posiciona de maneira a refletir o layout final desejado da notação \cite{mpsCookBook}. 
 
+Por padrão os elementos \texttt{Concepts} não possuem um editor associado, o editor padrão permite a edição direta da \gls{AST} pelo usuário da linguagem. No entanto, o editor padrão não é de simples entendimento para os usuários finais da linguagem, sendo necessário definir como aquele conceito deverá ser apresentado e editado pelo usuário.
+
+Nesse sentido a Figura \ref{fig:editors}, apresenta a lista de editores criados para a DSL de cotas. As definições desses editores são apresentadas a seguir.
+
+\input{chapters/dslcotas/mps/imagens/editors}
+
+
+O primeiro editor \texttt{LeiDeCota\_Editor} é responsável pela organização das informações relevantes para o modelo de cotas, na Figura \ref{fig:editorleicota} observa-se que ele é composto por uma coleção de células organizadas verticalmente, essa coleção é representada por \texttt{'[-' e '-]'}. Dentro de cada linha da coleção é possível utilizar propriedades básicas do conceito, como por exemplo o campo \texttt{name}. 
+
+\input{chapters/dslcotas/mps/imagens/editorleicota}
+
+
+\newpage
+Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário também definir o respectivo editor.
+
+Por se tratar de um editor de múltiplas projeções, é possível inserir nos editores do \gls{MPS} alguns recursos gráficos disponíveis em sua linguagem base, Java, como por exemplo elementos de \texttt{JTable} e \texttt{JButton} das bibliotecas gráficas \texttt{swing}. A Figura \ref{fig:swingbutton} demonstra um exemplo de como a célula \texttt{\$swing\_component\$} é implementada para inserir o botão de adição de novas configurações na DSL.
+
+\input{chapters/dslcotas/mps/imagens/swingbutton}
+
+Com objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS}.}. Segundo , as tabelas podem ser usadas para representar coleções de dados estruturados ou apresentar preocupações bidimensionais.
+
+Nesse sentido, na Figura \ref{fig:tableeditor} é possível observar o \texttt{CategoriaCota\_Editor} onde as categorias filhas existentes são renderizadas com esse \textit{plugin} por meio dos comandos \texttt{table\{\}} e \texttt{getHeaders}, onde são iterados todos os seus filhos, de modo que as categorias sejam divididas por linhas indicando a sigla da categoria e o respectivo número de contagem de categorias, resultando no exemplo da Figura \ref{fig:tableeditorres}.
+
+\input{chapters/dslcotas/mps/imagens/table}
+
+\input{chapters/dslcotas/mps/imagens/tableres}
+
+\newpage
+Após a definição de editores para todos os conceitos do modelo da linguagem, foi necessário utilizar o recurso de \texttt{constraints} para criar restrições de escopo para acesso às referências entre os elementos da linguagem. Esse detalhamento é observado na Seção \ref{sub:sec:constraints}.
+
+\newpage
 \subsection{\textit{Restrições de escopo}}
 \label{sub:sec:constraints}
 
