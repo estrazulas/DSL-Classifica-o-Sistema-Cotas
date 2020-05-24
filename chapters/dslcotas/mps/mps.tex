@@ -127,3 +127,16 @@ Segundo \citeonline{campagne2014mps}, o aspecto \textit{typesystem} do \gls{MPS}
 \newpage
 \subsection{\textit{Gerador textGen}}
 \label{sub:sec:texgen}
+
+Na presente pesquisa optou-se por implementar o código fonte de classificação de candidatos em formato de \gls{API} externa ao \gls{MPS}, por meio de leitura das definições da DSL Cotas e posterior extração em formato JSON. Isso foi possível mediante o uso do aspecto de \texttt{TextGen} do MPS.
+
+O aspecto de \texttt{TextGen} do MPS define como o modelo da linguagem pode ser transformado em formato textual. Esse recurso é útil sempre que o modelo definido no MPS precise ser convertido diretamente para formato textual \cite{jetbrains}. 
+
+Para tanto, esse recurso requer que cada conceito do modelo seja criado um \textit{text gen component}, onde devem ser utilizadas operações do tipo \textit{append}, para que as informações sejam extraídas no formato texto desejado. Um exemplo da geração do conceito \texttt{CategoriaCota} pode ser observado na Figura \ref{fig:texgen}.
+
+\input{chapters/dslcotas/mps/imagens/textgen}
+
+
+Por fim, todos esses componentes permitiram a construção da estrutura necessária para modelagem das regras do sistema de cotas por usuários não desenvolvedores. Em continuidade ao presente estudo, a Subseção \ref{apicotas} detalha a \gls{API} construída com o propósito validar os objetivos que concernem à geração do código fonte de classificação e aprovação de candidatos.
+
+\newpage
