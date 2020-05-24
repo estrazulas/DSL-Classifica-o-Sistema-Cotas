@@ -38,7 +38,7 @@ Na Subseção \ref{sub:sec:editores}, serão apresentados os editores criados pa
 
 \subsection{\textit{Editores de conceitos}}
 \label{sub:sec:editores}
-O \gls{MPS} oferece aos projetistas uma abordagem de definição de sintaxe abstrata por meio de editores construídos com a notação de células. O \textit{designer} da linguagem combina as células do editor e as posiciona de maneira a refletir o layout final desejado da notação \cite{mpsCookBook}. 
+O \gls{MPS} oferece aos projetistas uma abordagem de definição de sintaxe abstrata por meio de editores construídos com a notação de células. O \textit{designer} da linguagem combina as células do editor e as posiciona de maneira a refletir o layout final desejado da notação \cite{jetbrains}. 
 
 Por padrão os elementos \texttt{Concepts} não possuem um editor associado, o editor padrão permite a edição direta da \gls{AST} pelo usuário da linguagem. No entanto, o editor padrão não é de simples entendimento para os usuários finais da linguagem, sendo necessário definir como aquele conceito deverá ser apresentado e editado pelo usuário.
 
@@ -53,7 +53,7 @@ O primeiro editor \texttt{LeiDeCota\_Editor} é responsável pela organização 
 
 
 \newpage
-Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário também definir o respectivo editor.
+Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário também definir o respectivo editor. 
 
 Por se tratar de um editor de múltiplas projeções, é possível inserir nos editores do \gls{MPS} alguns recursos gráficos disponíveis em sua linguagem base, Java, como por exemplo elementos de \texttt{JTable} e \texttt{JButton} das bibliotecas gráficas \texttt{swing}. A Figura \ref{fig:swingbutton} demonstra um exemplo de como a célula \texttt{\$swing\_component\$} é implementada para inserir o botão de adição de novas configurações na DSL.
 
@@ -74,9 +74,46 @@ Após a definição de editores para todos os conceitos do modelo da linguagem, 
 \subsection{\textit{Restrições de escopo}}
 \label{sub:sec:constraints}
 
+Na presente pesquisa utilizou-se do recurso de restrições de escopo, que se aplica nas restrições de acesso para referências de configurações e categorias de cotas, dentro do contexto de um elemento de \texttt{LeiDeCota} criado pelo usuário da DSL. Possibilitando, por exemplo, que o \gls{MPS} preencha o menu de \textit{code-complete} somente valores válidos para aquela versão da lei de cotas e não mostre opções existentes em  outras versões já definidas.
+ 
+\begin{citacao}
+O aspecto de estrutura da linguagem pode ser insuficiente para expressar restrições avançadas para a DSL. O aspecto \texttt{constraints} do MPS fornece uma maneira de definir essas restrições adicionais. Referências dependem da definição de restrições de escopo, já que por padrão quando nenhum escopo é definido para uma referência, essas podem ser utilizadas em qualquer parte da modelagem da linguagem \cite[s/p, tradução nossa]{jetbrains}.
+\end{citacao}
+
+Desse modo, nos conceitos de \texttt{CategoriaCotaRef} e \texttt{ConfiguracaoCotaRef} utilizou-se o conceito de definição de escopo herdado ou \textit{inherited scopes} (Figura \ref{fig:scoperef}). Confome \citeonline[s/p, tradução nossa]{jetbrains}, "esse mecanismo delega a resolução do escopo aos ancestrais, que implementam o ScopeProvider".
+
+\input{chapters/dslcotas/mps/imagens/scoperef.tex}
+
+\newpage
+
+Nesse sentido, \gls{MPS} inicia a procura por provedores de escopos nos ancestrais de \texttt{Configuracao} até encontrar algum conceito que sobrescreva a implementação do método \texttt{getScope} da classe \texttt{ScopeProvider} do \gls{MPS}. 
+
+No caso da DSL Cotas o provedor de escopo foi o elemento \texttt{LeiDeCota} (Código Fonte \ref{lst:scopeprovider}), no qual todas as categorias da distribuição e as configurações de cota são adicionadas em uma lista (Linha 13) e retornadas por meio da criação de um \texttt{ListScope} (Linha 16) o qual é retornado sempre que acionado durantes os comandos de \texttt{code-complete} pelo usuário da linguagem (Figura \ref{fig:codecomplete}).
+
+\lstinputlisting[language=Java, 
+caption=Implementação do ScopeProvider 
+,label=lst:scopeprovider]{chapters/trechos_codigo/scopeprovider.m}
+
+\input{chapters/dslcotas/mps/imagens/codecomplete}
+
+Na Seção \ref{sub:sec:comportamentos} é apresentado o aspecto de definição de comportamentos de conceitos (\textit{behaviors}) da DSL Cotas.
+
+\newpage
 \subsection{\textit{Comportamento dos elementos de conceito}}
 \label{sub:sec:comportamentos}
 
+Durante a manipulação \gls{AST} no \gls{MPS}, operações comuns são frequentemente extraídas para métodos utilitários, a fim de simplificar a tarefa e reutilizar a funcionalidades. O aspecto \textit{behavior} possibilita a criação de métodos de instância, métodos estáticos e construtores de instância dos conceitos \cite{jetbrains}.
+
+Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas a extração das regras em formato JSON pelo recurso de \texttt{textGen}.
+
+A Figura \ref{fig:behaviorcat}, apresenta o aspecto \textit{behavior} para o conceito \texttt{CategoriaCota}, contendo um exemplo de método \texttt{isClag}, responsável por verificar se a categoria corrente é a categoria correspondente à ampla concorrência, possibilitando distingui-la e informar ao usuário o respectivo ramo na distribuição onde ela deve ser definida (Figura \ref{fig:behaviorcatuso}).
+
+\input{chapters/dslcotas/mps/imagens/behaviorCategoria}
+
+
+\input{chapters/dslcotas/mps/imagens/behaviorCategoriauso}
+
+\newpage
 \subsection{\textit{Sistema de tipos}}
 \label{sub:sec:typesystem}
 
