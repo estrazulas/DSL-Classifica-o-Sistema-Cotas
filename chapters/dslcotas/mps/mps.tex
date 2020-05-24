@@ -104,12 +104,13 @@ Na Seção \ref{sub:sec:comportamentos} é apresentado o aspecto de definição 
 
 Durante a manipulação \gls{AST} no \gls{MPS}, operações comuns são frequentemente extraídas para métodos utilitários, a fim de simplificar a tarefa e reutilizar a funcionalidades. O aspecto \textit{behavior} possibilita a criação de métodos de instância, métodos estáticos e construtores de instância dos conceitos \cite{jetbrains}.
 
-Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas a extração das regras em formato JSON pelo recurso de \texttt{textGen}.
+Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas a extração das regras em formato JSON pelo recurso de \texttt{textGen}. A Figura \ref{fig:behaviorlista} apresenta a lista dos \texttt{behaviors} presentes no fonte da DSL Cotas.
 
-A Figura \ref{fig:behaviorcat}, apresenta o aspecto \textit{behavior} para o conceito \texttt{CategoriaCota}, contendo um exemplo de método \texttt{isClag}, responsável por verificar se a categoria corrente é a categoria correspondente à ampla concorrência, possibilitando distingui-la e informar ao usuário o respectivo ramo na distribuição onde ela deve ser definida (Figura \ref{fig:behaviorcatuso}).
+\input{chapters/dslcotas/mps/imagens/behaviorslista}
+
+Um exemplo de \texttt{concept behavior} é apresentado na Figura \ref{fig:behaviorcat}, para o conceito \texttt{CategoriaCota}, onde o método \texttt{isClag}, responsável por verificar se a categoria corrente é a categoria correspondente à ampla concorrência, possibilitando distingui-la e informar ao usuário o respectivo ramo na distribuição onde ela deve ser definida (Figura \ref{fig:behaviorcatuso}).
 
 \input{chapters/dslcotas/mps/imagens/behaviorCategoria}
-
 
 \input{chapters/dslcotas/mps/imagens/behaviorCategoriauso}
 
