@@ -1,3 +1,15 @@
 \section{A API da DSL de cotas}
 \label{apicotas}
 
+Em relação ao desafio abordado nos objetivos específicos da presente pesquisa, ao que diz respeito sobre a evolução entre versões e a geração de código fonte de classificação e aprovação de candidatos, foi criada uma \gls{API} a qual utiliza a estrutura de padronização das regras definidas na DSL Cotas como base para implementação dos algoritmos responsáveis por calcular o quadro de vagas, aprovar candidatos e definir a ordem de prioridade conforme regras definidas pelo usuário.
+
+
+Para tanto, a tecnologia escolhida com o projeto \texttt{SpringBoot}, o qual segundo \citeonline{walls2016spring}, oferece um novo paradigma de desenvolvimento de aplicações com o \texttt{Spring Framework}, possibilitando desenvolver aplicativos com mais agilidade focando em atender as necessidades de funcionalidade com o mínimo de configurações que for necessário.
+
+Outro fator relevante para escolha dessa tecnologia, se dá por necessidade de aplicação interna no \gls{IFSC} em função da equipe possuir conhecimento na linguagem de desenvolvimento \texttt{Java}. O \texttt{SpringBoot} já é utilizado em outros projetos do setor de desenvolvimento de sistemas, o que pode favorecer a aceitação e implantação por parte da equipe.
+
+No que concerne à escolha para criação de serviços web, o setor de desenvolvimento do \gls{IFSC} possui dois sistemas que envolvem processos seletivos pelas regras de cotas, o primeiro é o sistema legado em \texttt{PHP}, tratado no Capítulo \ref{chap:historicoversoes} e o segundo é o novo Sistema Integrado de Gestão (SIG) que também contém um módulo responsável pela criação de processos seletivos e foi desenvolvido em \texttt{Java}. Portanto, a camada de serviços foi utilizada com intuito de permitir a utilização em sistemas distintos e independente de linguagem de alvo para geração.
+
+
+
+
