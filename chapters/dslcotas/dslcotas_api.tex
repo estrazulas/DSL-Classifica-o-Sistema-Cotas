@@ -1,4 +1,4 @@
-\section{A API da DSL de cotas}
+\section{A API DSL cotas}
 \label{apicotas}
 
 Em relação ao desafio abordado nos objetivos específicos da presente pesquisa, ao que diz respeito sobre a evolução entre versões e a geração de código fonte de classificação e aprovação de candidatos, foi criada uma \gls{API} a qual utiliza a estrutura de padronização das regras definidas na DSL Cotas como base para implementação dos algoritmos responsáveis por calcular o quadro de vagas, aprovar candidatos e definir a ordem de prioridade conforme regras definidas pelo usuário.
@@ -6,10 +6,50 @@ Em relação ao desafio abordado nos objetivos específicos da presente pesquisa
 
 Para tanto, a tecnologia escolhida com o projeto \texttt{SpringBoot}, o qual segundo \citeonline{walls2016spring}, oferece um novo paradigma de desenvolvimento de aplicações com o \texttt{Spring Framework}, possibilitando desenvolver aplicativos com mais agilidade focando em atender as necessidades de funcionalidade com o mínimo de configurações que for necessário.
 
-Outro fator relevante para escolha dessa tecnologia, se dá por necessidade de aplicação interna no \gls{IFSC} em função da equipe possuir conhecimento na linguagem de desenvolvimento \texttt{Java}. O \texttt{SpringBoot} já é utilizado em outros projetos do setor de desenvolvimento de sistemas, o que pode favorecer a aceitação e implantação por parte da equipe.
-
 No que concerne à escolha para criação de serviços web, o setor de desenvolvimento do \gls{IFSC} possui dois sistemas que envolvem processos seletivos pelas regras de cotas, o primeiro é o sistema legado em \texttt{PHP}, tratado no Capítulo \ref{chap:historicoversoes} e o segundo é o novo Sistema Integrado de Gestão (SIG) que também contém um módulo responsável pela criação de processos seletivos e foi desenvolvido em \texttt{Java}. Portanto, a camada de serviços foi utilizada com intuito de permitir a utilização em sistemas distintos e independente de linguagem de alvo para geração.
 
 
+Nas próximas Seções são descritos como os recursos do \texttt{Spring} que foram utilizados a criação das funcionalidades de classificação e aprovação de candidatos.
 
 
+\section{Componentes da API}
+\label{componentesapi}
+
+Inicialmente foi gerado um projeto \texttt{SpringBoot} por meio do site \texttt{start.spring.io}, no qual foram marcadas as opções de módulos necessários para desenvolvimento da pesquisa, tais como:
+
+\input{chapters/dslcotas/api/tabelas/componentespringboot}
+
+Após a inicialização do projeto, foi necessário criar as entidades de modelo necessárias para fazer o mapeamento do arquivo JSON gerado pela DSL Cotas, para isso foi utilizadas anotações \texttt{Json}, disponíveis pela biblioteca \texttt{jackson}. Um exemplo do mapeamento é apresentado pela Figura \ref{fig:jsonjackson}. 
+
+\input{chapters/dslcotas/api/imagens/jsonjackson}
+
+Desse modo, o modelo de regras gerado pela DSL Cotas é convertido para o objeto instância da classe \texttt{LeiDeCota}, que possui toda a estrutura de dados utilizada para armazenar e percorrer as regras definidas pelo usuário da DSL Cotas. 
+
+A API possui um controlador \texttt{REST} para cálculo de cotas, o qual fornece acesso às requisições \texttt{HTTP} que têm a função de: gerar o quadro de vagas, retornar a ordem de prioridade e aprovar uma lista de candidatos. Esse controlador por sua vez, utiliza os recursos do \texttt{Spring Data JPA} para conexão em um banco de dados H2, o qual é utilizado como meio de processar e aprovar a lista de candidatos passada.
+
+
+O relacionamento entre os principais componentes da \gls{API} e a DSL Cotas, pode ser observado na Figura \ref{fig:apicomponentes}. Adicionalmente o Código Fonte \ref{lst:restcontroller} mostra a assinatura das interfaces presentes no controlador \texttt{REST}.
+
+\input{chapters/dslcotas/api/imagens/apicomponentes}
+
+\lstinputlisting[language=Java, 
+caption=Endpoints no REST Controller  
+,label=lst:restcontroller]{chapters/trechos_codigo/restcontroler.m}
+
+\newpage
+O método \texttt{quadro-vagas} (Código Fonte \ref{lst:restcontroller}, Linha 5), recebe como parâmetro a quantidade de vagas e o identificador da versão, retornando uma lista de categorias com as respectivas siglas e quantidade de vagas (Figura \ref{fig:retquadrovagas}).
+
+\input{chapters/dslcotas/api/imagens/retquadrovagas}
+
+A aprovação é realizada no método \texttt{aprova-candidatos} (Código Fonte \ref{lst:restcontroller}, Linha 8), que recebe adicionalmente o parâmetro da lista de candidatos que deve ser processada. O seu retorno se dá por meio da mesma lista de candidatos, no entanto, já com a identificação da categoria de aprovação conforme a versão da lei de cotas desejada (Figura \ref{fig:retaprovacandidatos}).
+\input{chapters/dslcotas/api/imagens/retaprovacaocandidatos}
+
+A lista de candidatos é composta pela ordem de classificação, o código de inscrição, o código do curso a que o candidato concorre, a situação de inscrição, categoria de concorrência selecionada na inscrição e a situação de classificação. O campo \texttt{situacaoDeInscricao} inicia com a situação classificado (CLA), para que após processamento somente os candidatos aprovados sejam marcados como aprovados (APV). A categoria de classificação conforme o sistema de cotas é retornada no campo \texttt{situacaoDeClassificacao}.
+
+\newpage
+A interface de ordem de prioridade é atribuída ao método \texttt{ordem-prioridade} (Código Fonte \ref{lst:restcontroller}, Linha 13), esse possui apenas o parâmetro identificador da lei e retorna a lista de siglas conforme definição de prioridade feita pelo usuário na DSL Cotas (Figura \ref{fig:retordemprioridade}).
+
+\input{chapters/dslcotas/api/imagens/retordemprioridade}
+
+\newpage
+Por fim, no Capítulo \ref{chap:analise} é elencada a análise de resultados levantados pós coleta de dados com usuários, assim como a análise de testes realizados com os \texttt{endpoints} da API. Nesse capítulo também são apresentadas algumas mudanças na DSL Cotas que foram provenientes das sugestões de usuários que participaram da coleta.
