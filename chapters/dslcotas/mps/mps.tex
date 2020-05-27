@@ -1,17 +1,17 @@
 \section{Componentes da DSL Cotas no \gls{MPS}}
 \label{sec:mps}
 
-Nessa Seção são descritos os elementos de modelagem criados na ferramenta \gls{MPS} tais como: os componentes de estrutura (\texttt{structure concepts}), a sintaxe dos editores projecionais (\texttt{editors}), restrições de escopo (\texttt{constraints}), comportamentos de conceitos (\texttt{behaviors}), sistema de tipos (\texttt{typesystem}) e, por fim, os elementos de geração de texto (\texttt{textGen}).
+Nessa Seção são descritos os elementos de modelagem criados na ferramenta \gls{MPS} tais como: os componentes de estrutura (\texttt{structure concepts}), a sintaxe dos editores projecionais (\texttt{editors}), as restrições de escopo (\texttt{constraints}), os comportamentos de conceitos (\texttt{behaviors}), o sistema de tipos (\texttt{typesystem}) e, por fim, os elementos de geração de texto (\texttt{textGen}).
 
 \subsection{\textit{Componentes de estrutura}}
 \label{sub:sec:estrutura}
 
-\textit{Concepts} ou conceitos no \gls{MPS} servem para definir a estrutura base da linguagem, cada conceito pode conter propriedades, outros conceitos filhos \texttt{childrens} e referências para outros conceitos. Eles podem herdar ou implementar características de outros conceitos. A Figura \ref{fig:structure} apresenta a lista de conceitos criados para a DSL Cotas.
+\textit{Concepts} ou conceitos no \gls{MPS} servem para definir a estrutura base da linguagem, cada conceito pode conter propriedades, outros conceitos filhos (\texttt{childrens}) e referências para outros conceitos. Eles podem herdar ou implementar as características de outros conceitos. A Figura \ref{fig:structure} apresenta a lista de conceitos criados para a DSL Cotas.
 
 \input{chapters/dslcotas/mps/imagens/structurelist.tex}
 
 
-
+\newpage
 Esses conceitos definem a estrutura hierárquica da \gls{AST} de modo análogo ao modelo orientado a objetos, portanto, a Figura \ref{fig:classesmps} mostra a representação da modelagem dos conceitos em formato de diagrama de classes da \gls{UML}.
 
 \input{chapters/dslcotas/mps/imagens/classesmps.tex}
@@ -22,6 +22,7 @@ O conceito \texttt{LeiDeCota} é o elemento raiz  que pode ser instanciado no \g
 
 \input{chapters/dslcotas/mps/imagens/solutions.tex}
 
+
 Por sua vez, uma \texttt{LeiDeCota} está associada aos elementos descritos na Tabela \ref{tblelementoslei}:
 
 \input{chapters/dslcotas/mps/tabelas/tblelementoslei}
@@ -31,23 +32,23 @@ Para possibilitar a relação entre as regras definidas, alguns componentes da \
 \input{chapters/dslcotas/mps/imagens/references}
 
 \newpage
-Por fim, o conceito \texttt{Distribuicao} é o responsável por armazenar a árvore de distribuição, iniciando com a \texttt{CategoriaCota} raiz, na qual contém uma sigla, uma descrição, uma \texttt{Expression} onde será preenchida a reserva de vaga (percentuais fixos ou itens de \texttt{Configuracao} pré-definidos) e também uma lista de categorias filhas. 
+Por fim, o conceito \texttt{Distribuicao} é o responsável por armazenar a árvore de distribuição, iniciando com a \texttt{CategoriaCota} raiz, na qual contém uma sigla, uma descrição, uma \texttt{Expression} na qual será preenchida a reserva de vaga (percentuais fixos ou itens de \texttt{Configuracao} pré-definidos) e também uma lista de categorias filhas. 
 
 Na Subseção \ref{sub:sec:editores}, serão apresentados os editores criados para definição da sintaxe de cada conceito definido na modelagem.
 
 
 \subsection{\textit{Editores de conceitos}}
 \label{sub:sec:editores}
-O \gls{MPS} oferece aos projetistas uma abordagem de definição de sintaxe abstrata por meio de editores construídos com a notação de células. O \textit{designer} da linguagem combina as células do editor e as posiciona de maneira a refletir o layout final desejado da notação \cite{jetbrains}. 
+O \gls{MPS} oferece aos projetistas uma abordagem de definição de sintaxe abstrata por meio de editores construídos com a notação de células. O \textit{designer} da linguagem combina as células do editor e as posiciona de maneira a refletir o \textit{layout} final desejado da notação \cite{jetbrains}. 
 
-Por padrão os elementos \texttt{Concepts} não possuem um editor associado, o editor padrão permite a edição direta da \gls{AST} pelo usuário da linguagem. No entanto, o editor padrão não é de simples entendimento para os usuários finais da linguagem, sendo necessário definir como aquele conceito deverá ser apresentado e editado pelo usuário.
+Por padrão, os elementos \texttt{Concepts} não possuem um editor associado, o editor padrão permite a edição direta da \gls{AST} pelo usuário da linguagem. No entanto, o editor padrão não é de simples entendimento para os usuários finais da linguagem, sendo necessário definir como aquele conceito deverá ser apresentado e editado pelo usuário.
 
-Nesse sentido a Figura \ref{fig:editors}, apresenta a lista de editores criados para a DSL de cotas. As definições desses editores são apresentadas a seguir.
+Nesse sentido, a Figura \ref{fig:editors}, apresenta a lista de editores criados para a DSL de cotas. As definições desses editores são apresentadas a seguir.
 
 \input{chapters/dslcotas/mps/imagens/editors}
 
 
-O primeiro editor \texttt{LeiDeCota\_Editor} é responsável pela organização das informações relevantes para o modelo de cotas, na Figura \ref{fig:editorleicota} observa-se que ele é composto por uma coleção de células organizadas verticalmente, essa coleção é representada por \texttt{'[-' e '-]'}. Dentro de cada linha da coleção é possível utilizar propriedades básicas do conceito, como por exemplo o campo \texttt{name}. 
+O editor \texttt{LeiDeCota\_Editor} é responsável pela organização das informações relevantes para o modelo de cotas, na Figura \ref{fig:editorleicota}, observa-se que ele é composto por uma coleção de células organizadas verticalmente, essa coleção é representada por \texttt{'[-' e '-]'}. Dentro de cada linha da coleção é possível utilizar propriedades básicas do conceito, como por exemplo, o campo \texttt{name}. 
 
 \input{chapters/dslcotas/mps/imagens/editorleicota}
 
@@ -55,13 +56,13 @@ O primeiro editor \texttt{LeiDeCota\_Editor} é responsável pela organização 
 \newpage
 Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário também definir o respectivo editor. 
 
-Por se tratar de um editor de múltiplas projeções, é possível inserir nos editores do \gls{MPS} alguns recursos gráficos disponíveis em sua linguagem base, Java, como por exemplo elementos de \texttt{JTable} e \texttt{JButton} das bibliotecas gráficas \texttt{swing}. A Figura \ref{fig:swingbutton} demonstra um exemplo de como a célula \texttt{\$swing\_component\$} é implementada para inserir o botão de adição de novas configurações na DSL.
+Por se tratar de um editor de múltiplas projeções, é possível inserir nos editores do \gls{MPS} alguns recursos gráficos disponíveis em sua linguagem base, Java, como por exemplo, elementos de \texttt{JTable} e \texttt{JButton} das bibliotecas gráficas \texttt{swing}. A Figura \ref{fig:swingbutton} demonstra um exemplo de como a célula \texttt{\$swing\_component\$} é implementada para inserir o botão de adição de novas configurações na DSL.
 
 \input{chapters/dslcotas/mps/imagens/swingbutton}
 
-Com objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS} \cite{mbeddr}.}. Segundo , as tabelas podem ser usadas para representar coleções de dados estruturados ou apresentar preocupações bidimensionais.
+Com objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS} \cite{mbeddr}.}. Segundo \citeonline[]{XXXXX}, as tabelas podem ser usadas para representar coleções de dados estruturados ou apresentar preocupações bidimensionais.
 
-Nesse sentido, na Figura \ref{fig:tableeditor} é possível observar o \texttt{CategoriaCota\_Editor} onde as categorias filhas existentes são renderizadas com esse \textit{plugin} por meio dos comandos \texttt{table\{\}} e \texttt{getHeaders}, onde são iterados todos os seus filhos, de modo que as categorias sejam divididas por linhas indicando a sigla da categoria e o respectivo número de contagem de categorias, resultando no exemplo da Figura \ref{fig:tableeditorres}.
+Nesse sentido, na Figura \ref{fig:tableeditor} é possível observar o \texttt{CategoriaCota\_Editor} em que as categorias filhas existentes são renderizadas com esse \textit{plugin} por meio dos comandos \texttt{table\{\}} e \texttt{getHeaders}, nos quais são iterados todos os seus filhos, de modo que as categorias sejam divididas por linhas indicando a sigla da categoria e o respectivo número de contagem de categorias, resultando no exemplo da Figura \ref{fig:tableeditorres}.
 
 \input{chapters/dslcotas/mps/imagens/table}
 
@@ -74,7 +75,7 @@ Após a definição de editores para todos os conceitos do modelo da linguagem, 
 \subsection{\textit{Restrições de escopo}}
 \label{sub:sec:constraints}
 
-Na presente pesquisa utilizou-se do recurso de restrições de escopo, que se aplica nas restrições de acesso para referências de configurações e categorias de cotas, dentro do contexto de um elemento de \texttt{LeiDeCota} criado pelo usuário da DSL. Possibilitando, por exemplo, que o \gls{MPS} preencha o menu de \textit{code-complete} somente valores válidos para aquela versão da lei de cotas e não mostre opções existentes em  outras versões já definidas.
+Na pesquisa ora apresentada utilizou-se o recurso de restrições de escopo, que se aplica nas restrições de acesso para referências de configurações e de categorias de cotas, dentro do contexto de um elemento de \texttt{LeiDeCota} criado pelo usuário da DSL. Possibilitando, por exemplo, que o \gls{MPS} preencha o menu de \textit{code-complete} somente valores válidos para aquela versão da lei de cotas e não mostre opções existentes em  outras versões já definidas. Em relação a esse aspecto do MPS pode-se completar que:
  
 \begin{citacao}
 O aspecto de estrutura da linguagem pode ser insuficiente para expressar restrições avançadas para a DSL. O aspecto \texttt{constraints} do MPS fornece uma maneira de definir essas restrições adicionais. Referências dependem da definição de restrições de escopo, já que por padrão quando nenhum escopo é definido para uma referência, essas podem ser utilizadas em qualquer parte da modelagem da linguagem \cite[s/p, tradução nossa]{jetbrains}.
@@ -86,9 +87,9 @@ Desse modo, nos conceitos de \texttt{CategoriaCotaRef} e \texttt{ConfiguracaoCot
 
 \newpage
 
-Nesse sentido, \gls{MPS} inicia a procura por provedores de escopos nos ancestrais de \texttt{Configuracao} até encontrar algum conceito que sobrescreva a implementação do método \texttt{getScope} da classe \texttt{ScopeProvider} do \gls{MPS}. 
+Nesse sentido, o \gls{MPS} inicia a procura por provedores de escopos nos ancestrais de \texttt{Configuracao} até encontrar algum conceito que sobrescreva a implementação do método \texttt{getScope} da classe \texttt{ScopeProvider} do \gls{MPS}. 
 
-No caso da DSL Cotas o provedor de escopo foi o elemento \texttt{LeiDeCota} (Código Fonte \ref{lst:scopeprovider}), no qual todas as categorias da distribuição e as configurações de cota são adicionadas em uma lista (Linha 13) e retornadas por meio da criação de um \texttt{ListScope} (Linha 16) o qual é retornado sempre que acionado durantes os comandos de \texttt{code-complete} pelo usuário da linguagem (Figura \ref{fig:codecomplete}).
+No caso da DSL Cotas, o provedor de escopo foi o elemento \texttt{LeiDeCota} (Código Fonte \ref{lst:scopeprovider}), no qual todas as categorias da distribuição e as configurações de cota são adicionadas em uma lista (Linha 13) e retornadas por meio da criação de um \texttt{ListScope} (Linha 16), o qual é retornado sempre que acionado durante os comandos de \texttt{code-complete} pelo usuário da linguagem (Figura \ref{fig:codecomplete}).
 
 \lstinputlisting[language=Java, 
 caption=Implementação do ScopeProvider 
@@ -102,13 +103,13 @@ Na Seção \ref{sub:sec:comportamentos} é apresentado o aspecto de definição 
 \subsection{\textit{Comportamento dos elementos de conceito}}
 \label{sub:sec:comportamentos}
 
-Durante a manipulação \gls{AST} no \gls{MPS}, operações comuns são frequentemente extraídas para métodos utilitários, a fim de simplificar a tarefa e reutilizar a funcionalidades. O aspecto \textit{behavior} possibilita a criação de métodos de instância, métodos estáticos e construtores de instância dos conceitos \cite{jetbrains}.
+Durante a manipulação \gls{AST} no \gls{MPS}, operações comuns são frequentemente extraídas para métodos utilitários, a fim de simplificar a tarefa e de reutilizar as funcionalidades. O aspecto \textit{behavior} possibilita a criação de métodos de instância, métodos estáticos e construtores de instância dos conceitos \cite{jetbrains}.
 
-Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas a extração das regras em formato JSON pelo recurso de \texttt{textGen}. A Figura \ref{fig:behaviorlista} apresenta a lista dos \texttt{behaviors} presentes no fonte da DSL Cotas.
+Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas à extração das regras em formato JSON pelo recurso de \texttt{textGen}. A Figura \ref{fig:behaviorlista} apresenta a lista dos \texttt{behaviors} presentes no fonte da DSL Cotas.
 
 \input{chapters/dslcotas/mps/imagens/behaviorslista}
 
-Um exemplo de \texttt{concept behavior} é apresentado na Figura \ref{fig:behaviorcat}, para o conceito \texttt{CategoriaCota}, onde o método \texttt{isClag}, responsável por verificar se a categoria corrente é a categoria correspondente à ampla concorrência, possibilitando distingui-la e informar ao usuário o respectivo ramo na distribuição onde ela deve ser definida (Figura \ref{fig:behaviorcatuso}).
+Um exemplo de \texttt{concept behavior} é apresentado na Figura \ref{fig:behaviorcat}, para o conceito \texttt{CategoriaCota}, em que o método \texttt{isClag} é responsável por verificar se a categoria corrente é a correspondente à ampla concorrência, possibilitando distingui-la e informar ao usuário o respectivo ramo na distribuição em que ela deve ser definida (Figura \ref{fig:behaviorcatuso}).
 
 \input{chapters/dslcotas/mps/imagens/behaviorCategoria}
 
@@ -128,15 +129,15 @@ Segundo \citeonline{campagne2014mps}, o aspecto \textit{typesystem} do \gls{MPS}
 \subsection{\textit{Gerador textGen}}
 \label{sub:sec:texgen}
 
-Na presente pesquisa optou-se por implementar o código fonte de classificação de candidatos em formato de \gls{API} externa ao \gls{MPS}, por meio de leitura das definições da DSL Cotas e posterior extração em formato JSON. Isso foi possível mediante o uso do aspecto de \texttt{TextGen} do MPS.
+Na presente pesquisa optou-se por implementar o código fonte de classificação de candidatos em formato de \gls{API} externa ao \gls{MPS}, por meio de leitura das definições da DSL Cotas e, posterior, extração em formato JSON. Isso foi possível mediante ao uso do aspecto \texttt{TextGen} do MPS.
 
-O aspecto de \texttt{TextGen} do MPS define como o modelo da linguagem pode ser transformado em formato textual. Esse recurso é útil sempre que o modelo definido no MPS precise ser convertido diretamente para formato textual \cite{jetbrains}. 
+Esse aspecto define como o modelo da linguagem pode ser transformado em formato textual. Esse recurso é útil sempre que o modelo definido no MPS precise ser convertido diretamente para formato textual \cite{jetbrains}. 
 
-Para tanto, esse recurso requer que cada conceito do modelo seja criado um \textit{text gen component}, onde devem ser utilizadas operações do tipo \textit{append}, para que as informações sejam extraídas no formato texto desejado. Um exemplo da geração do conceito \texttt{CategoriaCota} pode ser observado na Figura \ref{fig:texgen}.
+Para tanto, esse recurso requer que cada conceito do modelo seja criado um \textit{text gen component}, no qual devem ser utilizadas operações do tipo \textit{append}, para que as informações sejam extraídas no formato de texto desejado. Um exemplo da geração do conceito \texttt{CategoriaCota} pode ser observado na Figura \ref{fig:texgen}.
 
 \input{chapters/dslcotas/mps/imagens/textgen}
 
 
-Por fim, esses componentes permitiram a construção da estrutura necessária para modelagem das regras do sistema de cotas por usuários não desenvolvedores. Em continuidade ao presente estudo, a Subseção \ref{apicotas} detalha a \gls{API} construída com o propósito validar os objetivos que concernem à geração do código fonte de classificação e aprovação de candidatos.
+Esses componentes permitiram a construção da estrutura necessária para modelagem das regras do sistema de cotas por usuários não desenvolvedores. Em continuidade ao presente estudo, a Subseção \ref{apicotas} detalha a \gls{API} construída com o propósito de validar os objetivos que concernem à geração do código fonte de classificação e aprovação de candidatos.
 
 \newpage
