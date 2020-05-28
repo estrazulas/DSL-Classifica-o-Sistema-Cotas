@@ -1,20 +1,20 @@
 \begin{enumerate}
  
- \item[a)] \texttt{Checking rules}: São regras de verificação que podem realizar uma busca no modelo à procura de padrões de erros conhecidos no código e relatá-los ao usuário, também são conhecidas como análise estática de código. O \gls{MPS} diferencia os problemas conforme a severidade: \textit{erros}, \textit{warning} e \textit{infos}, respectivamente, por meio de destaques nas cores vermelha, amarela e cinza.
+ \item[a)] \texttt{Checking rules}: São regras de verificação que podem realizar uma busca no modelo à procura de padrões de erros conhecidos no código e relatá-los ao usuário, também são conhecidas como análise estática de código. O \gls{MPS} diferencia os problemas conforme a severidade: \textit{erros}, \textit{warning} e \textit{infos}, respectivamente, por meio de destaques nas cores vermelha, amarela e cinza;
  
- \item[b)]\texttt{Inference Rules}: Uma regra de inferência para um determinado \textit{concept} é responsável principalmente por computar um tipo para instâncias desse conceito. O \gls{MPS} fornece uma série de métodos de inferência, tais como: expressões de \textit{typeof}, declarações \textit{when concrete}, \textit{equations} e \textit{inequations}, etc. Esses recursos podem ser utilizados, por exemplo, para verificar se o tipo de uma variável local é igual ao tipo da sua declaração.
+ \item[b)]\texttt{Inference Rules}: Uma regra de inferência para um determinado \textit{concept} é responsável principalmente por computar um tipo para instâncias desse conceito. O \gls{MPS} fornece uma série de métodos de inferência, tais como: expressões de \textit{typeof}, declarações \textit{when concrete}, \textit{equations} e \textit{inequations}, etc. Esses recursos podem ser utilizados, por exemplo, para verificar se o tipo de uma variável local é igual ao tipo da sua declaração;
  
  \item[c)]\texttt{Quick Fix}: São responsáveis por implementar correções automáticas, fornecendo uma função de transformação do modelo, eliminando o problema relatado para o usuário. Por exemplo, um quick fix poderia ser criado para eliminar automaticamente trechos de código ou declarações duplicadas.
 \end{enumerate}
 
 
-A Tabela \ref{tblcheckingrules}, apresenta a lista de \texttt{checking rules} implementadas na DSL Cotas:
+A Tabela \ref{tblcheckingrules}, apresenta a lista de \texttt{checking rules} implementadas na DSL Cotas, enquanto a Tabela \ref{tblquickfixes} elenca os elementos de \texttt{quick fixes} implementados como recursos de apoio ao usuário.
 
+\newpage
 \input{chapters/dslcotas/mps/tabelas/tblcheckingrules.tex}
-
-Ainda, no que concerne aos recursos de apoio ao usuário, a Tabela \ref{tblquickfixes} elenca os elementos de \textit{quick fixes} implementados.
-
+\newpage
 \input{chapters/dslcotas/mps/tabelas/quickfixes}
+
 
 Com relação aos recursos de regras de inferência (\textit{inference rules}), foram definidas as regras: \texttt{typeof\_CategoriaCota} e \texttt{typeof\_Configuracao}, criadas para verificar se os valores dos percentuais são preenchidos somente com expressões ou referências do tipo \texttt{double}.
 
