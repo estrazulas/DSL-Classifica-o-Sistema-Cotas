@@ -8,7 +8,7 @@ Segundo \citeonline{poltronieri2018usability}, há muito esforço para criar e u
 
 Desse modo, os instrumentos de coleta descritos são utilizados de modo a identificar as dificuldades de uso entre diferentes tipos de usuários, por meio de aplicação prática da DSL e, posterior, aplicação de questionário. 
 
-A fim de melhor sistematizar a organização dos dados optou-se por apresentar a análise por instrumento de coleta de dados e por grupo de usuários. Desse modo, a Subseção \ref{sec:analiseexercicio} expõe o resultados obtidos com o exercício prático proposto aos usuários convidados. Na Subseção \ref{sec:questionarioexercicio} são descritos os resultados obtidos com a aplicação do questionário após a realização do exercício. As Subseções \ref{sec:avaliacaoapi} e \ref{sec:mudanasresultantes} detalham os resultados dos testes com a API e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários.
+A fim de melhor sistematizar a organização dos dados optou-se por apresentar a análise por instrumento de coleta de dados e por grupo de usuários. Para tanto, a Subseção \ref{sec:analiseexercicio} expõe o resultados obtidos com o exercício prático proposto aos usuários convidados, assim como os resultados obtidos com a aplicação do questionário após a realização do exercício. As Subseções \ref{sec:avaliacaoapi} e \ref{sec:mudanasresultantes} detalham os resultados dos testes com a API e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários.
 
 
 Nesse sentido, considerando os diferentes perfis de usuário, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}.
@@ -42,12 +42,19 @@ Cada usuário recebeu por e-mail um manual  contendo as principais instruções 
 Essa versão foi escolhida por ser mais simples se comparada as versões mais recentes, requerendo um tempo menor de dedicação ao exercício e adequando a complexidade para todos os grupos dos diferentes perfis de usuários. 
 
 
-Com o intuito de avaliar o exercício foram contabilizados os acertos em relação aos elementos da linguagem de: distribuição de vagas (níveis e categorias criadas), configurações de percentuais (definição e utilização durante a distribuição), definição completa da ordem de prioridade (ordem indicada e quantidade de categorias presentes), quantidade de \textit{errors} e \textit{warnings} não resolvidos, e a presença de elementos extras nas definições que não foram solicitadas pelo exercício.
+Com o intuito de avaliar o exercício, todos os 20 exercícios foram salvos imediatamente após o término no sistema de controle de versão \texttt{git}. Cada usuário foi salvo em um \texttt{branch} disponível no repositório \texttt{https://github.com/spgroup/dsl-cotas/branches}.
+
+
+Durante essa análise foram contabilizados os acertos em relação aos seguintes elementos da linguagem: distribuição de vagas (níveis e categorias criadas), configurações de percentuais (definição e utilização durante a distribuição), definição completa da ordem de prioridade (ordem indicada e quantidade de categorias presentes), quantidade de \textit{errors} e \textit{warnings} não resolvidos, e a presença de versão da legislação mais recente implementada opcionalmente por alguns usuários.
 
 Desse modo, nas próximas Seções são apresentados os resultados da aplicação do exercício para cada grupo.
 
+\newpage
 \subsection{Resultados do Grupo DEV-ESP}
 \label{subsec:devesp}
+
+\input{chapters/analise/imagens/grupodevesp}
+
 
 
 \subsection{Resultados do Grupo DEV-NESP}
@@ -58,12 +65,6 @@ Desse modo, nas próximas Seções são apresentados os resultados da aplicaçã
 
 \subsection{Resultados do Grupo NDEV-NESP}
 \label{subsec:devesp}
-
-
-\section{Resultados obtidos com a aplicação do questionário}
-\label{sec:questionarioexercicio}
-
-
 
 
 \section{Resultados objetivos com a aplicação da API}
