@@ -83,7 +83,7 @@ Desse modo, nas próximas Seções são apresentados os resultados da aplicaçã
 \subsection{Resultados do Grupo DEV-ESP}
 \label{subsec:devesp}
 
-Em relação à pergunta "De modo geral, qual o grau de dificuldade para execução do exercício proposto?", em uma escala de 0(difícil) e 5(fácil), nesse grupo de usuários todos indicaram a nota 4 e 5. Ademais, foram realizadas as seguintes considerações:
+Em relação à pergunta "9. De modo geral, qual o grau de dificuldade para execução do exercício proposto?", em uma escala de 0(difícil) e 5(fácil), nesse grupo de usuários todos indicaram a nota 4 e 5. Ademais, foram realizadas as seguintes considerações:
 
  \begin{citacao}
  "Dúvidas de primeiro uso, do tipo -o que  mesmo que eu devia digitar maiúsculo?-, -será que preciso mesmo digitar 50.0 ou só 50?-,  entre outras do gênero. Como é execução de um exercício que é feito pela primeira vez, esse tipo de dúvida acaba não deixando totalmente fácil, pois eventualmente é necessário rever alguma instrução. Mas de resto, se já tiver esses detalhes na cabeça, a execução seria bem fácil (Usuário 20)."
@@ -115,6 +115,39 @@ Contudo, após o levantamento apresentado na Figura \ref{fig:quadro:grupodevesp}
 \subsection{Resultados do Grupo DEV-NESP}
 \label{subsec:devesp}
 
+Neste grupo, com relação à pergunta sobre o grau de dificuldade, os usuários apontaram os níveis 3 e 2 (três e dois).  Conforme o levantamento descrito na Figura \ref{fig:quadro:grupodevnesp},  observou-se um tempo maior para o exercício do Usuário 5 (Mais de 30min), enquanto no exercício do Usuário 6 constaram vários erros não resolvidos na distribuição de vagas, em sua maioria em relação ao padrão de nomenclatura das siglas das categorias de cotas (Figura \ref{fig:errodevnesp}). 
+
+\input{chapters/analise/imagens/errosdevnesp}
+
+\input{chapters/analise/imagens/grupodevnesp}
+
+
+
+Adicionalmente à questão sobre o grau de dificuldade foram feitos os seguintes comentários:
+
+\begin{enumerate}
+    \item [a)] "Foi difícil entender o funcionamento do sistema (Usuário 5)";
+    \item [b)] "No exercício não compreendi se era pra utilizar a a ordem de prioridade ou não, se segue o padrão de uma árvore ou teria que informar. A questão do arredondamento ficou um pouco confusa, depois que entendi que é apenas uma configuração caso utilizar números quebrados nos percentuais (Usuário 11)";
+    \item [c)] "Tive dificuldade em entender a proposta por não conhecer a lei especifica.  (Usuário 14)".    
+\end{enumerate}
+
+Portanto, nota-se a dificuldade de entendimento de questões relacionadas à legislação do sistema de cotas e adicionalmente algumas dificuldades sobre uso do elemento de ordem de prioridade da linguagem. 
+
+Em continuidade a essa análise, apresentam-se as considerações sobre a questão assertiva sobre as limitações da linguagem: "Não observei a execução de uma emulação de processo em pratica (Usuário 5)", "As sugestões das mensagens informativas não são claras o suficiente (Usuário 11)".
+
+Considerando a limitação apontada pelo Usuário 5, observa-se a falta do \textit{feedback} por parte da DSL para simulação em tempo real da distribuição de vagas, uma vez que a função responsável por fazer os cálculos do quadro de vagas foi implementada apenas na API DSL Cotas. 
+
+Novamente foram apontados problemas nas mensagens geradas pela linguagem, conforme relato do Usuário 11. Esse usuário relata que: "O video didático poderia ser mais alto e com mais instruções de utilização.", indicando que são necessárias mais instruções, no manual e vídeo explicativo, pra conseguir melhorar o entendimento da linguagem. 
+
+Ademais, as seguintes sugestões foram levantadas por meio da pergunta discursiva número 15 do questionário:
+
+\begin{citacao}
+A linguagem auxilia a documentar o processo. Acredito que ela implemente a execução da coleta de dados. Espero que ela saiba ler os dadas de varias bases diferentes, e não exija um tratamento nestes dados muito extenso, senão é talvez mais viável inserir diretamente os dados em uma base relacional e executar as ordenações necessárias (Usuário 5).
+\end{citacao}
+
+Tendo em vista os apontamentos descritos para o grupo, observa-se que a falta de entendimento nas regras de domínio dificulta o uso da linguagem (Usuários 11 e 14), no entanto há maiores preocupações relacionadas à simulação e à detalhes de implementação para o processamento final das regras (Usuário 5).
+
+\newpage
 \subsection{Resultados do Grupo NDEV-ESP}
 \label{subsec:devesp}
 
