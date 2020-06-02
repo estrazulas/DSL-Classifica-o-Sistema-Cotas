@@ -152,10 +152,53 @@ Tendo em vista os apontamentos descritos para o grupo, observa-se que a falta de
 \subsection{Resultados do Grupo NDEV-ESP}
 \label{subsec:devesp}
 
+Nessa Subseção são analisados os usuários nos quais os dados do perfil indicam maior proximidade com relação aos possíveis usuários finais da DSL Cotas, esses usuários em sua maioria já participaram da organização de processos seletivos com base no sistema de cotas, no entanto não possuem nenhuma experiência com ferramentas de desenvolvimento de sistemas.
+
+A Figura \ref{fig:dificuldadendevesp} demonstra o gráfico elaborado para as 8 (oito) respostas do grupo em relação à pergunta 11 do formulário , na qual em uma escala de 1 (difícil) a 5 (fácil) foi possível identificar que 50\% dos usuários tiveram maior facilidade (escala 4), 25\% indicaram a escala intermediária de dificuldade (escala 3) e os demais consideraram o uso da DSL como difícil (escalas 1 e 2). 
+
+\input{chapters/analise/imagens/dificuldadendevesp}
+
+Considerando os comentários dos usuários sobre essa pergunta, destacam-se as seguintes observações:
+
+\begin{enumerate}
+    \item [a)] "É necessário familiarizar-se com o ambiente proposto para o exercício.  (Usuário 1)";
+    
+    \item [b)] "Apenas dificuldade inicial para entender a lógica dos comandos. Logo após este entendimento, tornou-se fácil a utilização. O tutorial está muito claro, mas talvez um melhor suporte com menagens informativas no próprio ambiente, ao clicar nas etapas (Usuário 7)";
+    
+    \item [c)] "Primeiro momento parece simples, mas como preencher corretamente, as siglas finais, fiquei um pouco confusa, e ao preencher um percentual no próximo só dar ctrl + backspace ou somente colocar RESTANTE\_VAGAS... No final da ordem de como vai ser preenchido os restantes de vaga precisava ser um pouco mais claro, .. no geral é uma ótima ferramenta, mas necessitaria mais algumas aulas para ficar fera (Usuário 10)";
+    
+    \item [d)] "Demorei um pouco para entender o funcionamento, a regra do sistema, mesmo após ver o vídeo explicativo. Após isso, interpretar a lei, ou o exercício, e aplicar no sistema também surtiu uma certa dificuldade - refiz 3 vezes até entender que estava de acordo com o proposto (Usuário 13)";
+    
+    \item[e)] "O preenchimento na distribuição de vagas, sendo o entendimento do funcionamento das regras, apos ter uma dificuldade com a variável pré existente de RESTANTE\_VAGAS, e a relação com as configurações acima, o procedimento ficou mais claro (Usuário 18)".
+\end{enumerate}
+
+Portanto, observa-se que esse grupo teve dificuldades relacionadas ao uso de comandos e regras da DSL, no que concerne a etapa de distribuição de vagas. Todos os usuários citados relatam que essas dificuldades foram resolvidas após algum tempo de uso da DSL Cotas.
+
+Destaca-se que, 2 (dois) usuários do grupo (Usuário 4 e 7) implementaram a versão mais atualizada da legislação, na qual é composta de 5(cinco) níveis de distribuição e 9 (nove) categorias, incluindo a subdivisão para candidatos PCD (Figura \ref{fig:ndevesp}). Essa versão não foi proposta pelo exercício e, mesmo assim, esses usuários avançaram na utilização da DSL Cotas opcionalmente. Isso pode indicar que, apesar das dificuldades encontradas, foi possível utilizar a DSL Cotas até para situações mais complexadas não previstas pelo exercício.
+
+
+\input{chapters/analise/imagens/figndevesp}
+
+Nesse grupo, o Usuário 4 levou mais de 1 (uma) hora para fazer a implementação do exercício, embora este também tenha utilizado a versão mais recente como base para descrição na DSL Cotas. Os demais, em sua maioria, conseguiram finalizar o exercício entre 15 e 30 minutos (Figura \ref{fig:quadro:grupondevesp}).
 
 \input{chapters/analise/imagens/grupondevesp}
 
+Sobre a pergunta assertiva "11. Na sua avaliação quais as principais limitações da linguagem proposta?", 4 (quatro) usuários apontaram que a principal limitação é: "As sugestões das mensagens informativas não são claras o suficiente". O Usuário 13 relatou que "O layout talvez não seja tão amigável para leigos em programação, o que dificulta um pouco para identificar onde clicar e o que digitar".
 
+Assim como nos demais grupos de usuários, o grupo NDEV-ESP sugere melhorias nas mensagens informativas e na apresentação dos elementos da linguagem. Adicionalmente, algumas considerações foram observadas após análise da pergunta discursiva número "15. Comentários e Sugestões":
+
+\begin{enumerate}
+    \item [a)] "Afim de evitar erros e facilitar a compreensão, o sistema poderia apresentar, ao operador, uma simulação da distribuição de vagas para cada cota. Ex: Inicialmente o sistema mostra na variável RESTANTE\_VAGAS o valor 100 (ou outro valor). Após inserida a cota de ampla concorrência (CLAG) com percentagem de 50\%, a variável RESTANTE\_VAGAS apresenta o valor 50 e a CLAG apresenta o valor 50. E assim para todas as outras cotas. Ao final, seriam apresentadas as quantitativos de vagas para cada uma das cotas conforme os quadros dos editais de ingresso. (Usuário 1)";
+    \item [b)] "O ambiente parece bastante prático e dinâmico, com facilidade de adaptação às necessidades de cada tipo de processo seletivo. (Usuário 7)";    
+    \item [c)] "O manual de instruções está bem explicado, porém, por ser uma linguagem nova, pode haver dificuldade na interpretação das instruções, como foi meu caso. Confundi algumas instruções simples pois fiquei focado tentando entender os demais comandos que não conhecia. Porém, saliento que após utilizar a primeira vez, o sistema é de fácil manuseio. (Usuário 17)";   
+    \item [d)] "Não tem um entendimento claro sobre as configurações de percentual. Ex: quando nas configurações eu preencho um percentual de PPI -  este é sobre o valor total ou sobre o valor da categoria que ele pertencer posteriormente. (Usuário 18)".
+\end{enumerate}
+
+Esses comentários rementem à sugestões de melhorias, tais como: a necessidade de simulação prévia da distribuição e maior clareza sobre o modo de configuração dos percentuais das categorias. Ademais, apensar de dificuldades na interpretação e uso dos comandos (Usuário 17), observou-se que há facilidade de adaptação às necessidades de cada tipo de processo seletivo (Usuário 7).
+
+Por fim, considerando que os usuários do grupo conseguiram avançar no uso da DSL Cotas já no primeiro contato com a DSL Cotas, mesmo sem ter conhecimento em desenvolvimento de sistemas, conclui-se que após se acostumarem com a ferramenta, os usuários com domínio nas regras do sistema de cotas conseguem utilizar a DSL como meio de descrever as regras existentes na legislação.
+
+\newpage
 \subsection{Resultados do Grupo NDEV-NESP}
 \label{subsec:devesp}
 
