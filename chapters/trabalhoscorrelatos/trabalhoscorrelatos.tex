@@ -1,7 +1,31 @@
 \section{Trabalhos Correlatos}
 \label{subsection:trabalhoscorrelatos}
+ Segundo \citeonline{tahawalid2009}, existem duas maneiras diferentes pelas quais um domínio pode ser definido. A primeira é quando o domínio está bem definido matematicamente, a segunda quando o domínio é definido por atividades puramente humanas. As DSLs de domínio humano, definem uma linguagem especial ou jargões para comunicar ideias relacionadas ao seu domínio.  
+ 
+ Nesse contexto, os trabalhos correlatos encontrados mostraram formas de abstrair conceitos e jargões envolvendo questões legais, contratuais e regras sobre domínios financeiros. Os domínios dessas DSLs foram definidos com objetivo de apoiar na compreensão de atividades humanas e não de tratar de problemas computacionais ou matemáticos.
+ 
+ Para tanto, as DSLs descritas nas próximas Seções foram encontradas por meio da busca pelas palavras-chave (domain specific languages, DSL, law e legal)  nos repositórios, \textit{Researchgate}, \textit{Google Scholar} e \textit{IEEEXplore}.
+ 
+ 
+\subsection{LegalLanguage}
+\label{legallanguage}
+
+A DSL \texttt{LegalLanguage} é resultado da análise de ontologias que tratam de estrutura de documentos legais, sua construção busca estabelecer modelos conceituais com propósito de melhoria de comunicação e aprendizado sobre definições encontradas em textos normativos.
+
+\input{chapters/trabalhoscorrelatos/imagens/legallanguagemodel}
+
+Segundo \citeonline{legallanguage}, o seu modelo é composto de \textit{Laws}, que podem ser classificadas como: Leis internacionais, regulamentos públicos, regulamentos privados, constituições e leis ordinárias. As leis são compostas por uma série artigos ordenados sequencialmente, os quais são organizados em divisões. É possível criar relacionamentos hierárquicos entre artigos de diferentes elementos de lei, bem como indicar revogações quando novas leis surgem (Figura \ref{fig:legallanguagemodel}). 
+
+Segundo \citeonline[p.45, tradução nossa]{legallanguage}: "O desenvolvimento dessa linguagem tem como objetivo apoiar parlamentares que executam atividades inseridas em processos legislativos de redação de leis". Portanto, os autores à criaram utilizando a ferramenta \texttt{Xtext}, um exemplo de definição e uso do elemento \texttt{Law} pode ser observado nas Figuras \ref{fig:xtextlegal} e \ref{fig:legallanguageexample}.
+
+\input{chapters/trabalhoscorrelatos/imagens/xtextlegal}
 
 
+\input{chapters/trabalhoscorrelatos/imagens/legallanguageexample}
+
+
+
+\newpage
 \subsection{Ergo uma \textit{DSL} para acordos Legais}
 \label{ergo}
 
