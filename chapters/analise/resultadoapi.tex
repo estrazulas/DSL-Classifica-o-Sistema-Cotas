@@ -1,2 +1,30 @@
 \section{Resultados obtidos com a API DSL Cotas}
 \label{sec:avaliacaoapi}
+
+Nessa Seção são descritos os resultados provenientes dos testes da API DSL Cotas, nos quais tiveram como objetivo principal a comparação do histórico de processos seletivos do \gls{IFSC} com o resultado gerado pela API, de modo a verificar a conformidade de seus resultados em relação às legislações vigentes e/ou mais antigas.
+
+Essa análise contou com a seleção aleatória de 16 processos seletivos, incluindo 403 cursos do tipo: técnico integrado, concomitante, subsequente, proeja e graduação. Nesse contexto, foram considerados os resultados de 13494 candidatos no período de 2013 até 2020, nos quais foi possível testar 2 (duas) das versões já processadas pelo sistema de ingresso, além das demais alterações de código ocorridas no período. 
+
+Não foi possível fazer o comparativo com a versão intermediária descrita na Seção \ref{versao2} do Capítulo \ref{chap:historicoversoes}, uma vez que não houve processamento de resultados na época, pois o código precisou ser atualizado com a versão mais recente disponibilizada pelo MEC, antes da sua utilização nos processos seletivos.
+
+Como resultado dos testes, foi gerado um relatório contendo as colunas, "Versão de lei utilizada", "Edital", "Identificador do Curso", "Número de vagas", "Código de Inscrição", "Classificação", "Categoria esperada" e "Resultado da conferência". Para cada candidato, foi acionado o \textit{endpoint} \texttt{aprovaCandidatos} em classe de testes do \texttt{JUnit}, na qual foram realizadas requisições \texttt{HTTP} passando a lista de inicial de candidatos inscritos, sem a situação de classificação.
+
+A listagem resultante da API passou por comparação de todas as siglas de situação de classificação conforme o sistema de cotas, sendo possível retornar e comparar a sigla de situação original presente na base do sistema de ingresso. Desse modo, foi verificado que 81 dos 403 cursos apresentaram divergências nas listas de classificação de candidatos.
+
+Essas divergências foram marcadas em 297 candidatos dos 13494 registros utilizados. Para cada curso com divergência foi realizada uma análise manual que teve como objetivo identificar o problema, o motivo e uma possível solução. Essas divergências foram agrupadas nas seguintes \textit{issues} cadastradas no repositório \texttt{https://github.com/estrazulas/dsl-cotas-gen/issues}:
+
+\begin{enumerate}
+    \item[a)] \textbf{Candidato sem situação de classificação}: Situação encontrada em 2 (dois) cursos, o problema apresenta alguns candidatos sem sigla de categoria na lista resultante com o uso da API. Nos 2 (dois) caso o motivo da divergência aponta para o fato do teste ter sido realizado apenas em candidatos de primeira chamada, sendo que os candidatos com problema foram convocados posteriormente pelo sistema de ingresso. Não sendo um problema a ser solucionado pela API, uma vez que em chamadas posteriores as situações seriam recalculadas.
+    
+    \item[b)] \textbf{Cursos com candidatos em rechamada}: Em 31 dos cursos testados foram encontrados candidatos em situação de inscrição "REC" ou re-chamados, no entanto a seleção de candidatos para aplicação do testes apenas considerou a busca por candidatos de primeira chamada e em situação "CLA", sigla utilizada antes da etapa de aprovação e atribuição de categorias. Os candidatos re-chamados faziam parte de uma regra de negócio antiga do sistema, que dava a oportunidade de serem reconvocados para matrícula em chamadas posteriores, e por esse motivo não entraram no filtro de comparação de candidatos em primeira chamada.
+    
+    \item[c)] \textbf{Candidato cotista convocado como ampla concorrência}: Em apenas um curso foi encontrado um candidato de inscrição por cotas, na API foi marcado para a categoria correta, no entanto no sistema de ingresso consta com a categoria de ampla concorrência, após análise manual do processamento, identificou-se que seguindo as regras de processamento o candidato da posição 18 deveria ter sido convocado como cotista. No entanto, não foi identificado a causa dessa divergência, sendo possível que na época esse candidato tenha sido alterado manualmente em base de dados.
+    
+      
+    \item[d)] \textbf{Candidato da ampla concorrência classificado como cotista}: A divergência com maior numero de casos (42 cursos do \gls{SISU}), após análise no processamento foi identificado que os candidatos inscritos como cotistas com pontuação superior aos de candidatos da ampla concorrência (CLAG), foram aprovados pelo \gls{SISU} como cotistas, quando em todos os demais processos seletivos do sistema o funcionamento sugere que os primeiros candidatos sejam selecionados e classificados pela categoria CLAG. Em síntese o processamento foi diferente do processamento do SISU, o que não pode ser resolvido no contexto da presente pesquisa.
+    
+\end{enumerate}
+
+Nos demais casos de divergência, foram identificados candidatos com problemas relacionados à operações na base de dados em função de abertura de chamados do setor demandante, ou situações que puderam ser identificadas e resolvidas por meio de correção do código da API. O detalhamento completo das divergências, assim como o relatório utilizado para a análise estão disponíveis no repositório \textit{github} citado.
+
+Por fim, essa análise sugere que na maioria dos casos de cursos testados foi possível combinar o formalismo definido pela DSL Cotas em conjunto com a API, de modo a validar os diferentes tipos de cursos e versões da legislação já utilizadas pelo \gls{IFSC}. A sua utilização pode favorecer a produtividade e evolução de novas alterações em lei, de maneira agnóstica sem estar atrelada a uma \gls{GPL} específica, uma vez que sua construção foi concebida a nível de serviços \textit{web}.
