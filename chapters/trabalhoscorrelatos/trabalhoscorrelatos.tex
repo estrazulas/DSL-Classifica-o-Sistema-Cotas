@@ -26,7 +26,7 @@ Segundo \citeonline[p.45, tradução nossa]{legallanguage}: "O desenvolvimento d
 
 
 \newpage
-\subsection{Ergo uma \textit{DSL} para Contratos Legais Inteligentes}
+\subsection{Ergo uma DSL para Contratos Legais Inteligentes}
 \label{ergo}
 
 Ergo é uma linguagem específica de domínio que faz parte do projeto Accord, o qual define a base jurídica e técnica para contratos legais inteligentes, com objetivo de atender à problemas relacionados a falta de padronização em contratos legais. 
@@ -46,5 +46,20 @@ Um exemplo de linguagem natural pode ser observado na Figura \ref{fig:ergotexto}
 
 \newpage
 
-\subsection{DSLFIN uma \textit{DSL} para sistemas financeiros}
-\label{dslfin}
+\subsection{DSL Capgemini Pension}
+\label{capgeminipension}
+
+Segundo \citeonline{gregfuller2013}, foi criada com o objetivo de atender ao domínio de planos de previdência e fornecimento de planos de seguros de pensão, no qual cada plano pode conter centenas de regras específicas, tratadas conforme o histórico de até 40 anos de dados funcionais para milhares de segurados. 
+
+ Para \citeonline{kolkhenk2008}, essa linguagem advém da necessidade de inovação em produtos da área e é baseada em interesses governamentais, no sentido de que há a necessidade de adequação à novas leis de pensão, dar transparência sobre as regras e fornecer garantia de qualidade. 
+
+
+
+Criada com a ferramenta \texttt{Intentional Software} para construção de DSLs projecionais, ela permite que as definições das regras dos planos sejam realizadas em formato gráfico no formato de tabelas (Figura \ref{fig:dslcapgeminitables}) e permite fazer testes unitários para fazer validações das regras em tempo real (Figura \ref{fig:dslcapgeminiunittests}). 
+
+\input{chapters/trabalhoscorrelatos/imagens/dslcapgeminitables}
+
+\input{chapters/trabalhoscorrelatos/imagens/dslcapgeminiunittests}
+
+O ambiente da linguagem substitui uma série de planilhas, documentos de texto e outras fontes de controle utilizadas por múltiplos especialistas de domínio no contexto de gerenciamento dos planos de pensão. Dessa forma, a \textit{Pension Workbench} traz um ambiente colaborativo controlado, com sistema integrado de controle de versão, sendo passível criar testes unitários e gerar a \textit{engine} responsável pelos cálculos para a administração dos planos e fundos de pensão \cite{gregfuller2013}.
+
