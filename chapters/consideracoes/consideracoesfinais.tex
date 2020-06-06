@@ -1,23 +1,6 @@
 \chapter{Conclusões}
 \label{chap:consideracoes}
 
-
-
-O avanço na complexidade das regras de negócio, traz consigo uma série de discussões e estudos que objetivam abstrair e simplificar a sua implementação nos sistemas de informação, de modo a reduzir os impactos durante o seu desenvolvimento, podendo melhorar o desempenho das organizações.   
-
-Nesse contexto, a pesquisa proposta busca atacar as dificuldades encontradas durante a recorrente demanda por refatoração de código fonte do sistema de ingresso do \gls{IFSC}, em função de mudanças nas regras estabelecidas em leis, decretos e instruções normativas de órgãos de controle.
-
-A pesquisa contextualiza uma série de demandas de alteração no sistema de ingresso do \gls{IFSC}, que trazem forte dependência entre os especialistas de domínio e os desenvolvedores, no sentido de que as regras precisam ser traduzidas em várias linhas de código, para que sejam criadas as funcionalidades que implementam classificação de candidatos conforme os requisitos de lei.
-
-Portanto, são fundamentados os principais conceitos de linguagens específicas de domínio, que possibilitam definir uma sintaxe mais simples para o usuário, para tratar apenas questões de negócio, sem que esses precisem se preocupar com conhecimentos mais complexos de programação, mas ainda assim colaborando com o processo de modelagem e construção da solução.
-
-As ferramentas modernas de \gls{DSL}, permitem a especificação de gramáticas e estruturas de linguagem, sem que haja a necessidade de manualmente criar um \textit{parser}. Elas permitem a validação e criação de estruturas e tipos de dados, assim como fornecem uma série de recursos para apoio ao usuário da linguagem, podendo agilizar o processo de definição de regras, e a respectiva geração de código fonte.
-
-Por meio dos conceitos abordados e da justificativa de escolha da ferramenta \gls{MPS}, a presente pesquisa propõe duas \gls{DSL}s, uma com foco no usuário especialista de negócio e outra que objetiva a configuração dos parâmetros de geração do código fonte (foco no desenvolvedor). Ambas são utilizadas para atingir o mesmo objetivo, porém tratam de preocupações diferentes: conceitos necessários para definição de regras de negócio e conceitos de programação para desenvolvedores que irão implementar o gerador do algoritmo resultante.
-
-Será proposta uma pesquisa qualitativa com os usuários de negócio, na qual a usabilidade da linguagem será avaliada por meio de experimento. Por fim, foi definido um cronograma de 12 meses, descrevendo as atividades necessárias para conclusão dos objetivos dessa 
-pesquisa.
-
 \input{chapters/trabalhoscorrelatos/trabalhoscorrelatos.tex}
 
 \section{Escopo negativo da pesquisa}
@@ -44,3 +27,31 @@ Por fim, infere-se que além da relevância teórico-prática para a implementa�
 
 \section{Trabalhos Futuros}
 \label{trabalhosfuturos}
+
+Como proposta de trabalhos futuros sugere-se:
+
+\begin{enumerate}
+    \item [a)] Verificar a adesão da DSL Cotas por usuários especialistas e desenvolvedores de outras instituições de ensino pública federais;
+    \item [b)] Disponibilizar publicamente os serviços da API DSL Cotas para implantação em redes de ensino federadas, com intuito de verificar a aplicação em outras bases de dados por meio da colaboração e testes com outros setores de desenvolvimento de sistemas da rede; 
+    \item [c)] Criar um repositório de controle de versão centralizado para publicação das definições de regras de cotas presentes nas diferentes instituições e estados, de modo que se possa verificar a transparência nas regras utilizadas e garantir a rastreabilidade de alterações realizadas conforme cada edital de processo seletivo que requer atendimento da legislação de cotas;
+    \item [d)] Investigar outras de outras formas de visualização e geração de código a partir da DSL Cotas, tais como: geração de editais, geração do quadro de vagas, geração de resultados e geração de elementos de interface gráfica para sistemas e aplicativos de inscrição em processos seletivos de modo que possam ser apresentadas as definições de categorias durante o processo de inscrição até o momento final de classificação;
+    \item [e)] Avaliar e modelar alterações na DSL Cotas para aplicação em outros tipos de processos seletivos que envolvam classificação por cotas fora do âmbito da Lei nº 12.711.
+\end{enumerate}
+
+\section{Considerações finais}
+\label{considfinal}
+
+O avanço na complexidade das regras de negócio, traz consigo uma série de discussões e estudos que objetivam abstrair e simplificar a sua implementação nos sistemas de informação, de modo a reduzir os impactos durante o seu desenvolvimento, podendo melhorar o desempenho das organizações.   
+
+Nesse contexto, a pesquisa proposta busca atacar as dificuldades encontradas durante a recorrente demanda por refatoração de código fonte do sistema de ingresso do \gls{IFSC}, em função de mudanças nas regras estabelecidas em leis, decretos e instruções normativas de órgãos de controle.
+
+A pesquisa contextualiza uma série de demandas de alteração no sistema de ingresso do \gls{IFSC}, que trazem forte dependência entre os especialistas de domínio e os desenvolvedores, no sentido de que as regras precisam ser traduzidas em várias linhas de código, para que sejam criadas as funcionalidades que implementam classificação de candidatos conforme os requisitos de lei.
+
+Portanto, são fundamentados os principais conceitos de linguagens específicas de domínio, que possibilitam definir uma sintaxe mais simples para o usuário, para tratar apenas questões de negócio, sem que esses precisem se preocupar com conhecimentos mais complexos de programação, mas ainda assim colaborando com o processo de modelagem e construção da solução.
+
+As ferramentas modernas de \gls{DSL}, permitem a especificação de gramáticas e estruturas de linguagem, sem que haja a necessidade de manualmente criar um \textit{parser}. Elas permitem a validação e criação de estruturas e tipos de dados, assim como fornecem uma série de recursos para apoio ao usuário da linguagem, podendo agilizar o processo de definição de regras, e a respectiva geração de código fonte.
+
+Por meio dos conceitos abordados e da justificativa de escolha da ferramenta \gls{MPS}, a presente pesquisa propõe duas \gls{DSL}s, uma com foco no usuário especialista de negócio e outra que objetiva a configuração dos parâmetros de geração do código fonte (foco no desenvolvedor). Ambas são utilizadas para atingir o mesmo objetivo, porém tratam de preocupações diferentes: conceitos necessários para definição de regras de negócio e conceitos de programação para desenvolvedores que irão implementar o gerador do algoritmo resultante.
+
+Será proposta uma pesquisa qualitativa com os usuários de negócio, na qual a usabilidade da linguagem será avaliada por meio de experimento. Por fim, foi definido um cronograma de 12 meses, descrevendo as atividades necessárias para conclusão dos objetivos dessa 
+pesquisa.
