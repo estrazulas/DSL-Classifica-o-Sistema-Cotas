@@ -1,7 +1,7 @@
 \subsection{Versão 1 - Início do sistema de Cotas, Lei Nº 12.711 de 2012}
 \label{versao1}
 
-Inicialmente, o sistema de ingresso foi construído sem considerar cotas, ou seja, a classificação era por pontuação ou nota de vestibular, não havia exigência de lei em função de reserva de vagas. As chamadas para matrículas eram realizadas pela ordem geral de classificação e alguns critérios de desempate. Hoje apenas alguns tipos de processos seguem este molde, como por exemplo, cursos de curta duração, ou cursos internos que não se aplicam à legislação.
+Inicialmente, o sistema de ingresso foi construído sem considerar cotas, ou seja, a classificação era por pontuação ou nota de vestibular, não havia exigência de lei em função de reserva de vagas. As chamadas para matrículas eram realizadas pela ordem geral de classificação e alguns critérios de desempate. Hoje apenas alguns tipos de processos seguem este molde, como por exemplo, cursos de curta duração ou cursos internos que não se aplicam à legislação.
 
 Com o surgimento da lei Nº 12.711 de 2012, vem também a demanda do governo para que as instituições reservem 50\% das vagas para estudantes do ensino médio que estudaram exclusivamente em escolas públicas, e dentro desses 50\% deveria ser reservado um percentual para estudantes cuja renda familiar fosse inferior a 1.5 salários mínimos per capita:
 
@@ -11,7 +11,7 @@ Parágrafo único.  No preenchimento das vagas de que trata o caput deste artigo
 Art. 3o  Em cada instituição federal de ensino superior, as vagas de que trata o art. 1o desta Lei serão preenchidas, por curso e turno, por autodeclarados pretos, pardos e indígenas, em proporção no mínimo igual à de pretos, pardos e indígenas na população da unidade da Federação onde está instalada a instituição, segundo o último censo do Instituto Brasileiro de Geografia e Estatística (IBGE) \cite{leicotas}.
 \end{citacao}
 
-Com esse objetivo, o algoritmo de classificação que era uma consulta SQL foi separado em 3 funções PHP de nome: \texttt{calcula\_vagasAcoesAfirmativas}, \texttt{aprova\_Candidatos} e \texttt{retorna\_OrdemdePreenchimentodeVagasNaoOcupadas}.  A primeira função faz a geração do quadro de vagas, a segunda a seleção dos candidatos para serem aprovados e atualizar a contagem de vagas em cada categoria e a última para retornar a ordem de preenchimento em caso de sobra de vagas.
+Com esse objetivo, o algoritmo de classificação que era uma consulta SQL foi separado em 3 funções PHP de nome: \texttt{calcula\_vagasAcoesAfirmativas}, \texttt{aprova\_Candidatos} e \texttt{retorna\_OrdemdePreenchimentodeVagasNaoOcupadas}.  A primeira função faz a geração do quadro de vagas; a segunda, a seleção dos candidatos para serem aprovados e atualizar a contagem de vagas em cada categoria e, a última, para retornar a ordem de preenchimento em caso de sobra de vagas.
 
 Tendo em vista que há uma divisão categórica das vagas entre os candidatos, foi preciso criar 5 (cinco) tipos de situações de classificação para cada combinação de cotas possível, essas categorias foram definidas conforme a Tabela \ref{tabela_categoriasv1}.
 
@@ -25,7 +25,7 @@ Dadas as situações de classificação possíveis, o primeiro passo do algoritm
 caption=Função que calcula o quadro de vagas
 ,label=lst:quadrovagas]{chapters/trechos_codigo/calculaquadrovagas.m}
 
-Basicamente, o que a função \texttt{calcula\_vagasAcoesAfirmativas} faz é separar as vagas conforme os seguintes passos:
+Basicamente, o que a função \texttt{calcula\_vagasAcoesAfirmativas} faz é separar as vagas, conforme os seguintes passos:
 
 \begin{enumerate}
     \item Linha 1 - Dado o total de vagas do curso;
@@ -40,12 +40,12 @@ Basicamente, o que a função \texttt{calcula\_vagasAcoesAfirmativas} faz é sep
     \item Linha 20 - O total de vagas de estudantes de Renda Superior que NÃO são autodeclarados PPI (AAEPRSNPPI) é obtido após diminuir o total de vagas para renda inferior AAEPSI - o total armazenado em (AAEPRSPPI).
 \end{enumerate}{}
 
-Um exemplo do resultado da geração do quadro de vagas, para um cenário de curso com 40 vagas,  pode ser visto na Figura \ref{fig:cenario1}.
+Um exemplo do resultado da geração do quadro de vagas para um cenário de curso com 40 vagas,  pode ser visto na Figura \ref{fig:cenario1}.
 
 \input{chapters/sistemaingresso_versoes/cenarios/cenario1.tex}
 
 \newpage
-Tendo com base o quadro de vagas, o algoritmo de classificação de candidatos utiliza a função \texttt{aprova\_Candidatos} descrita no Código Fonte \ref{lst:algoritmoaprovacao}, fazendo a seleção dos candidatos para aprovação em cada categoria até atingir o total de vagas disponíveis. 
+Tendo como base o quadro de vagas, o algoritmo de classificação de candidatos utiliza a função \texttt{aprova\_Candidatos} descrita no Código Fonte \ref{lst:algoritmoaprovacao}, fazendo a seleção dos candidatos para aprovação em cada categoria até atingir o total de vagas disponíveis. 
 
 \lstinputlisting[language=PHP, 
 caption=Função de aprovação de candidatos
