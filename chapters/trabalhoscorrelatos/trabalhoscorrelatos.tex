@@ -14,9 +14,9 @@ A DSL \texttt{LegalLanguage} é resultado da análise de ontologias que tratam d
 
 \input{chapters/trabalhoscorrelatos/imagens/legallanguagemodel}
 
-Segundo \citeonline{legallanguage}, o seu modelo é composto de \textit{Laws}, que podem ser classificadas como: Leis internacionais, regulamentos públicos, regulamentos privados, constituições e leis ordinárias. As leis são compostas por uma série artigos ordenados sequencialmente, os quais são organizados em divisões. É possível criar relacionamentos hierárquicos entre artigos de diferentes elementos de lei, bem como indicar revogações quando novas leis surgem (Figura \ref{fig:legallanguagemodel}). 
+Segundo \citeonline{legallanguage}, o seu modelo é composto de \textit{Laws}, que podem ser classificadas como: Leis internacionais, regulamentos públicos, regulamentos privados, constituições e leis ordinárias. As leis são compostas por uma série de artigos ordenados sequencialmente, os quais são organizados em divisões. É possível criar relacionamentos hierárquicos entre artigos de diferentes elementos de lei, bem como indicar revogações quando novas leis surgem (Figura \ref{fig:legallanguagemodel}). 
 
-Segundo \citeonline[p.45, tradução nossa]{legallanguage}: "O desenvolvimento dessa linguagem tem como objetivo apoiar parlamentares que executam atividades inseridas em processos legislativos de redação de leis". Portanto, os autores à criaram utilizando a ferramenta \texttt{Xtext}, um exemplo de definição e uso do elemento \texttt{Law} pode ser observado nas Figuras \ref{fig:xtextlegal} e \ref{fig:legallanguageexample}.
+Segundo \citeonline[p.45, tradução nossa]{legallanguage}: "O desenvolvimento dessa linguagem tem como objetivo apoiar parlamentares que executam atividades inseridas em processos legislativos de redação de leis". Portanto, os autores a criaram utilizando a ferramenta \texttt{Xtext}, um exemplo de definição e uso do elemento \texttt{Law} pode ser observado nas Figuras \ref{fig:xtextlegal} e \ref{fig:legallanguageexample}.
 
 \input{chapters/trabalhoscorrelatos/imagens/xtextlegal}
 
@@ -29,14 +29,14 @@ Segundo \citeonline[p.45, tradução nossa]{legallanguage}: "O desenvolvimento d
 \subsection{Ergo uma DSL para Contratos Legais Inteligentes}
 \label{ergo}
 
-Ergo é uma linguagem específica de domínio que faz parte do projeto Accord, o qual define a base jurídica e técnica para contratos legais inteligentes, com objetivo de atender à problemas relacionados a falta de padronização em contratos legais. 
+Ergo é uma linguagem específica de domínio que faz parte do projeto Accord, o qual define a base jurídica e técnica para contratos legais inteligentes, com objetivo de atender aos problemas relacionados à falta de padronização em contratos legais. 
 
-Segundo \citeonline{accordproject}, a linguagem tem o foco de ajudar desenvolvedores da área de tecnologia jurídica na escrita de contratos legais que possam ser computados. Um contrato legal inteligente é um contrato legível por seres humanos e por máquinas, por exemplo, uma clausula de cobrança de pagamento pode estar presente em um contrato, de modo que se possa utilizar o texto descrito em linguagem natural, para extração dos dados de cobrança e posterior aplicação de cálculos de multas e geração de eventos de notificações. 
+Segundo \citeonline{accordproject}, a linguagem tem o foco de ajudar desenvolvedores da área de tecnologia jurídica na escrita de contratos legais que possam ser computados. Um contrato legal inteligente é um contrato legível por seres humanos e por máquinas, por exemplo, uma cláusula de cobrança de pagamento pode estar presente em um contrato, de modo que se possa utilizar o texto descrito em linguagem natural, para extração dos dados de cobrança e posterior aplicação de cálculos de multas e geração de eventos de notificações. 
 
 
-É uma linguagem fortemente tipada e independente de plataforma, seu código pode ser compilado nas plataformas \texttt{JavaScrit} e \texttt{Java}. Ela prove uma linguagem de expressões, pela qual é possível descrever funções e clausulas de modo que possa ser definida a lógica de contratos inteligentes. 
+É uma linguagem fortemente tipada e independente de plataforma, seu código pode ser compilado nas plataformas \texttt{JavaScrit} e \texttt{Java}. Ela provê uma linguagem de expressões, pela qual é possível descrever funções e cláusulas de modo que possa ser definida a lógica de contratos inteligentes. 
 
-Um exemplo de linguagem natural pode ser observado na Figura \ref{fig:ergotexto}, no qual os dados sobre a clausula de cobrança são mapeados, para posteriormente serem modelados e terem a lógica de cobrança seja definida (Figuras \ref{fig:ergomodelo} e \ref{fig:ergologica}). 
+Um exemplo de linguagem natural pode ser observado na Figura \ref{fig:ergotexto}, no qual os dados sobre a cláusula de cobrança são mapeados para posteriormente serem modelados e terem a lógica de cobrança seja definida (Figuras \ref{fig:ergomodelo} e \ref{fig:ergologica}). 
 
 \input{chapters/trabalhoscorrelatos/imagens/ergotexto}
 
@@ -51,11 +51,11 @@ Um exemplo de linguagem natural pode ser observado na Figura \ref{fig:ergotexto}
 
 Segundo \citeonline{gregfuller2013}, foi criada com o objetivo de atender ao domínio de planos de previdência e fornecimento de planos de seguros de pensão, no qual cada plano pode conter centenas de regras específicas, tratadas conforme o histórico de até 40 anos de dados funcionais para milhares de segurados. 
 
- Para \citeonline{kolkhenk2008}, essa linguagem advém da necessidade de inovação em produtos da área e é baseada em interesses governamentais, no sentido de que há a necessidade de adequação à novas leis de pensão, dar transparência sobre as regras e fornecer garantia de qualidade. 
+ Para \citeonline{kolkhenk2008}, essa linguagem advém da necessidade de inovação em produtos da área e é baseada em interesses governamentais, no sentido de que há a necessidade de adequação às novas leis de pensão, dar transparência sobre as regras e fornecer garantia de qualidade. 
 
 
 
-Criada com a ferramenta \texttt{Intentional Software} para construção de DSLs projecionais, ela permite que as definições das regras dos planos sejam realizadas em formato gráfico no formato de tabelas (Figura \ref{fig:dslcapgeminitables}) e permite fazer testes unitários para fazer validações das regras em tempo real (Figura \ref{fig:dslcapgeminiunittests}). 
+Criada com a ferramenta \texttt{Intentional Software} para construção de DSLs projecionais, ela permite que as definições das regras dos planos sejam realizadas em formato gráfico no estilo de tabelas de Excel (Figura \ref{fig:dslcapgeminitables}) e permite fazer testes unitários para validar as regras em tempo real (Figura \ref{fig:dslcapgeminiunittests}). 
 
 \input{chapters/trabalhoscorrelatos/imagens/dslcapgeminitables}
 
@@ -63,3 +63,6 @@ Criada com a ferramenta \texttt{Intentional Software} para construção de DSLs 
 
 O ambiente da linguagem substitui uma série de planilhas, documentos de texto e outras fontes de controle utilizadas por múltiplos especialistas de domínio no contexto de gerenciamento dos planos de pensão. Dessa forma, a \textit{Pension Workbench} traz um ambiente colaborativo controlado, com sistema integrado de controle de versão, sendo passível criar testes unitários e gerar a \textit{engine} responsável pelos cálculos para a administração dos planos e fundos de pensão \cite{gregfuller2013}.
 
+Portanto, esses trabalhos correlatos assemelham-se à presente pesquisa no sentido de abordarem DSLs como meio de abstração de conhecimento de negócio. Eles visam a melhoria de processos que necessitem de maior clareza por parte dos envolvidos, criando um ambiente controlado que possa favorecer ao desenvolvimento do produto desejado pelos usuários especialistas. 
+
+Considerando a DSL desenvolvida por esse estudo, a seguir serão apresentados: o escopo negativo da pesquisa, as suas principais contribuições e os trabalhos futuros sugeridos.
