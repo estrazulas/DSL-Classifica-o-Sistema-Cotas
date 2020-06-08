@@ -54,17 +54,17 @@ O editor \texttt{LeiDeCota\_Editor} é responsável pela organização das infor
 
 
 \newpage
-Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário também definir o respectivo editor. 
+Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário definir o respectivo editor. 
 
 Por se tratar de um editor de múltiplas projeções, é possível inserir nos editores do \gls{MPS} alguns recursos gráficos disponíveis em sua linguagem base, \texttt{Java}, como por exemplo, elementos de \texttt{JTable} e \texttt{JButton} das bibliotecas gráficas \texttt{swing}. A Figura \ref{fig:swingbutton} demonstra um exemplo de como a célula \texttt{\$swing\_component\$} é implementada para inserir o botão de adição de novas configurações na DSL.
 
 \input{chapters/dslcotas/mps/imagens/swingbutton}
 
-Com objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS} \cite{mbeddr}.}. Segundo \citeonline{voelter2014supporting}, as tabelas podem ser usadas para representar coleções de dados estruturados que abordem problemas bidimensionais. 
+Com o objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS} \cite{mbeddr}.}. Segundo \citeonline{voelter2014supporting}, as tabelas podem ser usadas para representar coleções de dados estruturados que abordem problemas bidimensionais. 
 
 A organização em formato de tabelas permite uma melhor visualização para os usuários leigos durante a esquematização das regras da legislação. Desse modo, não se deixou de utilizar os benefícios de modelagem por meio de \gls{DSL}s, porém agregou-se a tabela como um facilitador de entendimento. Ademais, o \textit{plugin} utilizado possuía bons materiais de documentação e exemplos, permitindo criar a projeção gráfica de maneira simplificada. 
 
-Nesse contexto, na Figura \ref{fig:tableeditor} é possível observar o \texttt{CategoriaCota\_Editor} em que as categorias filhas existentes são renderizadas com esse \textit{plugin} por meio dos comandos \texttt{table\{\}} e \texttt{getHeaders}, nos quais são iterados todos os seus filhos, de modo que as categorias sejam divididas por linhas indicando a sigla da categoria e o respectivo número de contagem, resultando no exemplo da Figura \ref{fig:tableeditorres}.
+Nesse contexto, na Figura \ref{fig:tableeditor} é possível observar o \texttt{CategoriaCota\_Editor} em que as categorias filhas existentes são renderizadas com esse \textit{plugin} por meio dos comandos \texttt{table\{\}} e \texttt{getHeaders}. Portanto, são iterados todos os elementos passados, de modo que as categorias sejam divididas por linhas indicando a sigla da categoria e o respectivo número de contagem, resultando no exemplo da Figura \ref{fig:tableeditorres}.
 
 \input{chapters/dslcotas/mps/imagens/table}
 
@@ -98,7 +98,7 @@ caption=Implementação do ScopeProvider
 
 \input{chapters/dslcotas/mps/imagens/codecomplete}
 
-Na Seção \ref{sub:sec:comportamentos} é apresentado o aspecto de definição de comportamentos de conceitos (\textit{behaviors}) da DSL Cotas.
+Na Subseção \ref{sub:sec:comportamentos} é apresentado o aspecto de definição de comportamentos de conceitos (\textit{behaviors}) da DSL Cotas.
 
 
 \subsection{\textit{Comportamento dos elementos de conceito}}
@@ -106,7 +106,7 @@ Na Seção \ref{sub:sec:comportamentos} é apresentado o aspecto de definição 
 
 Durante a manipulação \gls{AST} no \gls{MPS}, operações comuns são frequentemente extraídas para métodos utilitários, a fim de simplificar a tarefa e de reutilizar as funcionalidades. O aspecto \textit{behavior} possibilita a criação de métodos de instância, métodos estáticos e construtores de instância dos conceitos \cite{jetbrains}.
 
-Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas à extração das regras em formato JSON pelo recurso de \texttt{textGen}. A Figura \ref{fig:behaviorlista} apresenta a lista dos \texttt{behaviors} presentes no fonte da DSL Cotas.
+Na presente pesquisa, esse aspecto foi utilizado principalmente para simplificar implementações de verificações de inconsistências, fazer validações, implementar operações de \textit{quick fixes} para o usuário da linguagem e também para apoio em questões relacionadas à extração das regras em formato JSON pelo recurso de \texttt{textGen}. A Figura \ref{fig:behaviorlista} apresenta a lista dos \texttt{behaviors} presentes no código fonte da DSL Cotas.
 
 \input{chapters/dslcotas/mps/imagens/behaviorslista}
 
@@ -118,7 +118,7 @@ Um exemplo de \texttt{concept behavior} é apresentado na Figura \ref{fig:behavi
 \input{chapters/dslcotas/mps/imagens/behaviorCategoriauso}
 
 \newpage
-Em continuação ao objetivo de descrever os recursos que fornecem apoio aos usuários da linguagem, a Seção \ref{sub:sec:typesystem} apresenta o sistema de tipos criado para a DSL Cotas, o qual possibilita a definição controlada das regras de cotas para o usuário final.
+Em continuação ao objetivo de descrever os recursos que fornecem apoio aos usuários da linguagem, a Subseção \ref{sub:sec:typesystem} apresenta o sistema de tipos criado para a DSL Cotas, o qual possibilita a definição controlada das regras de cotas para o usuário final.
 
 
 \subsection{\textit{Sistema de tipos}}
@@ -143,6 +143,6 @@ Para tanto, esse recurso requer que cada conceito do modelo seja criado um \text
 \input{chapters/dslcotas/mps/imagens/textgen}
 
 
-Esses componentes permitiram a construção da estrutura necessária para modelagem das regras do sistema de cotas por usuários não desenvolvedores. Em continuidade ao presente estudo, a Subseção \ref{apicotas} detalha a \gls{API} construída com o propósito de validar os objetivos que concernem à geração do código fonte de classificação e aprovação de candidatos.
+Esses componentes permitiram a construção da estrutura necessária para modelagem das regras do sistema de cotas. Em continuidade ao presente estudo, a Seção \ref{apicotas} detalha a \gls{API} construída com o propósito de validar os objetivos que concernem à geração do código fonte de classificação e aprovação de candidatos.
 
 \newpage

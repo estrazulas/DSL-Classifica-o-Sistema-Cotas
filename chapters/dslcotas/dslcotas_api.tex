@@ -6,10 +6,10 @@ Em relação ao desafio abordado nos objetivos específicos dessa pesquisa, no q
 
 Para tanto, a tecnologia escolhida foi o projeto \texttt{SpringBoot}, o qual segundo \citeonline{walls2016spring}, oferece um novo paradigma de desenvolvimento de aplicações com o \texttt{Spring Framework}, possibilitando desenvolver aplicativos com mais agilidade, focando em atender as necessidades de funcionalidade com o mínimo de configurações que for necessário.
 
-No que concerne à escolha para criação de serviços web, o setor de desenvolvimento do \gls{IFSC} possui dois sistemas que envolvem processos seletivos, o primeiro é o sistema legado em \texttt{PHP}, tratado no Capítulo \ref{chap:historicoversoes} e o segundo é o novo Sistema Integrado de Gestão (SIG) que também contém um módulo responsável pela criação de processos seletivos e foi desenvolvido em \texttt{Java}. Portanto, a camada de serviços foi empregada com o intuito de permitir a utilização em sistemas distintos e independente de linguagem de alvo para geração de código fonte.
+No que concerne à escolha para criação de serviços web, o setor de desenvolvimento do \gls{IFSC} possui dois sistemas que envolvem processos seletivos, o primeiro é o sistema legado em \texttt{PHP}, tratado no Capítulo \ref{chap:historicoversoes} e o segundo, é o novo Sistema Integrado de Gestão (SIG) que também contém um módulo responsável pela criação de processos seletivos e foi desenvolvido em \texttt{Java}. Portanto, a camada de serviços foi empregada com o intuito de permitir a utilização em sistemas distintos de modo independente de linguagem alvo para geração de código fonte.
 
 
-Nas próximas Seções são descritos como os recursos do \texttt{Spring} que foram utilizados a criação das funcionalidades de classificação e aprovação de candidatos.
+Nas próximas Subseções são detalhados os recursos do \texttt{Spring} que foram utilizados na criação das funcionalidades de classificação e aprovação de candidatos.
 
 
 \subsection{Componentes da API}
@@ -23,7 +23,7 @@ Após a inicialização do projeto foram criadas as entidades de modelo necessá
 
 \input{chapters/dslcotas/api/imagens/jsonjackson}
 
-Desse modo, o modelo de regras gerado pela DSL Cotas é convertido para o objeto instância da classe \texttt{LeiDeCota}, que possui toda a estrutura de dados utilizada para armazenar e percorrer as regras definidas pelo usuário da DSL Cotas. 
+Desse modo, o modelo de regras gerado pela DSL Cotas é convertido para o objeto instância da classe \texttt{LeiDeCota}, que possui toda a estrutura de dados utilizada para armazenar e percorrer as regras definidas pelo usuário.
 
 A API possui um controlador \texttt{REST} para cálculo de cotas, o qual fornece acesso às requisições \texttt{HTTP} que têm a função de: gerar o quadro de vagas, retornar a ordem de prioridade e aprovar uma lista de candidatos. Esse controlador por sua vez, utiliza os recursos do \texttt{Spring Data JPA} para conexão em um banco de dados H2, o qual é utilizado como meio de processar e aprovar a lista de candidatos passada.
 
@@ -44,7 +44,7 @@ O método \texttt{quadro-vagas} (Código Fonte \ref{lst:restcontroller}, Linha 5
 A aprovação é realizada no método \texttt{aprova-candidatos} (Código Fonte \ref{lst:restcontroller}, Linha 8), que recebe adicionalmente o parâmetro da lista de candidatos que deve ser processada. O seu retorno se dá por meio da mesma lista de candidatos, no entanto, já com a identificação da categoria de aprovação, conforme a versão da lei de cotas desejada (Figura \ref{fig:retaprovacandidatos}).
 \input{chapters/dslcotas/api/imagens/retaprovacaocandidatos}
 
-A lista de candidatos é composta pela ordem de classificação, o código de inscrição, o código do curso a que o candidato concorre, a situação de inscrição, categoria de concorrência selecionada na inscrição e a situação de classificação. O campo \texttt{situacaoDeInscricao} inicia com a situação classificado (CLA), para que após processamento somente os candidatos aprovados sejam marcados como aprovados (APV). A categoria de classificação conforme o sistema de cotas é retornada no campo \texttt{situacaoDeClassificacao}.
+A lista de candidatos é composta pela ordem de classificação, o código de inscrição, o código do curso a que o candidato concorre, a situação de inscrição, categoria de concorrência selecionada na inscrição e a situação de classificação. O campo \texttt{situacaoDeInscricao} inicia com a situação classificado (CLA), para que após o processamento somente os candidatos aprovados sejam marcados como aprovados (APV). A categoria de classificação conforme o sistema de cotas é retornada no campo \texttt{situacaoDeClassificacao}.
 
 \newpage
 A interface de ordem de prioridade é atribuída ao método \texttt{ordem-prioridade} (Código Fonte \ref{lst:restcontroller}, Linha 13), esse possui apenas o parâmetro identificador da lei e devolve a lista de siglas conforme a definição de prioridade feita pelo usuário na DSL Cotas (Figura \ref{fig:retordemprioridade}).
