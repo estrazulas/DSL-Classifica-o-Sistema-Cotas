@@ -5,30 +5,30 @@
 
 \begin{tabular}{|p{6cm}|p{8cm}|}
 \hline
-\texttt{categoria\_resestante\_vagas} & Regra que busca identificar se o último ramo de uma divisão de vagas é preenchida pelo usuário com a constante \texttt{RESTANTE\_VAGAS}.                                                                                      \\ \hline
-\texttt{categoria\_unica} & Regra para impedir siglas de categorias de cotas duplicadas.                         \\ \hline
-\texttt{codigo\_versao\_lei}          & Regra para validar padrões de preenchimento dos dados de identificação da lei de cotas.                                       \\ \hline
-\texttt{configuracao\_simples}          & Regra para impedir que o usuário preencha expressões complexas em uma definição do conceito \texttt{Configuracao}.
+\texttt{categoria\_resestante\_vagas} & Busca identificar se o último ramo de uma divisão de vagas é preenchida pelo usuário com a constante \texttt{RESTANTE\_VAGAS}.                                                                                      \\ \hline
+\texttt{categoria\_unica} & Impede siglas de categorias de cotas duplicadas.                         \\ \hline
+\texttt{codigo\_versao\_lei}          & Valida padrões de preenchimento dos dados de identificação da lei de cotas.                                       \\ \hline
+\texttt{configuracao\_simples}          & Impede que o usuário preencha expressões complexas em uma definição do conceito \texttt{Configuracao}.
                         \\ \hline
-\texttt{divisao\_pelo\_menos\_dois\_ramos}          & Regra que garante que uma divisão de categoria possua pelo menos 2 (duas) categorias, exceto o ramo raiz.
+\texttt{divisao\_pelo\_menos\_dois\_ramos}          & Garante que uma divisão de categoria possua pelo menos 2 (duas) categorias, exceto o ramo raiz.
                         \\ \hline
-\texttt{filha\_sem\_reserva}          & Regra que verifica se todas as categorias possuem o campo de percentual de reserva preenchido.
+\texttt{filha\_sem\_reserva}          & Verifica se todas as categorias possuem o campo de percentual de reserva preenchido.
 
 \\ \hline
                
-\texttt{formato\_sigla\_cota}          & Regra para fazer o \textit{matching} da \texttt{String} de siglas de cota, permitindo apenas caracteres alfanuméricos maiúsculos.
+\texttt{formato\_sigla\_cota}          & Faz o \textit{matching} da \texttt{String} de siglas de cota, permitindo apenas caracteres alfanuméricos maiúsculos.
 \\ \hline
 
-\texttt{distribuicao\_nome}          & Regra para garantir que o ramo raiz \texttt{TOTAL\_VAGAS} não tenha o nome alterado pelo usuário da DSL.
+\texttt{distribuicao\_nome}          & Garante que o ramo raiz \texttt{TOTAL\_VAGAS} não tenha o nome alterado pelo usuário da DSL.
 \\ \hline
 
-\texttt{ordem\_prioridade\_duplicada}          & Regra para validar se o usuário informou uma categoria de cota duplicada no conceito \texttt{OrdemPrioridadeCotas}.
+\texttt{ordem\_prioridade\_duplicada}          & Valida se o usuário informou uma categoria de cota duplicada no conceito \texttt{OrdemPrioridadeCotas}.
 \\ \hline
 
-\texttt{ordem\_prioridade\_catfilhas}          & Regra que gera um \textit{warning} para o usuário quando uma categoria não foi informada na seção \texttt{OrdemPrioridadeCotas}.
+\texttt{ordem\_prioridade\_catfilhas}          & Gera um \textit{warning} para o usuário quando uma categoria não foi informada na seção \texttt{OrdemPrioridadeCotas}.
 \\ \hline
 
-\texttt{warning\_nm\_inic\_cota}          & Regra que sugere um nome de preenchimento para a sigla de cota que inicie com o prefixo da cota anterior, por exemplo: a cota de estudantes de renda inferior (sigla RI), que fica dentro da categoria de escola pública (sigla EP), tem como sugestão EP\_RI, para facilitar a identificação.
+\texttt{warning\_nm\_inic\_cota}          & Sugere um nome de preenchimento para a sigla de cota que inicie com o prefixo da cota anterior, por exemplo: a cota de estudantes de renda inferior (sigla RI), que fica dentro da categoria de escola pública (sigla EP), tem como sugestão EP\_RI, para facilitar a identificação.
 \\ \hline
 
 \end{tabular}

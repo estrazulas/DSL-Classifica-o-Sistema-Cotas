@@ -1,17 +1,14 @@
 \chapter{ANÁLISE DOS RESULTADOS DA  PESQUISA}
 \label{chap:analise}
 
-Este Capítulo apresenta a análise dos dados obtidos em relação aos 2 (dois) instrumentos de coleta de dados (exercício de avaliação da DSL Cotas e o questionário aplicado com usuários), bem como, os resultados com os testes da API DSL Cotas. Esses instrumentos têm como foco verificar se a DSL Cotas atinge seus objetivos em relação à perspectiva dos usuários. 
-
-
 Segundo \citeonline{poltronieri2018usability}, há muito esforço para criar e usar \gls{DSL}s como recurso de facilitar a construção do sistema, aumentar a produtividade e facilitar a manutenção. No entanto, as \gls{DSL}s tratam do problema de domínio (usuários especialistas) e não somente do domínio de solução (desenvolvedores/engenheiros de software), isso significa que nem sempre há aceitação e entendimento entre esses usuários.
 
-Desse modo, os instrumentos de coleta descritos são utilizados para identificar as dificuldades de uso entre os diferentes tipos de usuários, por meio de aplicação prática da DSL e, posterior, aplicação de questionário. 
+Nesse sentido, este Capítulo apresenta a análise dos dados obtidos em relação aos 2 (dois) instrumentos de coleta de dados (exercício de avaliação da DSL Cotas e o questionário aplicado com usuários), bem como, os resultados com os testes da API DSL Cotas. Esses instrumentos têm como foco verificar se a DSL Cotas atinge seus objetivos em relação à perspectiva dos diferentes grupos de usuários. 
 
-A fim de melhor sistematizar a organização dos dados optou-se por apresentar a análise por grupo de usuários, sendo realizado no término da análise um comparativo entre eles. Para tanto, a Seção \ref{sec:analiseexercicio} expõe os resultados obtidos com o exercício prático proposto aos usuários convidados, assim como os resultados obtidos com a aplicação do questionário após a realização do exercício. As próximas Seções detalham os resultados dos testes com a API e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários.
+Para melhor sistematizar a organização dos dados optou-se por apresentar a análise por grupos de usuários, considerando os diferentes perfis de usuário, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}. Na Seção \ref{sec:perguntasaplicadas} são apresentados os dados gerais sobre as perguntas aplicadas com os usuários, enquanto a Seção \ref{sec:analiseexercicio} expõe os resultados obtidos com o exercício prático proposto aos usuários convidados, os resultados obtidos com a aplicação do questionário após a realização do exercício e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários. Por fim, a Seção \ref{sec:avaliacaoapi} detalha os resultados dos testes com a API.
 
 
-Nesse sentido, considerando os diferentes perfis de usuário, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}.
+
 
 
 \section{Identificação dos perfis de usuários}
@@ -27,6 +24,11 @@ A Figura \ref{fig:perfilusuarios} apresenta o perfil de cada usuário que partic
     \item[d)] \texttt{NDEV-NESP}: usuários não conhecedores da legislação e não desenvolvedores, de modo que pudesse ser identificado se as pessoas com esse perfil teriam dificuldades com a utilização da linguagem.
 \end{enumerate}
 
+
+\begin{landscape}
+\input{chapters/analise/imagens/perfilusuarios}
+\end{landscape}
+
 \section{Informações obtidas com o questionário}
 \label{sec:perguntasaplicadas}
 
@@ -38,27 +40,31 @@ O formulário \textit{on-line} recebeu 20 respostas, das quais contou com a repr
 
 \input{chapters/analise/imagens/exerienciacargo}
 
+\newpage
 Para levantar o conhecimento e a experiência sobre o sistema de cotas da rede de ensino federal foram submetidas as seguintes perguntas: "6. Você já atuou em sistemas ou processos seletivos que utilizam regras de classificação para candidatos cotistas?" e "7. Qual o seu grau de conhecimento sobre o sistema de cotas da Lei nº 12.711/2012 e suas atualizações?" (Figura \ref{fig:grauconhecimento}).
 
 \input{chapters/analise/imagens/grauconhecimento}
 
+Com intuito de identificar se os usuários já tiveram contato com outras DSLs, a pergunta "8. Você já utilizou alguma Linguagem de Domínio Específica? Exemplos: HTML, Excel, Latex, SQL, etc.", mostrou que 55\% dos usuários já tiveram contato com outras aplicações ou softwares que utilizam alguma \gls{DSL}, enquanto os demais apontaram não conhecer nenhuma DSL (Figura \ref{fig:usodsl}).
 
+\input{chapters/analise/imagens/usodsl}
+
+\newpage
 Em continuidade, foram adicionadas as seguintes perguntas responsáveis pelo levantamento de dificuldades de uso com a DSL:
 
 \begin{enumerate}
-    \item[a)] 8. Você já utilizou alguma Linguagem de Domínio Específica?;
+
+    \item[a)] 9. De modo geral, qual o grau de dificuldade para execução do exercício proposto?;
     
-    \item[b)] 9. De modo geral, qual o grau de dificuldade para execução do exercício proposto?;
+    \item[b)] 10. Considerando a sua resposta na pergunta anterior, qual(is) a(s) dificuldade(s) encontrada(s)?;
     
-    \item[c)] 10. Considerando a sua resposta na pergunta anterior, qual(is) a(s) dificuldade(s) encontrada(s)?;
+    \item[c)] 11. Na sua avaliação quais as principais limitações da linguagem proposta?  ;
     
-    \item[d)] 11. Na sua avaliação quais as principais limitações da linguagem proposta?  ;
-    
-   \item[e)]  12. Quais dos materiais abaixo você utilizou para execução do exercício?;
+   \item[d)]  12. Quais dos materiais abaixo você utilizou para execução do exercício?;
    
-   \item[f)] 13. No caso de a linguagem apresentar erros "destaques em vermelho" ou avisos "destaques em amarelo", as mensagens foram claras e ajudaram a resolver o(s) problema(s) apresentado(s)?;
+   \item[e)] 13. No caso de a linguagem apresentar erros "destaques em vermelho" ou avisos "destaques em amarelo", as mensagens foram claras e ajudaram a resolver o(s) problema(s) apresentado(s)?;
    
-   \item[g)] 14. Quanto tempo, aproximadamente, você utilizou para executar o exercício proposto?.   
+   \item[f)] 14. Quanto tempo, aproximadamente, você utilizou para executar o exercício proposto?.   
 
 \end{enumerate}
 
@@ -66,12 +72,11 @@ Em linhas gerais, o grau de dificuldade de uso da DSL, em escala de 1 (difícil)
 
 \input{chapters/analise/imagens/dificuldadegeral}
 
+\newpage
 Os demais resultados obtidos com o formulário e os exercícios são descritos com maiores detalhes nas próximas Seções.
 
 
-\begin{landscape}
-\input{chapters/analise/imagens/perfilusuarios}
-\end{landscape}
+
 
 \section{Resultados obtidos com o exercício}
 \label{sec:analiseexercicio}
@@ -112,13 +117,12 @@ Os exercícios foram finalizados entre 15 a 30 minutos, sendo que 2 (dois) desse
 
 \input{chapters/analise/imagens/errodevesp}
 
-\newpage
 
 \input{chapters/analise/imagens/grupodevesp}
 
 Com relação às assertivas presentes na questão "11. Na sua avaliação quais as principais limitações da linguagem proposta?", 2 (dois) usuários informaram que: "As sugestões das mensagens informativas não são claras o suficiente (Usuários 16 e 20)", o que pode ter levado aos problemas descritos anteriormente.
 
-Em relação a pergunta "13. No caso de a linguagem apresentar erros "destaques em vermelho" ou avisos "destaques em amarelo", as mensagens foram claras e ajudaram a resolver o(s) problema(s) apresentado(s)?", esse grupo indicou conseguir de maneira geral resolver os problemas tendo como base as mensagens apresentadas pela DSL, todos indicaram a pontuação de escala 4 e 5 (quatro e cinco).
+Em relação a pergunta "13. No caso de a linguagem apresentar erros "destaques em vermelho" ou avisos "destaques em amarelo", as mensagens foram claras e ajudaram a resolver o(s) problema(s) apresentado(s)?", esse grupo indicou conseguir de maneira geral resolver os problemas tendo como base as mensagens apresentadas pela DSL, todos indicaram a pontuação de escala 4 e 5 (quatro e cinco), considerando a escala de 1(difícil) e 5(fácil).
 
 Contudo, após o levantamento apresentado na Figura \ref{fig:quadro:grupodevesp}, foi possível identificar que os demais recursos e percentuais foram preenchidos corretamente. Destaca-se que o grupo em análise, possui bom conhecimento na área de domínio, além de ter familiaridade com ferramentas de desenvolvimento e outras \gls{DSL}s, o que pode ter sido preponderante para que tenham indicado que a linguagem foi de fácil uso e entendimento. 
 
@@ -126,7 +130,7 @@ Contudo, após o levantamento apresentado na Figura \ref{fig:quadro:grupodevesp}
 \subsection{Resultados do Grupo DEV-NESP}
 \label{subsec:devnesp}
 
-Neste grupo, com relação à pergunta sobre o grau de dificuldade, os usuários apontaram os níveis 3 e 2 (três e dois).  Conforme o levantamento descrito na Figura \ref{fig:quadro:grupodevnesp},  observou-se um tempo maior para o exercício do Usuário 5 (Mais de 30min), enquanto no exercício do Usuário 6 constaram vários erros não resolvidos na distribuição de vagas, em sua maioria em relação ao padrão de nomenclatura das siglas das categorias de cotas (Figura \ref{fig:errodevnesp}). 
+Neste grupo, com relação à pergunta sobre o grau de dificuldade, os usuários apontaram os níveis 2 e 3 (três e dois), considerando a escala de 1(difícil) e 5(fácil).  Conforme o levantamento descrito na Figura \ref{fig:quadro:grupodevnesp},  observou-se um tempo maior para o exercício do Usuário 5 (Mais de 30min), enquanto no exercício do Usuário 6 constaram vários erros não resolvidos na distribuição de vagas, em sua maioria em relação ao padrão de nomenclatura das siglas das categorias de cotas (Figura \ref{fig:errodevnesp}). 
 
 \input{chapters/analise/imagens/errosdevnesp}
 

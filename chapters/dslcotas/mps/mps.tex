@@ -23,16 +23,17 @@ O conceito \texttt{LeiDeCota} é o elemento raiz  que pode ser instanciado no \g
 \input{chapters/dslcotas/mps/imagens/solutions.tex}
 
 
-Por sua vez, uma \texttt{LeiDeCota} está associada aos elementos descritos na Tabela \ref{tblelementoslei}:
+Por sua vez, uma \texttt{LeiDeCota} está associada aos elementos \texttt{CodigoVersao}, Lista de \texttt{Configur}\newline\texttt{acao}, \texttt{Distribuicao} e \texttt{OrdemPrioridadeCotas}. O conceito \texttt{CodigoVersao} armazena os dados que identificam o número de lei, a sigla da instituição de ensino e um número sequencial para diferenciar as versões de implementação. Opcionalmente, a lei de cotas pode possuir uma lista de configurações que armazena os percentuais a serem reutilizados pelo usuário na \texttt{Distribuicao}, como por exemplo: \texttt{PercentualPCD} ou \texttt{PercentualPPI}. 
 
-\input{chapters/dslcotas/mps/tabelas/tblelementoslei}
+A \texttt{Distribuicao} é o elemento que mantém a árvore de categorias, e os respectivos percentuais de reserva de vagas, iniciando com a \texttt{CategoriaCota} raiz, na qual contém uma sigla, uma descrição, uma \texttt{Expression} na qual será preenchida a reserva de vaga (percentuais fixos ou itens de \texttt{Configuracao} pré-definidos) e também uma lista de categorias filhas. Por fim, o elemento \texttt{OrdemPrioridadeCotas} faz referência às categorias criadas na \texttt{Distribuicao}. A Figura \ref{fig:objetos} apresenta um exemplo das associações entre os conceitos da DSL Cotas.
 
+\input{chapters/dslcotas/mps/imagens/figobjetos}
+
+\newpage
 Para possibilitar a relação entre as regras definidas, alguns componentes da \gls{DSL} utilizam \texttt{references} para outros, possibilitando que elementos já definidos possam ser acessados pelos comandos \texttt{control+espaço} no \gls{MPS}. As \texttt{references} são restringidas pelo tipo do conceito alvo e pela cardinalidade, por exemplo, o conceito \texttt{CategoriaCotaRef} possui uma referência para uma \texttt{CategoriaCota} e, por sua vez, o elemento \texttt{OrdemPrioridadeCotas} possui lista de \texttt{CategoriaCotaRef} para que seja possível indicar na linguagem a ordem de prioridade criada durante a distribuição de vagas (Figura \ref{fig:references}).
 
 \input{chapters/dslcotas/mps/imagens/references}
 
-\newpage
-Por fim, o conceito \texttt{Distribuicao} é o responsável por armazenar a árvore de distribuição, iniciando com a \texttt{CategoriaCota} raiz, na qual contém uma sigla, uma descrição, uma \texttt{Expression} na qual será preenchida a reserva de vaga (percentuais fixos ou itens de \texttt{Configuracao} pré-definidos) e também uma lista de categorias filhas. 
 
 Na Subseção \ref{sub:sec:editores}, serão apresentados os editores criados para definição da sintaxe de cada conceito definido na modelagem.
 
@@ -47,7 +48,7 @@ Nesse sentido, a Figura \ref{fig:editors}, apresenta a lista de editores criados
 
 \input{chapters/dslcotas/mps/imagens/editors}
 
-
+\newpage
 O editor \texttt{LeiDeCota\_Editor} é responsável pela organização das informações relevantes para o modelo de cotas, na Figura \ref{fig:editorleicota}, observa-se que ele é composto por uma coleção de células organizadas verticalmente, essa coleção é representada por \texttt{'[-' e '-]'}. Dentro de cada linha da coleção é possível utilizar propriedades básicas do conceito, como por exemplo, o campo \texttt{name}. 
 
 \input{chapters/dslcotas/mps/imagens/editorleicota}
@@ -60,7 +61,7 @@ Por se tratar de um editor de múltiplas projeções, é possível inserir nos e
 
 \input{chapters/dslcotas/mps/imagens/swingbutton}
 
-Com o objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS} \cite{mbeddr}.}. Segundo \citeonline{voelter2014supporting}, as tabelas podem ser usadas para representar coleções de dados estruturados que abordem problemas bidimensionais. 
+Com o objetivo de simplificar a edição da árvore de distribuição de vagas para o usuário final da DSL, foi utilizado o recurso \texttt{table} (\texttt{de.slisson.mps.tables}), que se trata de um plugin disponibilizado pelo pacote do \texttt{Mbeddr}.\footnote{O Mbeddr é uma coleção de pacotes utilitários e extensões do MPS que permite a criação de muitos tipos diferentes de linguagens no \gls{MPS} \cite{mbeddr}.} Segundo \citeonline{voelter2014supporting}, as tabelas podem ser usadas para representar coleções de dados estruturados que abordem problemas bidimensionais. 
 
 A organização em formato de tabelas permite uma melhor visualização para os usuários leigos durante a esquematização das regras da legislação. Desse modo, não se deixou de utilizar os benefícios de modelagem por meio de \gls{DSL}s, porém agregou-se a tabela como um facilitador de entendimento. Ademais, o \textit{plugin} utilizado possuía bons materiais de documentação e exemplos, permitindo criar a projeção gráfica de maneira simplificada. 
 
@@ -82,7 +83,7 @@ Na pesquisa ora apresentada utilizou-se o recurso de restrições de escopo, que
 O aspecto de estrutura da linguagem pode ser insuficiente para expressar restrições avançadas para a DSL. O aspecto \texttt{constraints} do MPS fornece uma maneira de definir essas restrições adicionais. Referências dependem da definição de restrições de escopo, já que por padrão quando nenhum escopo é definido para uma referência, essas podem ser utilizadas em qualquer parte da modelagem da linguagem \cite[s/p, tradução nossa]{jetbrains}.
 \end{citacao}
 
-Desse modo, nos conceitos de \texttt{CategoriaCotaRef} e \texttt{ConfiguracaoCotaRef} utilizou-se o conceito de definição de escopo herdado ou \textit{inherited scopes} (Figura \ref{fig:scoperef}). Confome \citeonline[s/p, tradução nossa]{jetbrains}, "esse mecanismo delega a resolução do escopo aos ancestrais, que implementam o ScopeProvider".
+Desse modo, nos conceitos de \texttt{CategoriaCotaRef} e \texttt{ConfiguracaoCotaRef} utilizou-se o conceito de definição de escopo herdado ou \textit{inherited scopes} (Figura \ref{fig:scoperef}). Conforme \citeonline[s/p, tradução nossa]{jetbrains}, "esse mecanismo delega a resolução do escopo aos ancestrais, que implementam o ScopeProvider".
 
 \input{chapters/dslcotas/mps/imagens/scoperef.tex}
 
