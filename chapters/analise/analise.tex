@@ -101,17 +101,15 @@ A seguir são apresentados os resultados da aplicação do exercício para cada 
 
 Em relação à pergunta "9. De modo geral, qual o grau de dificuldade para execução do exercício proposto?", em uma escala de 0(difícil) e 5(fácil), nesse grupo de usuários todos indicaram a nota 4 e 5. Ademais, foram realizadas as seguintes considerações:
 
- \begin{citacao}
- "Dúvidas de primeiro uso, do tipo -o que  mesmo que eu devia digitar maiúsculo?-, -será que preciso mesmo digitar 50.0 ou só 50?-,  entre outras do gênero. Como é execução de um exercício que é feito pela primeira vez, esse tipo de dúvida acaba não deixando totalmente fácil, pois eventualmente é necessário rever alguma instrução. Mas de resto, se já tiver esses detalhes na cabeça, a execução seria bem fácil (Usuário 20)."
-\end{citacao}
+\begin{enumerate}
+    \item [a)] "Dúvidas de primeiro uso, do tipo -o que  mesmo que eu devia digitar maiúsculo?-, -será que preciso mesmo digitar 50.0 ou só 50?-,  entre outras do gênero. Como é execução de um exercício que é feito pela primeira vez, esse tipo de dúvida acaba não deixando totalmente fácil, pois eventualmente é necessário rever alguma instrução. Mas de resto, se já tiver esses detalhes na cabeça, a execução seria bem fácil (Usuário 20).";
+    
+    \item[b)] "A sequência de prioridades final onde se define quais candidatos se seleciona primeiro, foi um pouco mais difícil fazer a seleção... A dificuldade do último item pode ser melhorada com implementação ou instruções. No mais ficou bem interessante para configurar a árvore de decisão e percentuais aplicados (Usuário 3).".
+\end{enumerate}
 
 Conforme relatado pelo Usuário 20, no primeiro contato com a DSL surgem algumas dúvidas sobre o formato de preenchimento dos percentuais e de siglas de categorias, o que pode levar a necessidade de reescrita de algumas instruções da linguagem. De modo geral, isso pode ser resolvido a medida que se acostuma com a linguagem.
 
-Outro aspecto levantado relaciona-se com problemas durante a definição da ordem de prioridade, em que o comando de adição de novos itens na lista não estava claro o suficiente na linguagem, sendo necessário melhorar a usabilidade desse elemento:
-
-\begin{citacao}
-"A sequência de prioridades final onde se define quais candidatos se seleciona primeiro, foi um pouco mais difícil fazer a seleção... A dificuldade do último item pode ser melhorada com implementação ou instruções. No mais ficou bem interessante para configurar a árvore de decisão e percentuais aplicados (Usuário 3)." 
-\end{citacao}
+Outro aspecto levantado pelo Usuário 3 relaciona-se com problemas durante a definição da ordem de prioridade, em que o comando de adição de novos itens na lista não estava claro o suficiente na linguagem, sendo necessário melhorar a usabilidade desse elemento.
 
 Os exercícios foram finalizados entre 15 a 30 minutos, sendo que 2 (dois) desses usuários (Usuário 20 e 16) fizeram completamente a definição da árvore de distribuição, sem \textit{errors} ou \textit{warnings}. Os outros dois usuários (Usuário 3 e 12) não resolveram alguns erros e avisos da linguagem, um deles criou um nível a mais de distribuição, gerando uma árvore de distribuição incorreta (Figura \ref{fig:errodevesp}). 
 
@@ -120,13 +118,13 @@ Os exercícios foram finalizados entre 15 a 30 minutos, sendo que 2 (dois) desse
 
 \input{chapters/analise/imagens/grupodevesp}
 
-Com relação às assertivas presentes na questão "11. Na sua avaliação quais as principais limitações da linguagem proposta?", 2 (dois) usuários informaram que: "As sugestões das mensagens informativas não são claras o suficiente (Usuários 16 e 20)", o que pode ter levado aos problemas descritos anteriormente.
+Com relação às respostas presentes na questão "11. Na sua avaliação quais as principais limitações da linguagem proposta?", 2 (dois) usuários informaram que: "As sugestões das mensagens informativas não são claras o suficiente (Usuários 16 e 20)", o que pode ter levado aos problemas descritos anteriormente.
 
 Em relação a pergunta "13. No caso de a linguagem apresentar erros "destaques em vermelho" ou avisos "destaques em amarelo", as mensagens foram claras e ajudaram a resolver o(s) problema(s) apresentado(s)?", esse grupo indicou conseguir de maneira geral resolver os problemas tendo como base as mensagens apresentadas pela DSL, todos indicaram a pontuação de escala 4 e 5 (quatro e cinco), considerando a escala de 1(difícil) e 5(fácil).
 
 Contudo, após o levantamento apresentado na Figura \ref{fig:quadro:grupodevesp}, foi possível identificar que os demais recursos e percentuais foram preenchidos corretamente. Destaca-se que o grupo em análise, possui bom conhecimento na área de domínio, além de ter familiaridade com ferramentas de desenvolvimento e outras \gls{DSL}s, o que pode ter sido preponderante para que tenham indicado que a linguagem foi de fácil uso e entendimento. 
 
-\newpage
+
 \subsection{Resultados do Grupo DEV-NESP}
 \label{subsec:devnesp}
 
@@ -148,7 +146,7 @@ Adicionalmente à questão sobre o grau de dificuldade foram feitos os seguintes
 
 Portanto, nota-se a dificuldade de entendimento de questões relacionadas à legislação do sistema de cotas e, adicionalmente, algumas dificuldades sobre uso do elemento de ordem de prioridade da linguagem. 
 
-Em continuidade a essa análise, apresentam-se as considerações sobre a questão assertiva sobre as limitações da linguagem: "Não observei a execução de uma emulação de processo em prática (Usuário 5)", "As sugestões das mensagens informativas não são claras o suficiente (Usuário 11)".
+Em continuidade a essa análise, apresentam-se as considerações sobre a questão sobre as limitações da linguagem: "Não observei a execução de uma emulação de processo em prática (Usuário 5)", "As sugestões das mensagens informativas não são claras o suficiente (Usuário 11)".
 
 Considerando a limitação apontada pelo Usuário 5, observa-se a falta do \textit{feedback} por parte da DSL para simulação da distribuição de vagas, uma vez que a função responsável por fazer os cálculos do quadro de vagas foi implementada apenas na API DSL Cotas. 
 
