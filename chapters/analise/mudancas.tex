@@ -6,6 +6,7 @@ Considerando as principais dificuldades relatadas pelos usuários da DSL Cotas, 
 A primeira melhoria é a responsável pelo tratamento das sugestões apontados pelos usuários do grupo DEV-ESP e NDEV-ESP, os quais apontaram a necessidade de visualização prévia de simulação das vagas, para tanto foi adicionado um novo elemento do tipo \texttt{behavior}, \texttt{Distribuicao\_Behavior} no qual foram inseridos métodos para varrer a \gls{AST} e fazer os cálculos do quadro de vagas seguindo as definições preenchidas pelo usuário da DSL (Código Fonte \ref{lst:distribuicao_behavior}).
 
 \newpage
+
 \lstinputlisting[language=Java, 
 caption=Behavior para cálculo do quadro de vagas 
 ,label=lst:distribuicao_behavior]{chapters/trechos_codigo/distribuicao_behavior.m}
