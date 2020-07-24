@@ -2,7 +2,7 @@
 \label{subsection:trabalhoscorrelatos}
  Segundo \citeonline{tahawalid2009}, existem duas maneiras diferentes pelas quais um domínio pode ser definido. A primeira é quando o domínio está bem definido matematicamente, a segunda quando o domínio é definido por atividades puramente humanas. As DSLs de domínio humano, definem uma linguagem especial ou jargões para comunicar ideias relacionadas ao seu domínio.  
  
- Nesse contexto, os trabalhos correlatos encontrados mostraram formas de abstrair conceitos e jargões envolvendo questões legais, contratuais e regras sobre domínios financeiros. Os domínios dessas DSLs foram definidos com objetivo de apoiar na compreensão de atividades humanas e não de tratar de problemas computacionais ou matemáticos.
+ Assim como a DSL Cotas, os trabalhos relacionados encontrados mostraram formas de modelar e abstrair conceitos e jargões envolvendo questões legais, contratuais e regras sobre domínios financeiros. Os domínios dessas DSLs foram definidos com objetivo de apoiar na compreensão de atividades humanas e não de tratar de problemas computacionais ou matemáticos.
  
  Para tanto, as DSLs descritas nas próximas Seções foram encontradas por meio da busca pelas palavras-chave (domain specific languages, DSL, law e legal)  nos repositórios, \textit{Researchgate}, \textit{Google Scholar} e \textit{IEEEXplore}.
  
@@ -11,6 +11,8 @@
 \label{legallanguage}
 
 A DSL \texttt{LegalLanguage} é resultado da análise de ontologias que tratam de estrutura de documentos legais, sua construção busca estabelecer modelos conceituais com propósito de melhoria de comunicação e aprendizado sobre definições encontradas em textos normativos.
+
+Apesar de tratar de domínio de questões legais, sua modelagem difere do presente trabalho pois sua construção foi baseada em ontologias já existentes, com propósito de auxiliar em definições de documentos legais de maneira geral, enquanto a DSL Cotas foi modelada a partir do histórico de controle de versão entre as diferentes versões da legislação e trata especificamente da lei de cotas. 
 
 \input{chapters/trabalhoscorrelatos/imagens/legallanguagemodel}
 
@@ -33,6 +35,7 @@ Ergo é uma linguagem específica de domínio que faz parte do projeto Accord, o
 
 Segundo \citeonline{accordproject}, a linguagem tem o foco de ajudar desenvolvedores da área de tecnologia jurídica na escrita de contratos legais que possam ser computados. Um contrato legal inteligente é um contrato legível por seres humanos e por máquinas, por exemplo, uma cláusula de cobrança de pagamento pode estar presente em um contrato, de modo que se possa utilizar o texto descrito em linguagem natural, para extração dos dados de cobrança e posterior aplicação de cálculos de multas e geração de eventos de notificações. 
 
+De forma similar a DSL Cotas, sua modelagem garante que as definições dos usuários sejam escritas com expressividade limitada, por outro lado, enquanto a DSL Cotas utiliza a definição das regras de distribuição de cotas em formato de tabelas, a Ergo DSL utiliza um formato textual controlado, similar ao de estrutura de classes para contratos e métodos para suas cláusulas.
 
 É uma linguagem fortemente tipada e independente de plataforma, seu código pode ser compilado nas plataformas \texttt{JavaScript} e \texttt{Java}. Ela provê uma linguagem de expressões, pela qual é possível descrever funções e cláusulas de modo que possa ser definida a lógica de contratos inteligentes. 
 
@@ -53,7 +56,7 @@ Segundo \citeonline{gregfuller2013}, foi criada com o objetivo de atender ao dom
 
  Para \citeonline{kolkhenk2008}, essa linguagem advém da necessidade de inovação em produtos da área e é baseada em interesses governamentais, no sentido de que há a necessidade de adequação às novas leis de pensão, dar transparência sobre as regras e fornecer garantia de qualidade. 
 
-
+Por tanto, essa DSL se relaciona ao presente trabalho no que diz respeito à necessidade de adequação, inovação e evolução para questões de interesses governamentais e para atendimento de novas legislações.
 
 Criada com a ferramenta \texttt{Intentional Software} para construção de DSLs projecionais, ela permite que as definições das regras dos planos sejam realizadas em formato gráfico no estilo de tabelas de Excel (Figura \ref{fig:dslcapgeminitables}) e permite fazer testes unitários para validar as regras em tempo real (Figura \ref{fig:dslcapgeminiunittests}). 
 
