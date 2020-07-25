@@ -5,7 +5,7 @@ Segundo \citeonline{poltronieri2018usability}, há muito esforço para criar e u
 
 Nesse sentido, este Capítulo apresenta a análise dos dados obtidos em relação aos 2 (dois) instrumentos de coleta de dados (exercício de avaliação da DSL Cotas e o questionário aplicado com usuários), bem como, os resultados com os testes da API DSL Cotas. Esses instrumentos têm como foco verificar se a DSL Cotas atinge seus objetivos em relação à perspectiva dos diferentes grupos de usuários. 
 
-Para melhor sistematizar a organização dos dados optou-se por apresentar a análise por grupos de usuários, considerando os diferentes perfis de usuário, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}. Na Seção \ref{sec:perguntasaplicadas} são apresentados os dados gerais sobre as perguntas aplicadas com os usuários, enquanto a Seção \ref{sec:analiseexercicio} expõe os resultados obtidos com o exercício prático proposto aos usuários convidados, os resultados obtidos com a aplicação do questionário após a realização do exercício e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários. Por fim, a Seção \ref{sec:avaliacaoapi} detalha os resultados dos testes com a API.
+Para melhor sistematizar a organização dos dados optou-se por apresentar a análise por grupos de usuários, considerando os diferentes perfis de experiência, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}. Na Seção \ref{sec:perguntasaplicadas} são apresentados os dados gerais sobre as perguntas aplicadas com os usuários, enquanto a Seção \ref{sec:analiseexercicio} expõe os resultados obtidos com o exercício prático proposto aos usuários convidados, os resultados obtidos com a aplicação do questionário após a realização do exercício e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários. Por fim, a Seção \ref{sec:avaliacaoapi} detalha os resultados dos testes com a API.
 
 
 
@@ -18,7 +18,7 @@ Para melhor sistematizar a organização dos dados optou-se por apresentar a an�
 A Figura \ref{fig:perfilusuarios} apresenta o perfil de cada usuário que participou da avaliação de uso da DSL Cotas. Os critérios para inserção em cada grupo são descritos a seguir:
 
 \begin{enumerate}
-    \item[a)] \texttt{DEV-ESP}: usuários que possuem conhecimento sobre a lei Nº 12.711 e suas atualizações, são desenvolvedores e já atuaram em sistemas ou processos seletivos que utilizam o sistema de cotas;
+    \item[a)] \texttt{DEV-ESP}: usuários que possuem conhecimento sobre a lei nº 12.711 e suas atualizações, são desenvolvedores e já atuaram em sistemas ou processos seletivos que utilizam o sistema de cotas;
     \item[b)] \texttt{DEV-NESP}: usuários com perfil de desenvolvedor sem conhecimento ou com conhecimento restrito sobre a legislação;
     \item[c)] \texttt{NDEV-ESP}: usuários com conhecimento na legislação, não desenvolvedores. Em sua maioria usuários que trabalham em setores que organizam processos seletivos relacionados ao sistema de cotas;
     \item[d)] \texttt{NDEV-NESP}: usuários não conhecedores da legislação e não desenvolvedores, de modo que pudesse ser identificado se as pessoas com esse perfil teriam dificuldades com a utilização da linguagem.
@@ -45,7 +45,7 @@ Para levantar o conhecimento e a experiência sobre o sistema de cotas da rede d
 
 \input{chapters/analise/imagens/grauconhecimento}
 
-Com intuito de identificar se os usuários já tiveram contato com outras DSLs, a pergunta "8. Você já utilizou alguma Linguagem de Domínio Específica? Exemplos: HTML, Excel, Latex, SQL, etc.", mostrou que 55\% dos usuários já tiveram contato com outras aplicações ou softwares que utilizam alguma \gls{DSL}, enquanto os demais apontaram não conhecer nenhuma DSL (Figura \ref{fig:usodsl}).
+Com o intuito de identificar se os usuários já tiveram contato com outras DSLs, a pergunta "8. Você já utilizou alguma Linguagem de Domínio Específica? Exemplos: HTML, Excel, Latex, SQL, etc.", mostrou que 55\% dos usuários já tiveram contato com outras aplicações ou softwares que utilizam alguma \gls{DSL}, enquanto os demais apontaram não conhecer nenhuma DSL (Figura \ref{fig:usodsl}).
 
 \input{chapters/analise/imagens/usodsl}
 
@@ -95,7 +95,7 @@ Durante essa análise foram contabilizados os acertos em relação aos seguintes
 
 A seguir são apresentados os resultados da aplicação do exercício para cada grupo.
 
-\newpage
+
 \subsection{Resultados do Grupo DEV-ESP}
 \label{subsec:devesp}
 
@@ -116,24 +116,23 @@ Os exercícios foram finalizados entre 15 a 30 minutos, sendo que 2 (dois) desse
 \input{chapters/analise/imagens/errodevesp}
 
 
-\input{chapters/analise/imagens/grupodevesp}
+
 
 Com relação às respostas presentes na questão "11. Na sua avaliação quais as principais limitações da linguagem proposta?", 2 (dois) usuários informaram que: "As sugestões das mensagens informativas não são claras o suficiente (Usuários 16 e 20)", o que pode ter levado aos problemas descritos anteriormente.
 
 Em relação a pergunta "13. No caso de a linguagem apresentar erros "destaques em vermelho" ou avisos "destaques em amarelo", as mensagens foram claras e ajudaram a resolver o(s) problema(s) apresentado(s)?", esse grupo indicou conseguir de maneira geral resolver os problemas tendo como base as mensagens apresentadas pela DSL, todos indicaram a pontuação de escala 4 e 5 (quatro e cinco), considerando a escala de 1(difícil) e 5(fácil).
 
 Contudo, após o levantamento apresentado na Figura \ref{fig:quadro:grupodevesp}, foi possível identificar que os demais recursos e percentuais foram preenchidos corretamente. Destaca-se que o grupo em análise, possui bom conhecimento na área de domínio, além de ter familiaridade com ferramentas de desenvolvimento e outras \gls{DSL}s, o que pode ter sido preponderante para que tenham indicado que a linguagem foi de fácil uso e entendimento. 
-
-
+\input{chapters/analise/imagens/grupodevesp}
+\newpage
 \subsection{Resultados do Grupo DEV-NESP}
 \label{subsec:devnesp}
 
-Neste grupo, com relação à pergunta sobre o grau de dificuldade, os usuários apontaram os níveis 2 e 3 (três e dois), considerando a escala de 1(difícil) e 5(fácil).  Conforme o levantamento descrito na Figura \ref{fig:quadro:grupodevnesp},  observou-se um tempo maior para o exercício do Usuário 5 (Mais de 30min), enquanto no exercício do Usuário 6 constaram vários erros não resolvidos na distribuição de vagas, em sua maioria em relação ao padrão de nomenclatura das siglas das categorias de cotas (Figura \ref{fig:errodevnesp}). 
+Nesse grupo, com relação à pergunta sobre o grau de dificuldade, os usuários apontaram os níveis 2 e 3 (três e dois), considerando a escala de 1(difícil) e 5(fácil). No exercício do Usuário 6 constaram vários erros não resolvidos na distribuição de vagas, em sua maioria em relação ao padrão de nomenclatura das siglas das categorias de cotas (Figura \ref{fig:errodevnesp}). 
 
 \input{chapters/analise/imagens/errosdevnesp}
 
-\input{chapters/analise/imagens/grupodevnesp}
-
+\newpage
 
 
 Adicionalmente à questão sobre o grau de dificuldade foram feitos os seguintes comentários:
@@ -158,8 +157,12 @@ Ademais, as seguintes sugestões foram levantadas por meio da pergunta número 1
 A linguagem auxilia a documentar o processo. Acredito que ela implemente a execução da coleta de dados. Espero que ela saiba ler os dados de várias bases diferentes, e não exija um tratamento nestes dados muito extenso, senão é talvez mais viável inserir diretamente os dados em uma base relacional e executar as ordenações necessárias (Usuário 5).
 \end{citacao}
 
-\newpage
-Tendo em vista os apontamentos descritos para o grupo, observa-se que a falta de entendimento nas regras de domínio dificulta o uso da linguagem (Usuários 11 e 14), no entanto, há maiores preocupações relacionadas à simulação e aos detalhes de implementação para o processamento final das regras (Usuário 5).
+Tendo em vista os apontamentos descritos para o grupo, observa-se que a falta de entendimento nas regras de domínio dificulta o uso da linguagem (Usuários 11 e 14), no entanto, há maiores preocupações relacionadas à simulação e aos detalhes de implementação para o processamento final das regras (Usuário 5). Conforme o levantamento descrito na Figura \ref{fig:quadro:grupodevnesp},  observou-se um tempo maior para o exercício do Usuário 5 (Mais de 30min).
+
+\input{chapters/analise/imagens/grupodevnesp}
+
+
+
 
 \newpage
 \subsection{Resultados do Grupo NDEV-ESP}
@@ -211,7 +214,7 @@ Esses comentários rementem às sugestões de melhorias, tais como: a necessidad
 
 Por fim, considerando que os usuários do grupo conseguiram avançar no uso da DSL Cotas já no primeiro contato com a linguagem, mesmo sem ter conhecimento em desenvolvimento de sistemas, conclui-se que após terem maior familiaridade com a ferramenta, os usuários com domínio nas regras do sistema de cotas conseguem utilizar a DSL como meio de descrever as regras existentes na legislação.
 
-\newpage
+
 \subsection{Resultados do Grupo NDEV-NESP}
 \label{subsec:ndevnesp}
 

@@ -2,7 +2,7 @@
 \label{sec:dslproposta:usuario}
 
    
- Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes}, sobre as versões do sistema de cotas detalhadas nas Seções \ref{versao1}, \ref{versao2} e \ref{versao3}, podem ser  pontuadas algumas características em comum identificadas entre cada uma dessas versões:
+ Tendo como base a análise realizada no Capítulo \ref{chap:historicoversoes}, sobre as versões do sistema de cotas detalhadas nas Subseções \ref{versao1}, \ref{versao2} e \ref{versao3}, podem ser  pontuadas algumas características em comum identificadas entre cada uma dessas versões:
    
    \begin{enumerate}
     \item[a)] A divisão das vagas entre as diferentes categorias de cotas se deu em formato hierárquico, iniciando no total de vagas o qual foi sendo subdividido em percentuais reservados para suas subcategorias (ex: Estudantes da escola pública, Estudantes com renda baixa, Estudantes PCD, etc); 
@@ -17,7 +17,7 @@
 
    \end{enumerate}
    
-   Segundo \citeonline{dslengineering}, a modelagem de DSLs costuma ser realizada com abordagens \textit{bottom-up} ou \textit{top-down}, a primeira abordagem aplica-se para domínios em termos de software, enquanto na segunda o modelo do domínio é aplicado ao conhecimento sobre o mundo real, fora do domínio de software. Nesse contexto, a modelagem da DSL Cotas utilizou a abordagem \texttt{top-down}, uma vez que seu design procura fornecer suporte para os usuários especialistas definirem os parâmetros da legislação de forma controlada, possibilitando a geração do código de processamento de classificação de candidatos sem que o usuário precise utilizar comandos complexos para a implementação dos respectivos algoritmos.
+   Segundo \citeonline{dslengineering}, a modelagem de DSLs costuma ser realizada com abordagens \textit{bottom-up} ou \textit{top-down}, a primeira abordagem aplica-se para domínios em termos de software, enquanto na segunda, o modelo do domínio é aplicado ao conhecimento sobre o mundo real, fora do domínio de software. Nesse contexto, a modelagem da DSL Cotas utilizou a abordagem \texttt{top-down}, uma vez que seu design procura fornecer suporte para os usuários especialistas definirem os parâmetros da legislação de forma controlada, possibilitando a geração do código de processamento de classificação de candidatos sem que o usuário precise utilizar comandos complexos para a implementação dos respectivos algoritmos.
    
    A \gls{DSL} desenvolvida consistiu em criar um modelo que permita a configuração de todos os itens listados, tais como: identificador da versão de lei, lista de variáveis para configuração de percentuais, formas de aplicação de arredondamento, uma macro para aplicar a função de resto de vagas de uma categoria, campo descritivo para os diferentes tipos de categorias, estrutura para divisão em subcategorias e lista de ordem de prioridade para a sobra de vagas.
    

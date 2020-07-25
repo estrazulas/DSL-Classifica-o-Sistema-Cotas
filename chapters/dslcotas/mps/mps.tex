@@ -30,7 +30,7 @@ A \texttt{Distribuicao} é o elemento que mantém a árvore de categorias, e os 
 \input{chapters/dslcotas/mps/imagens/figobjetos}
 
 \newpage
-Para possibilitar a relação entre as regras definidas, alguns componentes da \gls{DSL} utilizam \texttt{references} para outros, possibilitando que elementos já definidos possam ser acessados pelos comandos \texttt{control+espaço} no \gls{MPS}. As \texttt{references} são restringidas pelo tipo do conceito alvo e pela cardinalidade. Por exemplo, o conceito \texttt{CategoriaCotaRef} possui uma referência para uma \texttt{CategoriaCota} e, por sua vez, o elemento \texttt{OrdemPrioridadeCotas} possui lista de \texttt{CategoriaCotaRef} para que seja possível indicar na linguagem a ordem de prioridade criada durante a distribuição de vagas (Figura \ref{fig:references}).
+Para possibilitar a relação entre as regras definidas, alguns componentes da \gls{DSL} utilizam \texttt{references} para outros, permitindo que elementos já definidos possam ser acessados pelos comandos \texttt{control+espaço} no \gls{MPS}. As \texttt{references} são restringidas pelo tipo do conceito alvo e pela cardinalidade. Por exemplo, o conceito \texttt{CategoriaCotaRef} possui uma referência para uma \texttt{CategoriaCota} e, por sua vez, o elemento \texttt{OrdemPrioridadeCotas} possui lista de \texttt{CategoriaCotaRef} para que seja possível indicar na linguagem a ordem de prioridade criada durante a distribuição de vagas (Figura \ref{fig:references}).
 
 \input{chapters/dslcotas/mps/imagens/references}
 
@@ -72,7 +72,7 @@ Nesse contexto, na Figura \ref{fig:tableeditor} é possível observar o \texttt{
 \input{chapters/dslcotas/mps/imagens/tableres}
 
 \newpage
-Após a definição de editores para todos os conceitos do modelo da linguagem, foi necessário utilizar o recurso de \texttt{constraints} para criar restrições de escopo para acesso às referências entre os elementos da linguagem. Esse detalhamento é observado na Seção \ref{sub:sec:constraints}.
+Após a definição de editores para todos os conceitos do modelo da linguagem, foi necessário utilizar o recurso de \texttt{constraints} para criar restrições de escopo para acesso às referências entre os elementos da linguagem. Esse detalhamento é observado na Subseção \ref{sub:sec:constraints}.
 
 \subsection{\textit{Restrições de escopo}}
 \label{sub:sec:constraints}
