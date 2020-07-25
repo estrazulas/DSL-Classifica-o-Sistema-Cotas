@@ -9,7 +9,7 @@ Criado em meados do ano de 2000, o sistema de ingresso do \gls{IFSC}, tem por ob
 
 O projeto não utiliza conceitos de orientação a objetos, em sua maioria os arquivos PHP ultrapassam duas mil linhas, sem divisão em camadas \gls{MVC}, com combinações das linguagens Javascript, HTML e PHP no mesmo arquivo. Quando era preciso criar ou adaptar alguma nova funcionalidade por falta de conhecimento técnico, os antigos desenvolvedores (bolsistas) faziam a cópia das funcionalidades para vários locais do sistema, sem pensar em reutilização de código.
 
-Com objetivo de elencar a situação atual do código fonte do sistema, neste trabalho são apresentados os quantitativos levantados a partir do sistema de controle de versão do \gls{IFSC}. A Tabela \ref{quadro_git_ingresso} apresenta o levantamento geral sobre o total de arquivos, linhas de código, commits e desenvolvedores que já atuaram no projeto. Nas Seções seguintes são contextualizados os dados gerais sobre o algoritmo de classificação, assim como é descrito o levantamento feito nas 3 (três) versões do algoritmo de classificação que foram implementadas até o momento.
+Com o objetivo de elencar a situação atual do código fonte do sistema, neste trabalho são apresentados os quantitativos levantados a partir do sistema de controle de versão do \gls{IFSC}. A Tabela \ref{quadro_git_ingresso} apresenta o levantamento geral sobre o total de arquivos, linhas de código, commits e desenvolvedores que já atuaram no projeto. Nas Seções seguintes são contextualizados os dados gerais sobre o algoritmo de classificação, assim como é descrito o levantamento feito nas 3 (três) versões do algoritmo de classificação que foram implementadas até o momento.
 
 \input{chapters/sistemaingresso_versoes/quadros/quadro_dados_gerais_git.tex}
 
@@ -27,7 +27,7 @@ O algoritmo de classificação utiliza como parâmetro de entrada a lista de can
 
 Esses parâmetros variam conforme a Unidade Federada e são fornecidos pelo último censo demográfico, representando o percentual sobre o total de pretos, pardos e indígenas no estado em relação às demais categorias de cotas para estudantes da escola pública.
 
-Com esses parâmetros de entrada, o algoritmo gera um quadro de vagas contendo quantas vagas estão reservadas para às respectivas categorias de cotas, e faz a seleção e aprovação de candidatos de acordo com a sua classificação e critérios de desempate. Por fim, em caso de sobra de vagas por falta de candidatos para uma determinada categoria de cota, o algoritmo faz nova busca por candidatos de outra categoria, de acordo com a ordem de prioridade estabelecida na portaria Nº 18 de 2012 do \gls{MEC}, a qual define:
+Com esses parâmetros de entrada, o algoritmo gera um quadro de vagas contendo quantas vagas estão reservadas para às respectivas categorias de cotas, e faz a seleção e aprovação de candidatos de acordo com a sua classificação e critérios de desempate. Por fim, em caso de sobra de vagas por falta de candidatos para uma determinada categoria de cota, o algoritmo faz nova busca por candidatos de outra categoria, de acordo com a ordem de prioridade estabelecida na portaria nº 18 de 2012 do \gls{MEC}, a qual define:
 
 \begin{citacao}
 Art. 15. No caso de não preenchimento das vagas reservadas aos autodeclarados pretos, pardos
