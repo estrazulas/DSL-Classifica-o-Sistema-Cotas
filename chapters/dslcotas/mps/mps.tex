@@ -25,7 +25,7 @@ O conceito \texttt{LeiDeCota} é o elemento raiz  que pode ser instanciado no \g
 
 Por sua vez, uma \texttt{LeiDeCota} está associada aos elementos \texttt{CodigoVersao}, Lista de \texttt{Configur}\newline\texttt{acao}, \texttt{Distribuicao} e \texttt{OrdemPrioridadeCotas}. O conceito \texttt{CodigoVersao} armazena os dados que identificam o número de lei, a sigla da instituição de ensino e um número sequencial para diferenciar as versões de implementação. Opcionalmente, a lei de cotas pode possuir uma lista de configurações que armazena os percentuais a serem reutilizados pelo usuário na \texttt{Distribuicao}, como por exemplo: \texttt{PercentualPCD} ou \texttt{PercentualPPI}. 
 
-A \texttt{Distribuicao} é o elemento que mantém a árvore de categorias, e os respectivos percentuais de reserva de vagas, iniciando com a \texttt{CategoriaCota} raiz, na qual contém uma sigla, uma descrição, uma \texttt{Expression} na qual será preenchida a reserva de vaga (percentuais fixos ou itens de \texttt{Configuracao} pré-definidos) e também uma lista de categorias filhas. Por fim, o elemento \texttt{OrdemPrioridadeCotas} faz referência às categorias criadas na \texttt{Distribuicao}. A Figura \ref{fig:objetos} apresenta um exemplo das associações entre os conceitos da DSL Cotas.
+A \texttt{Distribuicao} é o elemento que mantém a árvore de categorias, e os respectivos percentuais de reserva de vagas, iniciando com a \texttt{CategoriaCota} raiz, a qual contém uma sigla, uma descrição, uma \texttt{Expression} na qual será preenchida a reserva de vaga (percentuais fixos ou itens de \texttt{Configuracao} pré-definidos) e também uma lista de categorias filhas. Por fim, o elemento \texttt{OrdemPrioridadeCotas} faz referência às categorias criadas na \texttt{Distribuicao}. A Figura \ref{fig:objetos} apresenta um exemplo das associações entre os conceitos da DSL Cotas.
 
 \input{chapters/dslcotas/mps/imagens/figobjetos}
 
@@ -42,7 +42,7 @@ Na Subseção \ref{sub:sec:editores}, são apresentados os editores criados para
 \label{sub:sec:editores}
 O \gls{MPS} oferece aos projetistas uma abordagem de definição de sintaxe abstrata por meio de editores construídos com a notação de células. O \textit{designer} da linguagem combina as células do editor e as posiciona de maneira a refletir o \textit{layout} final desejado da notação \cite{jetbrains}. 
 
-Por padrão, os elementos \texttt{Concepts} não possuem um editor associado, o editor padrão permite a edição direta da \gls{AST} pelo usuário da linguagem. No entanto, o editor padrão não é de simples entendimento para os usuários finais da linguagem, sendo necessário definir como aquele conceito deverá ser apresentado e editado pelo usuário.
+Por padrão, os elementos \texttt{Concepts} não possuem um editor associado, o editor padrão permite a edição direta da \gls{AST} pelo usuário da DSL. No entanto, o editor padrão não é de simples entendimento para os usuários finais da linguagem, sendo necessário definir como aquele conceito deverá ser apresentado e editado pelo usuário final da DSL.
 
 Nesse sentido, a Figura \ref{fig:editors}, apresenta a lista de editores criados para a DSL de cotas. As definições desses editores são apresentadas a seguir.
 
