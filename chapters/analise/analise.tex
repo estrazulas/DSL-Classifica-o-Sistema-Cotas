@@ -29,16 +29,27 @@ A Figura \ref{fig:perfilusuarios} apresenta o perfil de cada usuário que partic
 \input{chapters/analise/imagens/perfilusuarios}
 \end{landscape}
 
-\section{Informações obtidas com o questionário}
+\section{Resultados obtidos com o exercício e com o questionário}
 \label{sec:perguntasaplicadas}
 
-Esta seção apresenta as perguntas do formulário \textit{on-line} submetido para todos os usuários participantes do presente estudo. As perguntas foram aplicadas após o término da execução do exercício, buscando obter as informações necessárias para cada perfil de usuário da DSL, assim como, entender as principais dificuldades encontradas por eles na utilização da linguagem.
+Cada usuário recebeu por e-mail um manual  contendo as principais instruções para uso da DSL Cotas, incluindo conceitos sobre cada elemento da legislação. Adicionalmente, a esse manual foi definido um exercício aberto, no qual, a tarefa proposta é definir os requisitos da primeira versão da lei nº 12.711 (Figura \ref{fig:exercicio}). 
 
-As 5 (cinco) primeiras perguntas tem como objetivo levantar dados demográficos, tais como: nível de formação escolar, curso de formação acadêmica, cargo, tempo de experiência profissional e a informação se elas possuem experiência com desenvolvimento de sistemas.
+\input{chapters/analise/imagens/exercicio}
+
+Essa versão foi escolhida por ser mais simples se comparada as versões mais recentes, requerendo um tempo menor de dedicação ao exercício e adequando a complexidade para todos os grupos dos diferentes perfis de usuários. 
+
+
+Com o intuito de avaliar o exercício, todas as 20 respostas foram salvas imediatamente após o término no sistema de controle de versão \texttt{git}. Cada resposta foi salva em um \texttt{branch} disponível no repositório \texttt{https://github.com/spgroup/dsl-cotas/branches}.
+
+Após o exercício, os participantes foram convidados a responder ao questionário, no qual buscou-se obter as informações de cada perfil de usuário da DSL, assim como, entender as principais dificuldades encontradas por eles na utilização da linguagem.
+
+As 5 (cinco) primeiras perguntas do questionário tiveram como objetivo levantar dados demográficos, tais como: nível de formação escolar, curso de formação acadêmica, cargo, tempo de experiência profissional e a informação se elas possuem experiência com desenvolvimento de sistemas.
 
 O formulário \textit{on-line} recebeu 20 respostas, das quais contou com a representatividade de profissionais da área de tecnologia da informação (50\%) e profissionais atuantes em setor de ingresso de estudantes (20\%), além de outros setores como pode ser observado no gráfico da Figura \ref{fig:experienciacargo}. Desses profissionais, 68,4\% indicaram não ter experiência prévia com desenvolvimento de sistemas, enquanto, 31,6\% informaram já terem experiência de desenvolvimento.
 
 \input{chapters/analise/imagens/exerienciacargo}
+
+Com relação à pergunta ''5. Quanto tempo de experiência profissional?'', 50\% dos usuários indicaram ter mais de 10 anos, 20\% de 5 a 10 anos, 20\% de 3 a 5 anos e 10\% de 0 a 2 anos de experiência profissional.  
 
 \newpage
 Para levantar o conhecimento e a experiência sobre o sistema de cotas da rede de ensino federal foram submetidas as seguintes perguntas: "6. Você já atuou em sistemas ou processos seletivos que utilizam regras de classificação para candidatos cotistas?" e "7. Qual o seu grau de conhecimento sobre o sistema de cotas da Lei nº 12.711/2012 e suas atualizações?" (Figura \ref{fig:grauconhecimento}).
@@ -76,19 +87,10 @@ Em linhas gerais, o grau de dificuldade de uso da DSL, em escala de 1 (difícil)
 Os demais resultados obtidos com o formulário e os exercícios são descritos com maiores detalhes nas próximas Seções.
 
 
+%\section{Resultados obtidos com o exercício}
+%\label{sec:analiseexercicio}
 
 
-\section{Resultados obtidos com o exercício}
-\label{sec:analiseexercicio}
-
-Cada usuário recebeu por e-mail um manual  contendo as principais instruções para uso da DSL Cotas, incluindo conceitos sobre cada elemento da legislação. Adicionalmente, a esse manual foi definido um exercício aberto, no qual, a tarefa proposta é definir os requisitos da primeira versão da lei nº 12.711 (Figura \ref{fig:exercicio}). 
-
-\input{chapters/analise/imagens/exercicio}
-
-Essa versão foi escolhida por ser mais simples se comparada as versões mais recentes, requerendo um tempo menor de dedicação ao exercício e adequando a complexidade para todos os grupos dos diferentes perfis de usuários. 
-
-
-Com o intuito de avaliar o exercício, todas as 20 respostas foram salvas imediatamente após o término no sistema de controle de versão \texttt{git}. Cada resposta foi salva em um \texttt{branch} disponível no repositório \texttt{https://github.com/spgroup/dsl-cotas/branches}.
 
 
 Durante essa análise foram contabilizados os acertos em relação aos seguintes elementos da linguagem: distribuição de vagas (níveis e categorias criadas), configurações de percentuais (definição e utilização durante a distribuição), definição completa da ordem de prioridade (ordem indicada e quantidade de categorias presentes), quantidade de \textit{errors} e \textit{warnings} não resolvidos, e a presença de versão da legislação mais recente implementada opcionalmente por alguns usuários.
