@@ -23,20 +23,36 @@ No que concerne aos procedimentos técnicos utilizou-se para o presente estudo: 
     
 \end{enumerate}
 
-    O exercício na DSL (APÊNDICE \ref{chap:apen:exercicio}) e o questionário sobre a experiência de uso com os usuários (APÊNDICE \ref{chap:apen:manual}), foram os instrumentos de coleta de dados utilizados na fase de validação de usabilidade. O perfil dos usuários, o detalhamento do exercício e o questionário serão retomados nas próximas Seções.
+    O processo do estudo de caso foi conduzido com base no trabalho de \citeonline{runeson}, o qual define 5 (cinco) passos principais para serem considerados:
     
-    Anteriormente à avaliação com os usuários foi realizado o desenvolvimento da DSL Cotas, assim como a sua validação por meio de seleção aleatória de 16 processos seletivos presentes na base do sistema de ingresso do \gls{IFSC}, conforme listados na Tabela \ref{processos_utilizados}. Esses processos possuem um total de 13494 candidatos classificados em primeira chamada no sistema de ingresso no período de 2013 até 2020, os quais foram utilizados para comparação de resultados de uma \gls{API} desenvolvida com base na DSL Cotas que foram descritas no Capítulo \ref{chap:dslcotas}.
+    \begin{itemize}
+        \item[a)] Definir o estudo de caso: objetivos são definidos e o estudo de caso é planejado;
+        \item[b)] Preparar a coleta de dados: procedimentos de coleta de dados são definidos;
+        \item[c)] Evidenciar a coleta de dados: execução e registro da coleta de dados;
+        \item[d)] Analisar os dados coletados;
+        \item[e)] Relatar os resultados.
+    \end{itemize}
+
+    Considerando a pergunta central da pesquisa, ''Como utilizar uma linguagem de definição de regras do sistema de cotas de modo a melhorar a comunicação entre usuários especialistas e desenvolvedores e, assim, verificar a possibilidade de melhoria no processo de desenvolvimento das regras presentes na legislação?'', foi possível definir as seguintes questões do estudo de caso:
     
-    \input{chapters/metodologia/tabelas/tabelaprocessos}
+    \begin{enumerate}
+        \item[a)] É possível a criação de uma linguagem específica de domínio que padronize as definições em comum nas regras de distribuição de vagas?
+        
+        \item[b)] A utilização da linguagem proposta pode ajudar na produtividade durante o desenvolvimento de alterações na legislação, reduzindo a quantidade de linhas de código a serem implementadas manualmente pelos desenvolvedores?
+        
+        \item[c)] A definição de regras do sistema de cotas pode ser facilitada com apoio de uma \gls{IDE} que faça validações e forneça recursos específicos para a linguagem proposta?
+    \end{enumerate}
     
-    \newpage
-    A fim de situar o leitor acerca das etapas desenvolvidas na pesquisa, apresenta-se a Figura \ref{fig:etapas}. Nessa Figura, as duas primeiras etapas são responsáveis pelo levantamento conceitual, no qual realizou-se a análise do controle de versão do sistema de ingresso do IFSC e o levantamento dos principais estudos e pesquisas sobre \gls{DSL}s, respectivamente. As etapas seguintes referem-se ao desenvolvimento da DSL Cotas e da API de classificação e aprovação de candidatos. Na sequência, os procedimentos de avaliação e de análise foram compostos pelas etapas de avaliação da API com base no histórico de processos seletivos do IFSC e de aplicação dos instrumentos de coleta com os usuários da DSL Cotas. Com base nesses dados foi possível analisar a viabilidade de melhoria de comunicação entre os usuários de negócio e desenvolvedores a partir da DSL Cotas e, por fim, apresentar os resultados obtidos.
+  
+    Para a etapa de preparação da coleta foram apresentados os materiais de apoio elaborados (vídeo explicativo e manual de uso da DSL), e na sequência, o exercício na DSL (APÊNDICE \ref{chap:apen:exercicio}) e o questionário sobre a experiência de uso com os usuários (APÊNDICE \ref{chap:apen:manual}). Esses materiais foram utilizados como instrumentos de coleta de dados com o objetivo de fazer uma avaliação preliminar de uso da DSL Cotas, assim como, de identificar o perfil dos usuários e as principais dificuldades encontradas por eles. O detalhamento do exercício e do questionário serão retomados nas próximas Seções. As evidências da coleta, a análise dos dados coletados e o relato de resultados serão descritos respectivamente nos Capítulos \ref{chap:analise} e \ref{chap:consideracoes}.
+ 
+     A fim de situar o leitor acerca das etapas desenvolvidas na pesquisa, apresenta-se a Figura \ref{fig:etapas}. Nessa Figura, as duas primeiras etapas são responsáveis pelo levantamento conceitual, no qual realizou-se a análise do controle de versão do sistema de ingresso do IFSC e o levantamento dos principais estudos e pesquisas sobre \gls{DSL}s, respectivamente. As etapas seguintes referem-se ao desenvolvimento da DSL Cotas e da API de classificação e aprovação de candidatos. Na sequência, os procedimentos de avaliação e de análise foram compostos pelas etapas de avaliação da API com base no histórico de processos seletivos do IFSC e de aplicação dos instrumentos de coleta com os usuários da DSL Cotas. Com base nesses dados foi possível analisar a viabilidade de melhoria de comunicação entre os usuários de negócio e desenvolvedores a partir da DSL Cotas e, por fim, apresentar os resultados obtidos.
     
     
     \input{chapters/metodologia/imagens/etapas.tex}
     
-    \newpage
-    Com o intuito de apresentar os procedimentos metodológicos relativos ao ambiente da pesquisa, a Seção \ref{ambiente} descreve a metodologia de avaliação da DSL, abordando o perfil dos usuários, o detalhamento do exercício, o questionário aplicado e os critérios utilizados para avaliação da \gls{API}. 
+ 
+    Desse modo, a Seção \ref{ambiente} descreve a metodologia de avaliação da DSL, abordando o perfil dos usuários, o detalhamento do exercício, o questionário aplicado e os critérios utilizados para avaliação da \gls{API}. 
     
     
     

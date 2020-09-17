@@ -19,9 +19,19 @@
    
    Segundo \citeonline{dslengineering}, a modelagem de DSLs costuma ser realizada com abordagens \textit{bottom-up} ou \textit{top-down}, a primeira abordagem aplica-se para domínios em termos de software, enquanto na segunda, o modelo do domínio é aplicado ao conhecimento sobre o mundo real, fora do domínio de software. Nesse contexto, a modelagem da DSL Cotas utilizou a abordagem \texttt{top-down}, uma vez que seu design procura fornecer suporte para os usuários especialistas definirem os parâmetros da legislação de forma controlada, possibilitando a geração do código de processamento de classificação de candidatos sem que o usuário precise utilizar comandos complexos para a implementação dos respectivos algoritmos.
    
-   A \gls{DSL} desenvolvida consistiu em criar um modelo que permita a configuração de todos os itens listados, tais como: identificador da versão de lei, lista de variáveis para configuração de percentuais, formas de aplicação de arredondamento, uma macro para aplicar a função de resto de vagas de uma categoria, campo descritivo para os diferentes tipos de categorias, estrutura para divisão em subcategorias e lista de ordem de prioridade para a sobra de vagas.
+   Para tanto, o modelo proposto foi baseado em artigos presentes na legislação, que definem em formato textual, respectivamente: a distribuição de vagas, a forma de aplicação dos percentuais e a ordem de prioridade, como pode ser observado nas Figuras \ref{fig:art10}, \ref{fig:calcvagas} e \ref{fig:ordempri}. 
    
+   \input{chapters/dslcotas/modelo/art10}
    
+   \input{chapters/dslcotas/modelo/calcvagas}
+   
+   \input{chapters/dslcotas/modelo/ordempri}
+   
+   Essas Figuras exemplificam as propriedades e relacionamentos entre as categorias de cotas consideradas para a construção da linguagem proposta. Observa-se, por exemplo, que as informações de distribuição, das categorias de cotas, das subdivisões e das configurações (destacadas em ''vermelho'') na Figura \ref{fig:art10} incorporam os elementos do modelo da DSL Cotas (destaques em ''azul'') e suas respectivas propriedades (destacadas em ''preto'') . Na Figura \ref{fig:calcvagas} é possível perceber no trecho de lei extraído a definição de siglas das categorias e exemplos de aplicação dos percentuais. Por fim, na Figura \ref{fig:ordempri} apresentam-se as diferentes categorias que definem a ordem de prioridade, em formato sequencial definido pela legislação, em que as categorias de Renda estão destacadas em ''vermelho'', as categorias de \gls{PPI} em ''azul'' e as \gls{PCD} em ''verde''. Ao lado direito consta um exemplo de ordem no elemento do modelo, extraído do artigo de lei (destaque na cor ''preta'', nomeado \texttt{OrdemPrioridade}).
+  
+   
+  Assim, a \gls{DSL} desenvolvida consistiu em criar um modelo que permita a configuração de todos os itens listados, como: identificador da versão de lei, lista de variáveis para configuração de percentuais, formas de aplicação de arredondamento, uma macro para aplicar a função de resto de vagas de uma categoria, campo descritivo para os diferentes tipos de categorias, estrutura para divisão em subcategorias e lista de ordem de prioridade para a sobra de vagas.
+
    
     Na Seção \ref{sec:mps}, são apresentados os componentes desenvolvidos no MPS que são responsáveis pela construção da DSL Cotas.
     

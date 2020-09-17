@@ -35,13 +35,16 @@
 
 \subsection{Metodologia de avaliação da API}
 \label{metodoapi}
+
 Tendo como base a DSL elaborada, uma \gls{API} foi desenvolvida para disponibilizar \textit{endpoints} responsáveis pelos métodos de classificação e de aprovação de candidatos. Para tanto, as regras definidas na linguagem foram exportadas em formato de arquivos JSON, os quais foram utilizados no framework \textit{SpringBoot} \footnote{Segundo \citeonline{springbootreference}, o Spring Boot é um projeto da Spring que visa simplificar a criação de aplicações Java com base no Spring \textit{Framework}, para que se tenha uma aplicação inicial sem a necessidade de muitas configurações.} para geração das operações \gls{API}. 
 
 Como fator relevante para a escolha dessa tecnologia, destaca-se a necessidade de aplicação interna no \gls{IFSC} em função da equipe possuir conhecimento na linguagem de desenvolvimento \texttt{Java}. O \texttt{SpringBoot} já é utilizado em outros projetos do setor de desenvolvimento de sistemas, o que pode favorecer a aceitação e a implantação por parte da equipe.
 
-Desse modo, foi possível executar a classificação dos candidatos e fazer a comparação com os resultados de 13494 candidatos presentes na base de dados do sistema de ingresso. No total foram selecionados, aleatoriamente, 16 processos entre as diferentes versões de lei nas quais foram realizadas classificações pelas regras de cotas, conforme mencionado e apresentado na Figura \ref{processos_utilizados}. Para documentar as divergências entre os resultados da \gls{API} e do histórico presente no banco de dados do sistema utilizou-se o recurso de \textit{issues} disponível no sistema de controle de versão \textit{github} (Figura \ref{fig:issues}). Para cada curso com diferenças nas situações de classificações foi descrita a versão de lei aplicada na classificação, a quantidade de vagas, o problema apresentado, o motivo encontrado e uma possível solução.
+Desse modo, foi possível executar a classificação dos candidatos e fazer a comparação com os resultados de 13494 candidatos. No total foram selecionados, aleatoriamente, 16 processos na base do sistema de ingresso do \gls{IFSC} de 2013 a 2020, contendo as diferentes versões de lei nas quais foram realizadas classificações pelas regras de cotas, conforme apresentado na Tabela \ref{processos_utilizados}. Para documentar as divergências entre os resultados da \gls{API} e do histórico presente no banco de dados do sistema utilizou-se o recurso de \textit{issues} disponível no sistema de controle de versão \textit{github} (Figura \ref{fig:issues}). Para cada curso com diferenças nas situações de classificações foi descrita a versão de lei aplicada na classificação, a quantidade de vagas, o problema apresentado, o motivo encontrado e uma possível solução.
+
+\input{chapters/metodologia/tabelas/tabelaprocessos}
 
 \input{chapters/metodologia/imagens/issuesimg}
 
 \newpage
-O detalhamento completo de implementação da \gls{API} está descrita no Capítulo \ref{chap:dslcotas} e a análise das divergências encontradas está presente no Capítulo \ref{chap:analise}.
+O detalhamento completo de implementação da \gls{API} será descrita no Capítulo \ref{chap:dslcotas} e a análise das divergências encontradas será apresentada no Capítulo \ref{chap:analise}.

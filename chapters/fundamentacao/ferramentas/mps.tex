@@ -4,14 +4,23 @@
 
 Essa Subseção tem por objetivo detalhar os fatores considerados para a escolha da ferramenta \gls{MPS} como meio de implementação da linguagem de domínio desenvolvida na presente pesquisa.
 
+Anteriormente à escolha do \gls{MPS}, o autor também considerou  as ferramentas Xtext e Spoofax, nas quais foram realizados testes seguindo os guias: \textit{\href{https://www.eclipse.org/Xtext/documentation/103_domainmodelnextsteps.html}{Xtext 15 Minutes Tutorial}} e \textit{\href{http://metaborg.github.io/spoofax/tutorials/ql/}{Spoofax Tutorial Questionnaire Language}}. Após a execução dos tutoriais houve maior facilidade na utilização da ferramenta MPS, pois além do tutorial introdutório disponibilizou em seu portal um curso online gratuito complementar, o qual contribuiu para melhor entendimento dos recursos utilizados para desenvolvimento da pesquisa, tais como: múltiplas formas de projeções, textuais, tabulares e recursos de formulários. 
+
+
+Ademais, as ferramentas Xtext e Spoofax dependem de definição de uma gramática formal, enquanto o MPS permite que as definições da linguagem sejam associadas diretamente ao modelo. Segundo \citeonline{volter2011language}, isso traz alguns benefícios durante o desenvolvimento de linguagens: 
+\begin{enumerate}
+    \item[a)] Nas abordagens projecionais, não é necessário a definição de uma gramática ou \textit{parser}, a edição modifica diretamente a estrutura da linguagem;
+    \item[b)] Notações podem ser combinadas e misturadas, como por exemplo, a combinação de editores em formato gráfico, textual ou simbólico, formalmente o suficiente para permitir o seu processamento ou a sua tradução automática e com bom suporte da IDE;
+    \item[c)] A modelagem é definida independentemente da sua notação concreta, sendo possível representar o mesmo modelo de diferentes maneiras, simplesmente fornecendo várias projeções.
+    
+\end{enumerate}
+
 \citeonline{fowler2005language}, descreve a empresa \textit{JetBrains} como uma empresa com muita experiência no desenvolvimento de \textit{workbenches} para programação, incluindo a credibilidade adquirida com o sucesso da ferramenta \textit{IntelliJ} para desenvolvimento de Java.  Nesse sentido, o \gls{MPS} agrega várias capacidades que vieram do histórico de recursos disponíveis no \textit{IntelliJ}. 
 
 Além de ser uma ferramenta robusta, desenvolvida por uma equipe experiente, o principal fator considerado para escolha da ferramenta \gls{MPS}, foi a facilidade de encontrar documentação e vídeos exemplificativos sobre a \gls{IDE}. 
 
 A JetBrains disponibiliza em seu site um guia rápido de 10 passos (\href{www.jetbrains.com/help/mps/fast-track-to-mps.html}{\textit{Fast Track to MPS - Ten steps to mastery}}) para início do desenvolvimento de \gls{DSL}s com o \gls{MPS}, incluindo: \textit{overview} sobre os principais recursos, procedimentos de instalação, tutoriais de implementação de alguns exemplos de \gls{DSL}s, referência para documentação oficial e até um treinamento online introdutório, disponível de forma gratuita em ferramenta de ensino à distância (\href{https://stepik.org/course/37360/promo}{\textit{JetBrains MPS Elementary Course}}).  
 
-
-\newpage
 Tendo em vista que, a presente pesquisa procura reduzir a demanda para os desenvolvedores com relação às mudanças nas regras do sistema de cotas, é importante que a ferramenta ajude em questões de produtividade e possua boa usabilidade. Uma vez que as alterações podem surgir, seja em função de mudanças nos documentos de lei, ou até por questões de entendimento sobre determinado requisito de negócio - exemplos dessas situações foram apresentados anteriormente no Capítulo \ref{chap:historicoversoes}.
 
 Nesse sentido, o texto de  \citeonline{voelter2014generic}, apresenta um levantamento sobre a usabilidade do \gls{MPS}, em que 20 usuários do \gls{MPS} foram questionados sobre: "Eu consigo trabalhar produtivamente com o MPS?" e "Foi fácil se acostumar com a programação no MPS?". Esta pesquisa, segundo ele, mostra que os primeiros resultados foram positivos. 
@@ -20,18 +29,14 @@ O resultado dessa pesquisa pode ser visto na Figura \ref{fig:usuariosMPS}. São 
 
 \input{chapters/fundamentacao/imagens/usuariosMPS.tex}
 
-Segundo \citeonline{volter2011language}, o \gls{MPS} fornece alguns benefícios durante o desenvolvimento de linguagens: 
-\begin{enumerate}
-    \item[a)] Por ser um editor projecional, não é necessário a definição de uma gramática ou \textit{parser}, a edição modifica diretamente a estrutura da linguagem;
-    \item[b)] Permite a modularização e extensão de linguagens;
-    \item[c)] Notações podem ser combinadas e misturadas, como por exemplo, a combinação de editores em formato gráfico, textual ou simbólico, formalmente o suficiente para permitir o seu processamento ou a sua tradução automática e com bom suporte da IDE;
-    \item[d)] A modelagem é definida independentemente da sua notação concreta, sendo possível representar o mesmo modelo de diferentes maneiras, simplesmente fornecendo várias projeções.
-    
-\end{enumerate}
+
+
 
 Esses pontos favorecem o desenvolvimento e reutilização de linguagens, pois no \gls{MPS} é possível criar linguagens novas estendendo definições de outras já existentes, sendo possível combinar conceitos que deveriam ser tratados em diferentes pontos de vista, segregando preocupações da solução, de acordo com as necessidades e interesses de cada domínio \cite{volter2011language}.
 
+
 Do ponto de vista do autor da presente pesquisa, o \gls{MPS} se mostra uma ferramenta moderna e madura, sua base de exemplos possui mais de 37 projetos que podem servir para facilitar o aprendizado e o desenvolvimento de linguagens. Ademais, é gratuita, com vasta documentação, e por se tratar de uma ferramenta projecional não há a necessidade de manter uma gramática formal ou de desenvolvimento de \textit{parsers}.
+
 
 Com foco nessa ferramenta e nos conceitos sobre linguagens específicas de domínio apresentados, nos próximos capítulos descreve-se a linguagem desenvolvida nessa pesquisa, assim como algumas vantagens que poderão contribuir na geração do código fonte que faz a classificação de candidatos ao sistema de cotas.
 
