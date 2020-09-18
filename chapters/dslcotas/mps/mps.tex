@@ -55,7 +55,7 @@ O editor \texttt{LeiDeCota\_Editor} é responsável pela organização das infor
 
 
 \newpage
-Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto "Distribuição de Vagas" e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário definir o respectivo editor. 
+Também é permitido criar elementos estáticos para descrição de seções, como no caso do texto ''Distribuição de Vagas'' e referenciar os elementos \texttt{childrens} do conceito, por exemplo, \texttt{\%configuracoes\%}. No entanto, para que os elementos filhos sejam apresentados adequadamente para o usuário é necessário definir o respectivo editor. 
 
 Por se tratar de um editor de múltiplas projeções, é possível inserir nos editores do \gls{MPS} alguns recursos gráficos disponíveis em sua linguagem base, \texttt{Java}, como por exemplo, elementos de \texttt{JTable} e \texttt{JButton} das bibliotecas gráficas \texttt{swing}. A Figura \ref{fig:swingbutton} demonstra um exemplo de como a célula \texttt{\$swing\_component\$} é implementada para inserir o botão de adição de novas configurações na DSL.
 
@@ -83,7 +83,7 @@ Na pesquisa ora apresentada utilizou-se o recurso de restrições de escopo, que
 O aspecto de estrutura da linguagem pode ser insuficiente para expressar restrições avançadas para a DSL. O aspecto \texttt{constraints} do MPS fornece uma maneira de definir essas restrições adicionais. Referências dependem da definição de restrições de escopo, já que por padrão quando nenhum escopo é definido para uma referência, essas podem ser utilizadas em qualquer parte da modelagem da linguagem \cite[s/p, tradução nossa]{jetbrains}.
 \end{citacao}
 
-Desse modo, nos conceitos de \texttt{CategoriaCotaRef} e \texttt{ConfiguracaoCotaRef} utilizou-se o conceito de definição de escopo herdado ou \textit{inherited scopes} (Figura \ref{fig:scoperef}). Conforme \citeonline[s/p, tradução nossa]{jetbrains}, "esse mecanismo delega a resolução do escopo aos ancestrais, que implementam o ScopeProvider".
+Desse modo, nos conceitos de \texttt{CategoriaCotaRef} e \texttt{ConfiguracaoCotaRef} utilizou-se o conceito de definição de escopo herdado ou \textit{inherited scopes} (Figura \ref{fig:scoperef}). Conforme \citeonline[s/p, tradução nossa]{jetbrains}, ''esse mecanismo delega a resolução do escopo aos ancestrais, que implementam o ScopeProvider''.
 
 \input{chapters/dslcotas/mps/imagens/scoperef.tex}
 
