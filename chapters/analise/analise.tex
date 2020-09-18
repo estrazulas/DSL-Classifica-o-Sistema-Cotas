@@ -5,10 +5,9 @@ Segundo \citeonline{poltronieri2018usability}, há muito esforço para criar e u
 
 Nesse sentido, este Capítulo apresenta a análise dos dados obtidos em relação aos 2 (dois) instrumentos de coleta de dados (exercício de avaliação da DSL Cotas e o questionário aplicado com usuários), bem como, os resultados com os testes da API DSL Cotas. Esses instrumentos têm como foco verificar se a DSL Cotas atinge seus objetivos em relação à perspectiva dos diferentes grupos de usuários. 
 
-Para melhor sistematizar a organização dos dados optou-se por apresentar a análise por grupos de usuários, considerando os diferentes perfis de experiência, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}. Na Seção \ref{sec:perguntasaplicadas} são apresentados os dados gerais sobre as perguntas aplicadas com os usuários, enquanto a Seção \ref{sec:analiseexercicio} expõe os resultados obtidos com o exercício prático proposto aos usuários convidados, os resultados obtidos com a aplicação do questionário após a realização do exercício e algumas mudanças aplicadas na DSL Cotas com base nas sugestões dos usuários. Por fim, a Seção \ref{sec:avaliacaoapi} detalha os resultados dos testes com a API.
+Para melhor sistematizar a organização dos dados optou-se por apresentar a análise por grupos de usuários, considerando os diferentes perfis de experiência, os resultados foram agrupados de acordo com os 4 (quatro) grupos:  DEV-NESP; DEV-ESP; NDEV-ESP e NDEV-NESP, cujos perfis são definidos na Seção \ref{sec:idperfis}. 
 
-
-
+Na Seção \ref{sec:perguntasaplicadas} apresenta-se o exercício aplicado com os usuários na DSL Cotas, assim como os resultados obtidos com a aplicação do questionário após a realização do exercício e algumas mudanças desenvolvidas na DSL Cotas com base nas sugestões dos participantes. Por fim, a Seção \ref{sec:avaliacaoapi} detalha os resultados dos testes com a API.
 
 
 \section{Identificação dos perfis de usuários}
@@ -134,8 +133,6 @@ Nesse grupo, com relação à pergunta sobre o grau de dificuldade, os usuários
 
 \input{chapters/analise/imagens/errosdevnesp}
 
-\newpage
-
 
 Adicionalmente à questão sobre o grau de dificuldade foram feitos os seguintes comentários:
 
@@ -176,6 +173,7 @@ A Figura \ref{fig:dificuldadendevesp} demonstra o gráfico elaborado para as 8 (
 
 \input{chapters/analise/imagens/dificuldadendevesp}
 
+\newpage
 Considerando os comentários dos usuários sobre essa pergunta, destacam-se as seguintes observações:
 
 \begin{enumerate}
@@ -203,6 +201,7 @@ Nesse grupo, o Usuário 4 levou mais de 1 (uma) hora para fazer a implementaçã
 
 Sobre a pergunta "11. Na sua avaliação quais as principais limitações da linguagem proposta?", 4 (quatro) usuários apontaram que a principal limitação é: "As sugestões das mensagens informativas não são claras o suficiente". O Usuário 13 relatou que "O layout talvez não seja tão amigável para leigos em programação, o que dificulta um pouco para identificar onde clicar e o que digitar".
 
+\newpage
 Assim como nos demais grupos de usuários, o grupo NDEV-ESP sugere melhorias nas mensagens informativas e na apresentação dos elementos da linguagem. Adicionalmente, algumas considerações foram observadas após análise do questionamento número "15. Comentários e Sugestões":
 
 \begin{enumerate}
@@ -233,6 +232,7 @@ Em relação ao tempo de execução do exercício, esse grupo apresentou resulta
 
 Após o levantamento, foi possível identificar que 3 (três) dos 5 (cinco) usuários, não implementaram corretamente a quantidade de níveis de distribuição proposta pelo exercício, os Usuários 2 e 8 implementaram, respectivamente, apenas 3 (três) e 2 (dois) níveis da árvore. O Usuário 6 criou um nível extra sem subdivisões o que gerou um número de 6 categorias. Os problemas criados durante a definição da distribuição ocasionaram no aumento da contabilização de erros para esse grupo. 
 
+\newpage
 Destaca-se o caso do Usuário 2, o qual utilizou a constante RESTANTE\_VAGAS fora do contexto de distribuição, o que levou o pesquisador a descobrir uma falha durante a checagem de escopo da DSL Cotas (Figura \ref{fig:falha}). Ademais, o Usuário 8 acabou desistindo da correção dos erros apontados pela DSL Cotas no segundo nível de distribuição, indicando a finalização do exercício abaixo de 15 minutos (Figura \ref{fig:figerroniveis}).
 
 \input{chapters/analise/imagens/figfalha}

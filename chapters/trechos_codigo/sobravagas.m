@@ -1,20 +1,14 @@
-function retorna_OrdemdePreenchimentodeVagasNaoOcupadas($situacaodeClassificacao)
-{
+function retorna_OrdemdePreenchimentodeVagasNaoOcupadas($situacaodeClassificacao){
     $ordem = array();
-    switch($situacaodeClassificacao)
-    {
+    switch($situacaodeClassificacao){
         case 'AAEPRIPPI':
-            $ordem = array('AAEPRINPPI', 'AAEPRSPPI', 'AAEPRSNPPI', 'CLAG');
-            break;
+            $ordem = array('AAEPRINPPI', 'AAEPRSPPI', 'AAEPRSNPPI', 'CLAG');break;
         case 'AAEPRINPPI':
-            $ordem = array('AAEPRIPPI', 'AAEPRSPPI', 'AAEPRSNPPI', 'CLAG');
-            break;
+            $ordem = array('AAEPRIPPI', 'AAEPRSPPI', 'AAEPRSNPPI', 'CLAG');break;
         case 'AAEPRSPPI':
-            $ordem = array('AAEPRSNPPI', 'AAEPRIPPI', 'AAEPRINPPI', 'CLAG');
-            break;
+            $ordem = array('AAEPRSNPPI', 'AAEPRIPPI', 'AAEPRINPPI', 'CLAG'); break;
         case 'AAEPRSNPPI':
-            $ordem = array('AAEPRSPPI', 'AAEPRIPPI', 'AAEPRINPPI', 'CLAG');
-            break;
+            $ordem = array('AAEPRSPPI', 'AAEPRIPPI', 'AAEPRINPPI', 'CLAG');break;
         default:
             break;
     }
